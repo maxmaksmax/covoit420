@@ -10,7 +10,5 @@
   </div>
     <!---//End-bottom-footer---->
 </div>
-</div>
-</div>
 </body>
 </html>
