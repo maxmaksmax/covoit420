@@ -3,7 +3,7 @@
 	<head>
 
 		<meta charset="utf-8">
-		<title>IMT Express | Home</title>
+		<title>IMT Express</title>
 
 		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
@@ -21,7 +21,7 @@
 		<!---webfonts--->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 		<!---//webfonts--->
-    
+
 	</head>
 
 	<body>

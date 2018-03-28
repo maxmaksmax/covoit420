@@ -7,6 +7,7 @@ class View extends MyObject {
        // parent::__construct();
        $this->templateNames = array();
        $this->templateNames['head'] = 'head';
+       $this->templateNames['top'] = 'top';
        $this->templateNames['menu'] = 'menu';
        $this->templateNames['content'] = $templateName;
        // $this->templateNames['side'] = 'side';
@@ -54,6 +55,7 @@ class View extends MyObject {
 
     public function render() {
        $this->loadTemplate($this->templateNames['head'], $this->args);
+       $this->loadTemplate($this->templateNames['top'], $this->args);
        $this->loadTemplate($this->templateNames['menu'], $this->args);
        $this->loadTemplate($this->templateNames['content'], $this->args);
        // $this->loadTemplate($this->templateNames['side'], $this->args);

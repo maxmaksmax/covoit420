@@ -1,2 +1,4 @@
-<div> Le SiTE n'AfFicHE rIeN </div>
-<div>
+<!--- container ---->
+  <!--- header ----->
+  <div class="header">
+    <div class="container">
