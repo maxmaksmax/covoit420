@@ -40,13 +40,4 @@
 				</div>
 </div>
 <!--- top-nav ----->
-  <!--- script-for-nav ---->
-<!-- <script>
-  $( "span.menu" ).click(function() {
-    $( ".top-nav ul" ).slideToggle( "slow", function() {
-      // Animation complete.
-    });
-  });
-</script> -->
-<!--- script-for-nav ---->
 </div>
