@@ -4,7 +4,7 @@
 // Debug
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	//define ('__DEBUG', false);
+	define ('__DEBUG', false);
 	//define ('__DEBUG', true);
 
 	if('__DEBUG') {

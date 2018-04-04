@@ -32,10 +32,10 @@
   }
 
   // a priori on n'a pas de debug donc ne pas executer ce code
-  if('__DEBUG')
-  	MyObject::echoLogs();
-  else
-  	if($hasErrors)
-  		include(__ROOT_DIR . 'templates/error.html');
+  // if('__DEBUG')
+  // 	MyObject::echoLogs();
+  // else
+  // 	if($hasErrors)
+  // 		include(__ROOT_DIR . 'templates/error.html');
 
 ?>

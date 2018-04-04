@@ -23,14 +23,14 @@
 ?>
 
 
-<div id="content">
+<div id="inscription">
 
 <h2>Inscription</h2>
 
 <div class="row">
 
 
-    <form class="form-horizontal col-sm-12" action="index.php?a=validateInscription" method="post">
+    <form class="form-horizontal" action="index.php?a=validateInscription" method="post">
 		<!-- ----------------
 		 		 inputEmail
 		 ---------------- -->

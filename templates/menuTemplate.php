@@ -3,7 +3,7 @@
   <div class="logo">
     <a href="index.php"><span>IMT</span> Express</a>
   </div>
-  <span class="menu"> </span>
+
   <ul>
     <li <?php
 	  	    if($controller->getActionName()=='defaultAction')
@@ -23,27 +23,30 @@
     <li><a href="blog.html">Mon compte</a></li>
     <li><a href="contact.html">Contact</a></li>-->
   </ul>
-</div>
 
-<div class="clearfix"> </div>
+
 <!-- à afficher seulement si on n'est pas connecté -->
-<div class="formulaire">
-  <form method="post" action="traitement.php">
-     <label for="pseudo">Pseudo :</label>
-     <input type="text" name="pseudo" id="pseudo" required />
-     <label for="pass">  Mot de passe :</label>
-     <input type="password" name="pass" id="pass" required />
-     <input type="submit" value="Valider" />
-<!-- il faut du php au cas ou erreur de connexion -->
-  </form>
+<div class="connection">
+  <div class="formulaire">
+					<form method="post" action="index.php?a=validateConnection">
+						 <p>
+							 <label for="inputEmail"></label>
+							 <input type="email" name="inputEmail" placeholder="Email"required />
+							 <label for="inputPassword"></label>
+							 <input type="password" name="inputPassword" placeholder="Mot de passe" required />
+							 <input type="submit" value="Valider" />
+						 </p>
+					</form>
+				</div>
 </div>
 <!--- top-nav ----->
   <!--- script-for-nav ---->
-<script>
+<!-- <script>
   $( "span.menu" ).click(function() {
     $( ".top-nav ul" ).slideToggle( "slow", function() {
       // Animation complete.
     });
   });
-</script>
+</script> -->
 <!--- script-for-nav ---->
+</div>

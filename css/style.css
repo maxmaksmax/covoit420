@@ -1,3 +1,20 @@
+/* Custom classes */
+.connection{
+  display: inline-flex;
+  float: right;
+  padding: 25px 10px 25px 10px;
+}
+
+#accueil{
+  color: #FFF;
+}
+#inscription{
+  background-color: rgba(255,255,255, 0.9);
+}
+.bottom-footer{
+  max-height: 20px;
+}
+
 /*--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -21,7 +38,7 @@ body input[type="text"],body input[type="submit"],body textarea{
 }
 /*--- container ----*/
 .container{
-	width:70%;
+	width:90%;
 }
 .top-nav span.menu{
 	display:none;
@@ -30,7 +47,7 @@ body input[type="text"],body input[type="submit"],body textarea{
 .header{
 	background: url(../images/bg.jpg) no-repeat 0px 0px;
 	background-size: cover;
-	min-height: 700px;
+	min-height: 730px;
 	position:relative;
 }
 .logo{
@@ -48,12 +65,13 @@ body input[type="text"],body input[type="submit"],body textarea{
 	color:#EC005F;
 }
 .top-nav{
-	float:right;
+	float:none;
   background:#bdcedd;
 }
 .top-nav ul{
 	margin:0;
 	padding:0;
+  display: inline-block;
 }
 .top-nav ul li{
 	list-style:none;
