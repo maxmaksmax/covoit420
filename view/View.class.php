@@ -1,5 +1,7 @@
 <?php
+
 class View extends MyObject {
+	
     protected $args;
     protected $templateNames;
 
