@@ -1,8 +1,8 @@
-<h2>Mon Compte</h2>
+<h2> Compte</h2>
 
 <div class="row">
 
-Hey c'est mon compte ici !
+compte
 
 </div>
 
