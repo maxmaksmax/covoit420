@@ -15,5 +15,22 @@
 		ini_set("display_errors", 0);
 	}
 
-// IL MANQUE LA DATABASE
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// DB
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	if($_SERVER['DOCUMENT_ROOT']=='C:/UwAmp/www/') {
+		define('_MYSQL_HOST','localhost');
+		define('_MYSQL_PORT',8080);
+		define('_MYSQL_DBNAME','bdd_covoit2.0');
+		define('_MYSQL_USER','root');
+		define('_MYSQL_PASSWORD','root');
+	} else {
+
+		define('_MYSQL_HOST','localhost');
+		define('_MYSQL_PORT',443);
+		define('_MYSQL_DBNAME','maxime_servillat');
+		define('_MYSQL_USER','maxime.servillat');
+		define('_MYSQL_PASSWORD','svmFnqYK');
+	}
 ?>
