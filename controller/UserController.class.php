@@ -1,11 +1,14 @@
 <?php
 
 class UserController extends Controller {
-	public function inscription($request) {
-		$view = new AnonymousView($this);
+	
+	public function connection($request) {
+		
+		$view = new UserView($this);
 		$view->render();
-	}
-
+		}
+	
+   
 }
 
 ?>
