@@ -4,39 +4,23 @@
 class Trajet extends Model {
 
 
-	public static function create($id_Trajet, $id_voiture, $lieu_depart, $lieu_arrivee, $heure_depart, $heure_arrivee, $nbPlaces){ /* Changer dans la base de donnnées le champ "NULL" pour avoir des champs non obligatoires */
+	public static function create($id_trajet, $id_voiture, $lieu_depart, $lieu_arrivee, $heure_depart, $heure_arrivee, $nombre_places){ /* Changer dans la base de donnnées le champ "NULL" pour avoir des champs non obligatoires */
 			
-		$cleRequete = 'CreateTrajet';
-		$trajet = Model::executeRequest($cleRequete, array(':nom_trajet' => $nomTrajet, ':id_voiture' => $id_voiture, ':lieu_depart' => $lieu_depart, 
-			':lieu_arrivee' => $lieu_arrivee, ':heure_depart' => $heure_depart, ':heure_arrivee' => $heure_arrivee, ':nombre_places' => $nbPlaces));
+
+		$trajet = Model::executeRequest('CreateTrajet';, array(':id_trajet' => $id_trajet, ':id_voiture' => $id_voiture, ':lieu_depart' => $lieu_depart, 
+			':lieu_arrivee' => $lieu_arrivee, ':heure_depart' => $heure_depart, ':heure_arrivee' => $heure_arrivee, ':nombre_places' => $nombre_places));
 			
 		return $trajet;
 	}
 	
 	
 	public static function afficherTrajet($lieu_depart, $lieu_arrivee, $heure_depart){
-		
-		$cleRequete = "AfficherTrajet";		
-		$trajet = Model::executeRequest($cleRequete, array(':lieu_depart' => $lieu_depart, ':lieu_arrivee' => $lieu_arrivee, ':heure_depart' => $heure_depart));
+			
+		$trajet = Model::executeRequest('AfficherTrajet', array(':lieu_depart' => $lieu_depart, ':lieu_arrivee' => $lieu_arrivee, ':heure_depart' => $heure_depart));
 		$result = $trajet->fetchAll();
 		return $result;
 	}
 	
-	public static function recupererVoitures($idUser){
-		
-		$cleRequete = "RecupererVoitures";		
-		$trajet = Model::executeRequest($cleRequete, array(':id_user' => $idUser));
-		$result = $trajet->fetchAll();
-		return $result;
-	}
-	
-	public static function getIdByModele($modele){
-		
-		$cleRequete = "RecupererIdVoiture";		
-		$trajet = Model::executeRequest($cleRequete, array(':modele' => $modele));
-		$result = $trajet->fetchAll();
-		return $result;
-	}
    
 }
 
