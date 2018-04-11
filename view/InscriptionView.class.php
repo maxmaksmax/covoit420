@@ -4,7 +4,7 @@ class InscriptionView extends View {
 
 	public function __construct($controller, $templateName, $args = array()) {
 		parent::__construct($controller, $templateName, $args = array());
-		$this->templateNames['head'] = 'headAnonymous';
+		$this->templateNames['head'] = 'head';
 		$this->templateNames['content'] = 'inscription';
 	}
 
