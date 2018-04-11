@@ -80,7 +80,7 @@ create table realise
 /*==============================================================*/
 create table trajet
 (
-   id_trajet            int not null,
+   id_trajet            int not null auto_increment,
    id_user              int,
    id_voiture           int not null,
    lieu_depart          varchar(30) not null,
@@ -107,7 +107,7 @@ create table traverse
 /*==============================================================*/
 create table utilisateur
 (
-   id_user              int not null,
+   id_user              int not null auto_increment,
    nom_user             varchar(30) not null,
    prenom_user          varchar(30) not null,
    password             char(50),
@@ -126,7 +126,7 @@ create table utilisateur
 /*==============================================================*/
 create table ville
 (
-   id_ville             int not null,
+   id_ville             int not null auto_increment,
    nom_ville            varchar(30) not null,
    code_postal          char(5) not null,
    code_insee           char(5),
@@ -138,7 +138,7 @@ create table ville
 /*==============================================================*/
 create table voiture
 (
-   id_voiture           int not null,
+   id_voiture           int not null auto_increment,
    id_user              int not null,
    modele               varchar(20) not null,
    couleur              varchar(20),
@@ -148,44 +148,43 @@ create table voiture
 );
 
 alter table ami add constraint FK_gerer foreign key (id_user)
-      references utilisateur (id_user) on delete restrict on update restrict;
+      references utilisateur (id_user) on delete cascade on update cascade;
 
 alter table ami add constraint FK_heritage_2 foreign key (nom_groupe)
-      references groupe (nom_groupe) on delete restrict on update restrict;
+      references groupe (nom_groupe) on delete cascade on update cascade;
 
 alter table appartient add constraint FK_appartient foreign key (id_user)
-      references utilisateur (id_user) on delete restrict on update restrict;
+      references utilisateur (id_user) on delete cascade on update cascade;
 
 alter table appartient add constraint FK_appartient2 foreign key (nom_groupe)
-      references groupe (nom_groupe) on delete restrict on update restrict;
+      references groupe (nom_groupe) on delete cascade on update cascade;
 
 alter table participe add constraint FK_participe foreign key (id_user)
-      references utilisateur (id_user) on delete restrict on update restrict;
+      references utilisateur (id_user) on delete cascade on update cascade;
 
 alter table participe add constraint FK_participe2 foreign key (id_trajet)
-      references trajet (id_trajet) on delete restrict on update restrict;
+      references trajet (id_trajet) on delete cascade on update cascade;
 
 alter table realise add constraint FK_realise foreign key (nom_groupe)
-      references groupe (nom_groupe) on delete restrict on update restrict;
+      references groupe (nom_groupe) on delete cascade on update cascade;
 
 alter table realise add constraint FK_realise2 foreign key (id_trajet)
-      references trajet (id_trajet) on delete restrict on update restrict;
+      references trajet (id_trajet) on delete cascade on update cascade;
 
 alter table trajet add constraint FK_effacer foreign key (id_user)
-      references utilisateur (id_user) on delete restrict on update restrict;
+      references utilisateur (id_user) on delete cascade on update cascade;
 
 alter table trajet add constraint FK_fait foreign key (id_voiture)
-      references voiture (id_voiture) on delete restrict on update restrict;
+      references voiture (id_voiture) on delete restrict on update cascade;
 
 alter table trajet add constraint FK_propose foreign key (id_user)
-      references utilisateur (id_user) on delete restrict on update restrict;
+      references utilisateur (id_user) on delete cascade on update cascade;
 
 alter table traverse add constraint FK_traverse foreign key (id_trajet)
-      references trajet (id_trajet) on delete restrict on update restrict;
+      references trajet (id_trajet) on delete cascade on update cascade;
 
 alter table traverse add constraint FK_traverse2 foreign key (id_ville)
-      references ville (id_ville) on delete restrict on update restrict;
+      references ville (id_ville) on delete restrict on update cascade;
 
 alter table voiture add constraint FK_possede foreign key (id_user)
-      references utilisateur (id_user) on delete restrict on update restrict;
-
+      references utilisateur (id_user) on delete cascade on update cascade;

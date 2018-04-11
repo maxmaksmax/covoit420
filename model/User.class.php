@@ -1,7 +1,7 @@
 <?php
 //COMMENT
 class User extends Model {
-	
+
 	public static function isEmailUsed($email){
 		$user = Model::executeRequest('CountUsersWithEmail', array(':email' => $email));
 		foreach($user as $u){
@@ -13,19 +13,19 @@ class User extends Model {
 			}
 		}
 	}
-	
-	public static function create($email, $prenom, $nom, $admin, $telephone, $password){ 
-	
+
+	public static function create($email, $prenom, $nom, $admin, $telephone, $password){
+
 		if (self::isEmailUsed($email)){
 			echo 'Email déjà utilisé !';
 			exit();
 		}
 		else{
-			$user = Model::executeRequest('CreateUser', array('id' => rand(10000,10100), 'password' => $password, 'email' => $email, 'nom_user' => $nom, 'prenom_user' => $prenom, 'est_admin' => $admin, 'telephone' => $telephone));
+			$user = Model::executeRequest('CreateUser', 'password' => $password, 'email' => $email, 'nom_user' => $nom, 'prenom_user' => $prenom, 'est_admin' => $admin, 'telephone' => $telephone));
 		}
 		return $user;
 	}
-	
+
 	public static function getPassword($email){
 		$stmt = Model::executeRequest('PrintPassword', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
@@ -35,7 +35,7 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-	
+
 	public static function getNom($email){
 		$stmt = Model::executeRequest('PrintNom', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
@@ -44,7 +44,7 @@ class User extends Model {
 		else{
 			return $stmt;
 		}
-	}	
+	}
 
 	public static function getPrenom($email){
 		$stmt = Model::executeRequest('PrintPrenom', array('email' => $email)) -> fetch()[0];
@@ -55,7 +55,7 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-	
+
 	public static function getTelephone($email){
 		$stmt = Model::executeRequest('PrintTelephone', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
@@ -65,7 +65,7 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-   
+
 }
 
 ?>

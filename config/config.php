@@ -20,13 +20,14 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	if($_SERVER['DOCUMENT_ROOT']=='C:/UwAmp/www/') {
+		echo('local');
 		define('_MYSQL_HOST','localhost');
 		define('_MYSQL_PORT',8080);
-		define('_MYSQL_DBNAME','bdd_covoit2.0');
+		define('_MYSQL_DBNAME','bdd_covoit4');
 		define('_MYSQL_USER','root');
 		define('_MYSQL_PASSWORD','root');
 	} else {
-
+		echo('online');
 		define('_MYSQL_HOST','localhost');
 		define('_MYSQL_PORT',443);
 		define('_MYSQL_DBNAME','maxime_servillat');
