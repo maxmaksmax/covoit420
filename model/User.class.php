@@ -21,7 +21,7 @@ class User extends Model {
 			exit();
 		}
 		else{
-			$user = Model::executeRequest('CreateUser', array(password' => $password, 'email' => $email, 'nom_user' => $nom, 'prenom_user' => $prenom, 'est_admin' => $admin, 'telephone' => $telephone));
+			$user = Model::executeRequest('CreateUser', array('password' => $password, 'email' => $email, 'nom_user' => $nom, 'prenom_user' => $prenom, 'est_admin' => $admin, 'telephone' => $telephone));
 		}
 		return $user;
 	}
