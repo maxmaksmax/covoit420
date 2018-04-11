@@ -23,8 +23,8 @@ class UserController extends Controller {
 		$view->render();
 	}	
 	
-	public function monCompte($request) {
-		$view = new UserView($this, 'monCompte');
+	public function compte($request) {
+		$view = new UserView($this, 'compte');
 		$view->render();
 	}
 	

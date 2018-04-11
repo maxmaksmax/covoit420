@@ -11,9 +11,9 @@
 	 ><a href="index.php?c=user&amp;a=index">Accueil</a></li>
 
    <li <?php
-	  	if($controller->getActionName()=='monCompte')
+	  	if($controller->getActionName()=='compte')
 			echo 'class="active"';
-	   ?>><a href="index.php?c=user&amp;a=monCompte">Mon Compte</a></li>
+	   ?>><a href="index.php?c=user&amp;a=compte">Mon Compte</a></li>
 
 	<li <?php
 	  	if($controller->getActionName()=='mesTrajets')

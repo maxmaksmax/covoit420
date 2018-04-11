@@ -5,13 +5,16 @@
   <img src="images/simpsons.jpg" alt="Covoiturage Simpsons/Futurama">
 </div>
 
-<div id='rechercheTrajet'>
-  <h1></h1>
-  <h2>Recherche un covoiturage</h2>
-</div>
+<ul>
+   <li <?php
+	  	if($controller->getActionName()=='defaultAction')
+			echo 'class="active"';
+	   ?>><a href="index.php?c=user&amp;a=index">Propose un covoiturage</a></li>
 
-<div id='propositionTrajet'>
-  <h1></h1>
-  <h2>Propose un covoiturage</h2>
-</div>
+   <li <?php
+	  	if($controller->getActionName()=='compte')
+			echo 'class="active"';
+	   ?>><a href="index.php?c=user&amp;a=compte">Recherche un covoiturage</a></li>
+
+</ul>
 <!--- banner --->

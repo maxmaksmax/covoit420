@@ -13,7 +13,7 @@ class User extends Model {
 		}
 	}
 
-  public static function create($email, $prenom, $nom, $admin=0, $telephone=null, $password){
+  public static function createUser($email, $prenom, $nom, $admin=0, $telephone=null, $password){
 		$requete = "INSERT INTO utilisateur(id_user, password, email, prenom_user, nom_user, est_admin, telephone) VALUES (:id, :password, :email,  :prenom_user, :nom_user,
 				:est_admin, :telephone);";
 		if (self::isEmailUsed($email)){
