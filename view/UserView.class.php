@@ -4,7 +4,7 @@ class UserView extends View {
 	
 	public function __construct($controller, $templateName, $args = array()) {
 		parent::__construct($controller, $templateName, $args = array());
-		$this->templateNames['head'] = 'headUser';
+		$this->templateNames['head'] = 'head'; 
 		$this->templateNames['menu'] = 'menuUser';
 	} 
    

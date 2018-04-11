@@ -7,12 +7,8 @@ class UserController extends Controller {
 		session_start();
     }
 	
-	public function defaultAction($request) {
-		$view = new UserView($this, 'index');
-		$view->render();
-	}
 	
-	public function index($request) {
+	public function defaultAction($request) {
 		$view = new UserView($this, 'index');
 		$view->render();
 	}
@@ -22,23 +18,40 @@ class UserController extends Controller {
 		$view->render();
 	}
 	
+	public function index($request) {
+		$view = new UserView($this, 'index');
+		$view->render();
+	}	
+	
 	public function monCompte($request) {
 		$view = new UserView($this, 'monCompte');
 		$view->render();
 	}
 	
-	public function mesTrajets($request) {
-		$view = new UserView($this, 'mesTrajets');
-		$view->render();
-	}
 	
 	public function enregistrerInfos($request){
 		$email = $request->read('emailChg');
 		$telephone = $request->read('telephoneChg');
 		$password = $request->read('passwordChg');
 		$password2 = $request->read('password2Chg');
-		if($email == "")
-			echo 'test';
+		$login = $_SESSION["login"];
+
+		if($email != ""){
+			User::changeEmailByLogin($login, $email);
+		}
+		if($telephone != ""){
+			User::changeTelephoneByLogin($login, $telephone);
+		}
+		if($password != ""){
+			if($password2 == $password){
+				User::changePasswordByLogin($login, $password);
+			}
+			else{
+				echo 'Les deux mots de passe ne sont pas les mêmes';
+			}
+		}
+		$view = new UserView($this, 'monCompte');
+		$view->render();
 	}
    
 }
