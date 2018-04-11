@@ -1,7 +1,7 @@
 <?php
 
-	User::addSqlRequest('CreateUser', "INSERT INTO `utilisateur`(`login`, `nom_user`, `prenom_user`, `est_admin`, `telephone`, `email`, `password`) 
-	VALUES (:login, :nom_user, :prenom_user, :est_admin, :telephone, :email, :password);");
+	User::addSqlRequest('CreateUser', "INSERT INTO `utilisateur`(`email`, `nom_user`, `prenom_user`, `est_admin`, `telephone`,  `password`) 
+	VALUES (:email, :nom_user, :prenom_user, :est_admin, :telephone, :password);");
 			
 	User::addSqlRequest('CountUsersWithLogin', 'select count(*) from utilisateur where utilisateur.email = :email');
 	
