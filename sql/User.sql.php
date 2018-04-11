@@ -3,7 +3,7 @@
 	User::addSqlRequest('CreateUser', "INSERT INTO `utilisateur`(`email`, `nom_user`, `prenom_user`, `est_admin`, `telephone`,  `password`)
 	VALUES (:email, :nom_user, :prenom_user, :est_admin, :telephone, :password);");
 
-	User::addSqlRequest('CountUsersWithLogin', 'select count(*) from utilisateur where utilisateur.email = :email');
+	User::addSqlRequest('CountUsersWithLogin', "SELECT count(*) from utilisateur where utilisateur.email = :email");
 
 
 	User::addSqlRequest('PrintPassword', "SELECT password FROM utilisateur WHERE utilisateur.email = :email");

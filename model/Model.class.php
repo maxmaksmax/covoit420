@@ -1,16 +1,16 @@
 <?php
 
 class Model extends MyObject {
-	
+
 	private static $BDD;
 	protected static $tabRequetes;
-	
-	
+
+
 	public static function addSqlRequest($key, $requete){
 		static::$tabRequetes[$key] = $requete;
-		
+
 	}
-	
+
 	// protected static function executeRequest($requeteSQL,  $parameters = null){
 		// if ($parameters == null){
 			// $resultat = static::getBDD()-> getPDOInstance() -> query($requeteSQL);
@@ -21,7 +21,7 @@ class Model extends MyObject {
 		// }
 		// return $resultat;
 	// }
-	
+
 	protected static function executeRequest($requestKey,  $parameters = null){
 		$requete = static::$tabRequetes[$requestKey];
 		
