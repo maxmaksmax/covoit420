@@ -7,12 +7,7 @@ class TrajetController extends Controller {
     }
 	
 	public function defaultAction($request) {
-		$view = new TrajetView($this, 'mesTrajets');
-		$view->render();
-	}
-	
-   public function mesTrajets($request) {
-		$view = new TrajetView($this, 'mesTrajets');
+		$view = new TrajetView($this, 'mesTrajets'); //drtfyguijoploiuhytfrdfyghujiokpiuhytfyuiho mesTrajets?????
 		$view->render();
 	}
 	
@@ -40,7 +35,7 @@ class TrajetController extends Controller {
 		
 		$trajets = Trajet::createTrajet($lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places, $commentaire);
 		print_r($trajets);
-		$view = new TrajetView($this, 'creerTrajet');
+		$view = new TrajetView($this, 'creationTrajet');
 		$view->render();
 	}
 	
@@ -50,7 +45,7 @@ class TrajetController extends Controller {
 		$lieu_depart = $request->read('lieu_depart');
 		$lieu_arrivee = $request->read('lieu_arrivee');
 		$date_heure = $date . ' ' . $heure . ':00'; // pour être au format '2018-04-07 22:30:00';
-		$trajets = Trajet::show($lieu_depart, $lieu_arrivee, $date_heure);
+		$trajets = Trajet::showTrajet($lieu_depart, $lieu_arrivee, $date_heure);
 		$nbTrajets = sizeof($trajets);
 			
 		

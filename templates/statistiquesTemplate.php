@@ -1,0 +1,3 @@
+
+
+statistiquesTemplate

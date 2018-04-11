@@ -2,10 +2,15 @@
 
 class AnonymousController extends Controller {
 
-  public function defaultAction($request) {
-    $view = new View($this, 'index');
-    $view->render();
-  }
+	public function defaultAction($request) {
+	$view = new View($this, 'index');
+	$view->render();
+	}
+
+	public function connection($request){
+		$view = new View($this, 'inscription');
+		$view->render();
+	}
 
   public function validateConnection($request) {
 		$email = $request->read('email');
@@ -66,7 +71,7 @@ class AnonymousController extends Controller {
 			else {
 				echo 'Inscription validée';
 
-				$view = new View($this, 'index');
+				$view = new UserView($this, 'index');
 				$view->render();
 				// $newRequest = new Request();
 				// $newRequest->write('controller','user');
