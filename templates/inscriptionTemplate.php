@@ -1,20 +1,20 @@
 <?php
 
 
-  	if(!isset($inputPasswordError))
-  		$inputPasswordError = false;
-  	if(!isset($inputPasswordFeedbackMsg))
-  		$inputPasswordFeedbackMsg = "Error";
-
-  	if(!isset($inputPasswordError2))
-  		$inputPasswordError2 = false;
-  	if(!isset($inputPasswordFeedbackMsg2))
-  		$inputPasswordFeedbackMsg2 = "Error";
-
-  	if(!isset($inputLastnameError))
-  		$inputLastnameError = false;
-  	if(!isset($inputLastnameErrorFeedbackMsg))
-  		$inputLastnameErrorFeedbackMsg = "Error";
+  	// if(!isset($inputPasswordError))
+  	// 	$inputPasswordError = false;
+  	// if(!isset($inputPasswordFeedbackMsg))
+  	// 	$inputPasswordFeedbackMsg = "Error";
+    //
+  	// if(!isset($inputPasswordError2))
+  	// 	$inputPasswordError2 = false;
+  	// if(!isset($inputPasswordFeedbackMsg2))
+  	// 	$inputPasswordFeedbackMsg2 = "Error";
+    //
+  	// if(!isset($inputLastnameError))
+  	// 	$inputLastnameError = false;
+  	// if(!isset($inputLastnameErrorFeedbackMsg))
+  	// 	$inputLastnameErrorFeedbackMsg = "Error";
 
   	// if(!isset(Error))
   	// 	 = false;

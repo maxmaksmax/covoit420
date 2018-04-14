@@ -14,6 +14,7 @@ class User extends Model {
 	}
 
   public static function createUser($email, $prenom, $nom, $admin=0, $telephone=null, $password){
+		echo 'createUser de classes';
 		$requete = "INSERT INTO utilisateur(id_user, password, email, prenom_user, nom_user, est_admin, telephone) VALUES (:id, :password, :email,  :prenom_user, :nom_user,
 				:est_admin, :telephone);";
 		if (self::isEmailUsed($email)){
@@ -21,7 +22,7 @@ class User extends Model {
 			exit();
 		}
 		else{ // ATTENTION ici id est un random mais il faut vérifier si l'auto-incrémentation fonctionne
-			$user = Model::executeRequest($requete, array('id' => rand(10000,10100), 'password' => $password, 'email' => $email, 'nom_user' => $nom, 'prenom_user' => $prenom, 'est_admin' => $admin, 'telephone' => $telephone));
+			$user = Model::executeRequest($requete, array('password' => $password, 'email' => $email, 'nom_user' => $nom, 'prenom_user' => $prenom, 'est_admin' => $admin, 'telephone' => $telephone));
 		}
 		return $user;
 	}

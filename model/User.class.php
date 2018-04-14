@@ -15,7 +15,7 @@ class User extends Model {
 	}
 
 	public static function createUser($email, $prenom, $nom, $admin, $telephone, $password){
-
+		echo 'creatUser de model';
 		if (self::isEmailUsed($email)){
 			echo 'Email déjà utilisé !';
 			exit();

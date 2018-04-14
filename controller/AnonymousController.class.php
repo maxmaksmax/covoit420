@@ -61,7 +61,7 @@ class AnonymousController extends Controller {
 			$nom = $request->read('inputLastname');
 			$prenom = $request->read('inputFirstname');
 			$telephone = $request->read('inputTelephone');
-			
+
 			$user = User::createUser($email, $prenom, $nom, 0, $telephone, $password);
 			if(!isset($user)) {
 				$view = new View($this,'inscription');
