@@ -22,7 +22,7 @@ class TrajetController extends Controller {
 	}
 	
 	public function rechercheTrajet($request) {
-		$view = new TrajetView($this, 'rechercherTrajet');
+		$view = new TrajetView($this, 'rechercheTrajet');
 		$view->render();
 	}
 	
@@ -54,7 +54,7 @@ class TrajetController extends Controller {
 		$nbTrajets = sizeof($trajets);
 			
 		
-		$view = new TrajetView($this, 'rechercheTrajet');
+		$view = new TrajetView($this, 'validateRechercheTrajet');
 		// print_r($trajets[0]['nom_trajet']); //marche aussi avec [0]
 		// print_r($trajets[0]['lieu_depart']);	
 		// print_r($trajets[0]['lieu_arrivee']);	
