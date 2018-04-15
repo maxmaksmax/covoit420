@@ -4,18 +4,18 @@ class AnonymousController extends Controller {
 
 
 	//ACTION PAR DEFAUT
-	
+
 	public function defaultAction($request) {
 	$view = new View($this, 'index');
 	$view->render();
 	}
 
-	
+
 	//CONNECTION
-	
-	
+
+
 	public function connection($request){
-		$view = new View($this, 'inscription');
+		$view = new View($this, 'index');
 		$view->render();
 	}
 
@@ -51,10 +51,10 @@ class AnonymousController extends Controller {
 		}
 	}
 
-	
+
 	//INSCRIPTION
-	
-	
+
+
   public function inscription($request){
 		$view = new View($this, 'inscription');
 		$view->render();
@@ -63,7 +63,7 @@ class AnonymousController extends Controller {
 	public function validateInscription($request) {
 		$email = $request->read('inputEmail');
 		if(User::isEmailUsed($email)) {
-			$view = new View($this,'inscription');
+			$view = new View($this,'index');
 			$view->setArg('inscErrorText','This email is already used');
 			$view->render();
 		}
@@ -75,7 +75,7 @@ class AnonymousController extends Controller {
 
 			$user = User::createUser($email, $prenom, $nom, 0, $telephone, $password);
 			if(!isset($user)) {
-				$view = new View($this,'inscription');
+				$view = new View($this,'index');
 				$view->setArg('inscErrorText', 'Cannot complete inscription');
 				$view->render();
 			}

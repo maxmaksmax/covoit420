@@ -2,7 +2,7 @@
   <div class="logo">
     <a href="index.php"><span>IMT</span> Express</a>
   </div>
-  
+
 <ul>
    <li <?php
 	  	if($controller->getActionName()=='defaultAction')
@@ -10,6 +10,16 @@
 	   ?>
 	 ><a href="index.php?c=user&amp;a=index">Accueil</a></li>
 
+   <li <?php
+	  	if($controller->getActionName()=='defaultAction')
+			echo 'class="active"';
+	   ?>><a href="index.php?c=user&amp;a=index">Propose un covoiturage</a></li>
+
+   <li <?php
+	  	if($controller->getActionName()=='compte')
+			echo 'class="active"';
+	   ?>><a href="index.php?c=user&amp;a=compte">Recherche un covoiturage</a></li>
+     
    <li <?php
 	  	if($controller->getActionName()=='compte')
 			echo 'class="active"';
