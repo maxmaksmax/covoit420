@@ -165,7 +165,7 @@
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-3">
                         <input type="submit" class="btn btn-primary" value="Créer mon compte" name="boutonCreerCompte">
-                        <input type="reset" class="btn btn-default" value="Annuler">
+                        <input type="reset" class="btn btn-default" value="Annuler" data-dismiss="modal">
                     </div>
                 </div>
 
@@ -174,7 +174,7 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
         </div>
       </div>
 
@@ -215,7 +215,7 @@
         	</div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
         </div>
       </div>
 
