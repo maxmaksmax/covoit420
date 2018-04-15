@@ -64,7 +64,7 @@ class AnonymousController extends Controller {
 		$email = $request->read('inputEmail');
 		if(User::isEmailUsed($email)) {
 			$view = new View($this,'index');
-			$view->setArg('inscErrorText','This email is already used');
+			$view->setArg('inscErrorText','Cet email est déjà utilisé !');
 			$view->render();
 		}
 		else {
