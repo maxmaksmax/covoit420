@@ -2,7 +2,7 @@
 class User extends Model {
 
 	public static function isEmailUsed($email){
-		$user = Model::executeRequest('SELECT count(*) FROM utilisateur u WHERE u.email = :email', array(':email' => $email));
+		$user = Model::executeRequest('CountUsersWithEmail', array(':email' => $email));
 		foreach($user as $u){
 			if($u['count(*)'] == 0){
 				return false;
@@ -14,22 +14,19 @@ class User extends Model {
 	}
 
   public static function createUser($email, $prenom, $nom, $admin=0, $telephone=null, $password){
-		echo 'createUser de classes';
-		$requete = "INSERT INTO utilisateur(id_user, password, email, prenom_user, nom_user, est_admin, telephone) VALUES (:id, :password, :email,  :prenom_user, :nom_user,
-				:est_admin, :telephone);";
+
 		if (self::isEmailUsed($email)){
 			echo 'Email déjà utilisé !';
 			exit();
 		}
-		else{ // ATTENTION ici id est un random mais il faut vérifier si l'auto-incrémentation fonctionne
-			$user = Model::executeRequest($requete, array('password' => $password, 'email' => $email, 'nom_user' => $nom, 'prenom_user' => $prenom, 'est_admin' => $admin, 'telephone' => $telephone));
+		else{
+			$user = Model::executeRequest('CreateUser', array('password' => $password, 'email' => $email, 'nom_user' => $nom, 'prenom_user' => $prenom, 'est_admin' => $admin, 'telephone' => $telephone));
 		}
 		return $user;
 	}
 
   public static function getPassword($email){
-		$requete = "SELECT password FROM utilisateur WHERE utilisateur.email = :email";
-		$stmt = Model::executeRequest($requete, array('email' => $email)) -> fetch()[0];
+		$stmt = Model::executeRequest('PrintPassword', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -39,8 +36,7 @@ class User extends Model {
 	}
 
 	public static function getNom($email){
-		$requete = "SELECT nom FROM utilisateur WHERE utilisateur.email = :email";
-		$stmt = Model::executeRequest($requete, array('email' => $email)) -> fetch()[0];
+		$stmt = Model::executeRequest('PrintNom', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -50,8 +46,7 @@ class User extends Model {
 	}
 
 	public static function getPrenom($email){
-		$requete = "SELECT prenom FROM utilisateur WHERE utilisateur.email = :email";
-		$stmt = Model::executeRequest($requete, array('email' => $email)) -> fetch()[0];
+		$stmt = Model::executeRequest('PrintPrenom', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -61,8 +56,7 @@ class User extends Model {
 	}
 
 	public static function getTelephone($email){
-		$requete = "SELECT telephone FROM utilisateur WHERE utilisateur.email = :email";
-		$stmt = Model::executeRequest($requete, array('email' => $email)) -> fetch()[0];
+		$stmt = Model::executeRequest('PrintTelephone', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}

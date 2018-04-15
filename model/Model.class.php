@@ -8,7 +8,6 @@ class Model extends MyObject {
 
 	public static function addSqlRequest($key, $requete){
 		static::$tabRequetes[$key] = $requete;
-
 	}
 
 	// protected static function executeRequest($requeteSQL,  $parameters = null){
