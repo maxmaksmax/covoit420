@@ -7,8 +7,8 @@
 
 	User::addSqlRequest('PrintPassword', "SELECT password FROM utilisateur WHERE utilisateur.email = :email");
 	User::addSqlRequest('PrintTelephone', "SELECT telephone FROM utilisateur WHERE utilisateur.email = :email");
-	User::addSqlRequest('PrintNom', "SELECT nom FROM utilisateur WHERE utilisateur.email = :email");
-	User::addSqlRequest('PrintPrenom', "SELECT prenom FROM utilisateur WHERE utilisateur.email = :email");
+	User::addSqlRequest('PrintNom', "SELECT nom_user FROM utilisateur WHERE utilisateur.email = :email");
+	User::addSqlRequest('PrintPrenom', "SELECT prenom_user FROM utilisateur WHERE utilisateur.email = :email");
 
 
 

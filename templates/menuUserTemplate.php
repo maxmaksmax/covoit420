@@ -19,7 +19,7 @@
 	  	if($controller->getActionName()=='compte')
 			echo 'class="active"';
 	   ?>><a href="index.php?c=user&amp;a=compte">Recherche un covoiturage</a></li>
-     
+
    <li <?php
 	  	if($controller->getActionName()=='compte')
 			echo 'class="active"';
@@ -34,3 +34,4 @@
 <form class="navbar-form navbar-right" id="login_form" action="index.php" method="post">
 	<button type="submit" class="btn btn-primary">Se déconnecter</button>
 </form>
+</div>

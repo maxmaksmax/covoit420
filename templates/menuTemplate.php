@@ -18,7 +18,7 @@
 <div class="connection">
   <div class="inscription">
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">S'inscrire'</button>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">S'inscrire</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
