@@ -20,7 +20,6 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	if($_SERVER['DOCUMENT_ROOT']=='C:/UwAmp/www/') {
-		echo('local');
 		define('_MYSQL_HOST','localhost');
 		define('_MYSQL_PORT',8080);
 		define('_MYSQL_DBNAME','bdd_covoit4');

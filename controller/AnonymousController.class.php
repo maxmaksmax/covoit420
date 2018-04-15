@@ -20,8 +20,8 @@ class AnonymousController extends Controller {
 	}
 
   public function validateConnection($request) {
-		$email = $request->read('email');
-		$password = $request->read('password');
+		$email = $request->read('inputEmail');
+		$password = $request->read('inputPassword');
 
     if(!User::isEmailUsed($email)) {
 			$view = new View($this,'index');
@@ -33,13 +33,13 @@ class AnonymousController extends Controller {
 			if($password == $mdp){
 				session_start();
 				$_SESSION['email'] = $email;
-				// $_SESSION['password'] = $password;
-				//$_SESSION['nom'] = User::getNom($email);
-				//$_SESSION['prenom'] = User::getPrenom($email);
-				//$_SESSION['telephone'] = User::getTelephone($email);
+				$_SESSION['password'] = $password;
+				$_SESSION['nom'] = User::getNom($email);
+				$_SESSION['prenom'] = User::getPrenom($email);
+				$_SESSION['telephone'] = User::getTelephone($email);
 
 				echo 'Vous êtes connectés en tant que '.$email;
-				$view = new View($this,'index');
+				$view = new UserView($this,'index');
 				$view->render();
 			}
 			else {
@@ -72,7 +72,7 @@ class AnonymousController extends Controller {
 			$nom = $request->read('inputLastname');
 			$prenom = $request->read('inputFirstname');
 			$telephone = $request->read('inputTelephone');
-			
+
 			$user = User::createUser($email, $prenom, $nom, 0, $telephone, $password);
 			if(!isset($user)) {
 				$view = new View($this,'inscription');

@@ -17,6 +17,9 @@
   // Load the Loader class to automatically load classes when needed
 	require_once(__ROOT_DIR . '/classes/AutoLoader.class.php');
 
+  // Load sql requests
+  require_once(__ROOT_DIR . '/sql/User.sql.php');
+  
   // Reify the current request
 	$request = Request::getCurrentRequest();
 

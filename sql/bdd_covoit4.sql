@@ -115,7 +115,7 @@ create table utilisateur
    telephone            char(10) not null,
    email                varchar(70) not null,
    nombre_trajets_realises int,
-   site                 varchar(20) not null,
+   site                 varchar(20),
    type                 varchar(20),
    fonction             varchar(20),
    primary key (id_user)

@@ -8,7 +8,6 @@ class Model extends MyObject {
 
 	public static function addSqlRequest($key, $requete){
 		static::$tabRequetes[$key] = $requete;
-
 	}
 
 	// protected static function executeRequest($requeteSQL,  $parameters = null){
@@ -24,7 +23,7 @@ class Model extends MyObject {
 
 	protected static function executeRequest($requestKey,  $parameters = null){
 		$requete = static::$tabRequetes[$requestKey];
-		
+
 		if ($parameters == null){
 			$resultat = static::getBDD()-> getPDOInstance() -> query($requete);
 		}

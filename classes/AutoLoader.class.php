@@ -20,7 +20,7 @@ class AutoLoader extends MyObject {
             $fileToLoad =__ROOT_DIR.$paths[$i].ucfirst($className).'.class.php';
             $i++;
         } while ( !is_readable($fileToLoad) && $i< count ($paths) );
-        require_once( $fileToLoad);          
+        require_once( $fileToLoad);
     }
 }
 
