@@ -46,9 +46,11 @@
           		 <p>
           			 <label for="inputEmail"></label>
           			 <input type="email" name="inputEmail" placeholder="Email"required />
-          			 <label for="inputPassword"></label>
+
+                 <label for="inputPassword"></label>
           			 <input type="password" name="inputPassword" placeholder="Mot de passe" required />
-          			 <input type="submit" value="Valider" />
+
+                 <input type="submit" value="Valider" name="boutonConnexion"/>
           		 </p>
           	</form>
         	</div>
