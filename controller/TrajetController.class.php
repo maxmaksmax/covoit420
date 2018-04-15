@@ -21,6 +21,11 @@ class TrajetController extends Controller {
 		$view->render();
 	}
 	
+	public function rechercheTrajet($request) {
+		$view = new TrajetView($this, 'rechercherTrajet');
+		$view->render();
+	}
+	
 	public function creationTrajet($request) {
 		$date = $request->read('date');
 		$heure_depart = $request->read('heure_depart');
@@ -39,7 +44,7 @@ class TrajetController extends Controller {
 		$view->render();
 	}
 	
-	public function rechercheTrajet($request) {
+	public function validateRechercheTrajet($request) {
 		$date = $request->read('date');
 		$heure = $request->read('heure');
 		$lieu_depart = $request->read('lieu_depart');
