@@ -12,9 +12,9 @@
 	   ?>><a href="index.php?c=user&amp;a=index">Propose un covoiturage</a></li>
 
    <li <?php
-	  	if($controller->getActionName()=='compte')
+	  	if($controller->getActionName()=='creationTrajet')
 			echo 'class="active"';
-	   ?>><a href="index.php?c=user&amp;a=compte">Recherche un covoiturage</a></li>
+	   ?>><a href="index.php?c=user&amp;a=creationTrajet">Recherche un covoiturage</a></li>
 
 </ul>
 <!--- banner --->
