@@ -2,11 +2,18 @@
 
 class AnonymousController extends Controller {
 
+
+	//ACTION PAR DEFAUT
+	
 	public function defaultAction($request) {
 	$view = new View($this, 'index');
 	$view->render();
 	}
 
+	
+	//CONNECTION
+	
+	
 	public function connection($request){
 		$view = new View($this, 'inscription');
 		$view->render();
@@ -44,6 +51,10 @@ class AnonymousController extends Controller {
 		}
 	}
 
+	
+	//INSCRIPTION
+	
+	
   public function inscription($request){
 		$view = new View($this, 'inscription');
 		$view->render();
