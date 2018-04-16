@@ -31,7 +31,7 @@ class UserController extends Controller {
 		$view->render();
 	}
 	
-	public function voiture($request) {
+	public function creationVoiture($request) {
 		$view = new UserView($this, 'creationVoiture');
 		$view->render();
 	}

@@ -12,7 +12,6 @@ class Trajet extends Model {
 		return $trajet;
 	}
 	
-	
 	public static function showTrajet($lieu_depart, $lieu_arrivee, $heure_depart){
 			
 		$trajet = Model::executeRequest('ShowTrajet', array(':lieu_depart' => $lieu_depart, ':lieu_arrivee' => $lieu_arrivee, ':heure_depart' => $heure_depart));
