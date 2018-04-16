@@ -31,6 +31,11 @@ class UserController extends Controller {
 		$view->render();
 	}
 	
+	public function creationVoiture($request) {
+		$view = new UserView($this, 'creationVoiture');
+		$view->render();
+	}
+	
 	public function statistiques($request) {
 	$view = new UserView($this, 'statistiques');
 	$view->render();
@@ -58,7 +63,7 @@ class UserController extends Controller {
 		$dateDepartHeure = $date . ' ' . $heure_depart . ':00';
 		$dateArriveeHeure = $date . ' ' . $heure_arrivee . ':00';
 		
-		$trajets = Trajet::createTrajet($lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places, $commentaire);
+		$trajets = User::createTrajet($lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places, $commentaire);
 		print_r($trajets);
 		$view = new UserView($this, 'validateCreationTrajet');
 		$view->render();
@@ -75,7 +80,7 @@ class UserController extends Controller {
 		$lieu_depart = $request->read('lieu_depart');
 		$lieu_arrivee = $request->read('lieu_arrivee');
 		$date_heure = $date . ' ' . $heure . ':00';
-		$trajets = Trajet::showTrajet($lieu_depart, $lieu_arrivee, $date_heure);
+		$trajets = User::showTrajet($lieu_depart, $lieu_arrivee, $date_heure);
 		$nbTrajets = sizeof($trajets);
 			
 		

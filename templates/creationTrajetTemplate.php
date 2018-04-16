@@ -9,7 +9,7 @@
         </div>
         <div>
           <div>
-            <form action="index.php?c=user&a=creationTrajet" method="post" id="trajetForm" >
+            <form action="index.php?c=user&a=creationTrajet" method="post">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -34,7 +34,7 @@
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
                   <div id="success"></div>
-                  <input type="submit" value="Rechercher" name="boutonRechercher" class="btn btn-primary btn-xl text-uppercase"></input>
+                  <input type="submit" value="Proposer" name="boutonProposer" class="btn btn-primary btn-xl text-uppercase"></input>
                 </div>
               </div>
             </form>

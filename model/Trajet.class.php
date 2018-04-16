@@ -12,7 +12,6 @@ class Trajet extends Model {
 		return $trajet;
 	}
 	
-	
 	public static function showTrajet($lieu_depart, $lieu_arrivee, $heure_depart){
 			
 		$trajet = Model::executeRequest('ShowTrajet', array(':lieu_depart' => $lieu_depart, ':lieu_arrivee' => $lieu_arrivee, ':heure_depart' => $heure_depart));
@@ -20,6 +19,12 @@ class Trajet extends Model {
 		return $result;
 	}
 	
+	public static function enrollUserATrajet($id_user, $id_trajet){
+		
+	$trajet = Model::executeRequest('EnrollUserATrajet', array(':id_user' => $id_user, ':id_trajet' => $id_trajet));
+	$result = $trajet->fetchAll();
+	return $result;
+	}
    
 }
 
