@@ -20,7 +20,22 @@
 	User::addSqlRequest('UpdateNbTrajet', "UPDATE `utilisateur` SET `nombre_trajets_realises`= :newNb WHERE utilisateur.email = :email;");
 
 
+<<<<<<< HEAD
 	//TRAJET
+=======
+	
+	//TRAJET
+	
+	User::addSqlRequest('CreateTrajet', "INSERT INTO `trajet`(`id_trajet`, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `heure_arrivee`, `nombre_places`) 
+			VALUES (:id_trajet, :id_voiture, :lieu_depart, :lieu_arrivee, :heure_depart, :heure_arrivee, :nombre_places);");
+			
+	User::addSqlRequest('ShowTrajet', "SELECT id_trajet, lieu_depart, lieu_arrivee, nombre_places FROM trajet WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee
+		AND heure_depart >= :heure_depart;");
+		
+	User::addSqlRequest('EnrollUserATrajet', "INSERT INTO `participe`(`id_user`, `id_trajet`) VALUES (:id_user, :id_trajet)");
+	
+   
+>>>>>>> ac01db0c0d286d50f03215356f800a8f712bfad8
 
 	User::addSqlRequest('CreateTrajet', "INSERT INTO `trajet`(id_user, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `heure_arrivee`, `nombre_places`)
 											VALUES (:id_voiture, :lieu_depart, :lieu_arrivee, :heure_depart, :heure_arrivee, :nombre_places)
