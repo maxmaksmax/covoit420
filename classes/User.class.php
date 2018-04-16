@@ -65,7 +65,74 @@ class User extends Model {
 		}
 	}
 
-	
-	
+	public static function UpdatePassword($email){
+		$stmt = Model::executeRequest('UpdatePassword', array('email'=>$email)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+
+	public static function UpdateNom($email){
+		$stmt = Model::executeRequest('UpdateNom', array('email'=>$email)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+
+	public static function UpdatePrenom($email){
+		$stmt = Model::executeRequest('UpdatePrenom', array('email'=>$email)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+
+	public static function UpdateTelephone($email){
+		$stmt = Model::executeRequest('UpdatTelephone', array('email'=>$email)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+
+	public static function UpdateSite($email){
+		$stmt = Model::executeRequest('UpdateSite', array('email'=>$email)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+
+	public static function UpdateFonction($email){
+		$stmt = Model::executeRequest('UpdateFonction', array('email'=>$email)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+
+	public static function UpdateNbTrajet($email){
+		$stmt = Model::executeRequest('UpdateNbTrajet', array('email'=>$email)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
 }
  ?>
