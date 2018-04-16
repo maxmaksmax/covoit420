@@ -5,6 +5,12 @@
   padding: 15px 10px 25px 10px;
 }
 
+.contenu{
+  min-height: 730px;
+  background-image: url(../images/background-map.jpg);
+  background-size: cover;
+}
+
 #accueil{
   color: #FFF;
 }
@@ -13,6 +19,11 @@
 }
 .bottom-footer{
   max-height: 20px;
+  width: 100%;
+  height: 150px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px; 
 }
 
 /*--

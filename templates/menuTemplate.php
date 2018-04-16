@@ -202,7 +202,7 @@
               	<form method="post" action="index.php?a=validateConnection">
               		 <p>
               			 <label for="inputEmail"></label>
-              			 <input type="email" name="inputEmail" placeholder="Email"required />
+              			 <input type="email" name="inputEmail" placeholder="Email" required />
 
                      <label for="inputPassword"></label>
               			 <input type="password" name="inputPassword" placeholder="Mot de passe" required />
