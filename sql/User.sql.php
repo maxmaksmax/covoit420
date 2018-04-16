@@ -21,7 +21,7 @@
 
 
 	//TRAJET
-	
+
 	User::addSqlRequest('CreateTrajet', "INSERT INTO `trajet`(id_user, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `heure_arrivee`, `nombre_places`)
 											VALUES (:id_voiture, :lieu_depart, :lieu_arrivee, :heure_depart, :heure_arrivee, :nombre_places)
 											WHERE id_user = :id_user;");
@@ -30,6 +30,8 @@
 											WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee AND heure_depart >= :heure_depart
 											ORDER BY heure_depart;");
 
+	User::addSqlRequest('ShowMesTrajets', "SELECT lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
+											WHERE id_user = :id_user;");
 
 	//VOITURE
 
@@ -38,6 +40,7 @@
 											WHERE id_user = :id_user;");
 
 	User::addSqlRequest('ShowVoiture', "SELECT modele, couleur, nombre_places, taille_bagage FROM voiture WHERE id_user = :id_user;");
+
 	User::addSqlRequest('UpdateModele', "UPDATE `voiture` SET `modele`= :newModele WHERE voiture.email = :email;");
 	User::addSqlRequest('UpdateCouleur', "UPDATE `voiture` SET `couleur`= :newCouleur WHERE voiture.email = :email;");
 	User::addSqlRequest('UpdateNbPlaces', "UPDATE `voiture` SET `nombre_places`= :newNbPlaces WHERE voiture.email = :email;");
