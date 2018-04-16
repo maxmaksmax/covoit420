@@ -20,6 +20,12 @@ class Trajet extends Model {
 		return $result;
 	}
 	
+	public static function enrollUserATrajet($id_user, $id_trajet){
+		
+	$trajet = Model::executeRequest('EnrollUserATrajet', array(':id_user' => $id_user, ':id_trajet' => $id_trajet));
+	$result = $trajet->fetchAll();
+	return $result;
+	}
    
 }
 
