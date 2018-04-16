@@ -3,7 +3,7 @@
       <div class="container">
         <div class="content-section-heading text-center">
           <h3 class="text-secondary mb-0">Compte</h3>
-          <h2 class="mb-5">Gérer mes Trajets</h2>
+  
         </div>
         <div class="row no-gutters">
           <div class="col-lg-6">
@@ -37,6 +37,17 @@
                 </span>
               </span>
               <img class="img-fluid" src="BootStrap/Portfolio/img/portfolio-3.jpg" alt="">
+            </a>
+          </div>
+		  <div class="col-lg-6">
+            <a class="portfolio-item" href="index.php?c=user&a=profil">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Mon profil</h2>
+                  <p class="mb-0">Gère ton compte!</p>
+                </span>
+              </span>
+              <img class="img-fluid" src="BootStrap/Portfolio/img/portfolio-1.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-6">
