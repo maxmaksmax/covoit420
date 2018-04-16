@@ -7,6 +7,7 @@ class UserController extends Controller {
 		
     }
 	
+	//FONCTIONS USER
 	
 	public function defaultAction($request) {
 		$view = new UserView($this, 'index');
@@ -23,9 +24,62 @@ class UserController extends Controller {
 		$view->render();
 	}	
 	
+	//FONCTIONS TRAJETS 
+	
 	public function compte($request) {
 		$view = new UserView($this, 'compte');
 		$view->render();
+	}
+	
+	public function statistiques($request) {
+	$view = new UserView($this, 'statistiques');
+	$view->render();
+	}
+	
+	public function historiqueTrajets($request) {
+		$view = new UserView($this, 'historique');
+		$view->render();
+	}
+	
+	public function rechercheTrajet($request) {
+		$view = new UserView($this, 'rechercheTrajet');
+		$view->render();
+	}
+	
+	public function creationTrajet($request) {
+		$date = $request->read('date');
+		$heure_depart = $request->read('heure_depart');
+		$heure_arrivee = $request->read('heure_arrivee');
+		$lieu_depart = $request->read('lieu_depart');
+		$lieu_arrivee = $request->read('lieu_arrivee');
+		$nombre_places = $request->read('nombre_places');
+		$commentaire = $request->read('commentaire');
+		
+		$dateDepartHeure = $date . ' ' . $heure_depart . ':00';
+		$dateArriveeHeure = $date . ' ' . $heure_arrivee . ':00';
+		
+		$trajets = Trajet::createTrajet($lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places, $commentaire);
+		print_r($trajets);
+		$view = new UserView($this, 'creationTrajet');
+		$view->render();
+	}
+	
+	public function validateRechercheTrajet($request) {
+		$date = $request->read('date');
+		$heure = $request->read('heure');
+		$lieu_depart = $request->read('lieu_depart');
+		$lieu_arrivee = $request->read('lieu_arrivee');
+		$date_heure = $date . ' ' . $heure . ':00';
+		$trajets = Trajet::showTrajet($lieu_depart, $lieu_arrivee, $date_heure);
+		$nbTrajets = sizeof($trajets);
+			
+		
+		$view = new UserView($this, 'validateRechercheTrajet');
+		// print_r($trajets[0]['nom_trajet']); //marche aussi avec [0]
+		// print_r($trajets[0]['lieu_depart']);	
+		// print_r($trajets[0]['lieu_arrivee']);	
+		// print_r($trajets[0]['nombre_places']);	
+		// print_r($trajets[0]['heure_depart']);
 	}
 	
 }
