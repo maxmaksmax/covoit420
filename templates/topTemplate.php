@@ -1,4 +1,4 @@
 <!--- container ---->
-  <!--- header ----->
-<div class="header">
-  <div>
+<div class="contenu">
+  <!--- menu ----->
+  <div class="menu">

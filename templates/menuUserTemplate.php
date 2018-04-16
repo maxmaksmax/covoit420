@@ -1,37 +1,44 @@
+<!--- top-nav ----->
 <div class="top-nav">
   <div class="logo">
     <a href="index.php"><span>IMT</span> Express</a>
   </div>
 
-<ul>
-   <li <?php
-	  	if($controller->getActionName()=='defaultAction')
-			echo 'class="active"';
-	   ?>
-	 ><a href="index.php?c=user&amp;a=index">Accueil</a></li>
+  <ul>
+     <li <?php
+  	  	if($controller->getActionName()=='defaultAction')
+  			echo 'class="active"';
+  	   ?>
+  	 ><a href="index.php?c=user&amp;a=index">Accueil</a></li>
 
-   <li <?php
-	  	if($controller->getActionName()=='defaultAction')
-			echo 'class="active"';
-	   ?>><a href="index.php?c=user&amp;a=index">Propose un covoiturage</a></li>
+     <li <?php
+  	  	if($controller->getActionName()=='defaultAction')
+  			echo 'class="active"';
+  	   ?>><a href="index.php?c=user&amp;a=index">Propose un covoiturage</a></li>
 
-   <li <?php
-	  	if($controller->getActionName()=='compte')
-			echo 'class="active"';
-	   ?>><a href="index.php?c=user&amp;a=compte">Recherche un covoiturage</a></li>
+     <li <?php
+  	  	if($controller->getActionName()=='compte')
+  			echo 'class="active"';
+  	   ?>><a href="index.php?c=user&amp;a=compte">Recherche un covoiturage</a></li>
 
-   <li <?php
-	  	if($controller->getActionName()=='compte')
-			echo 'class="active"';
-	   ?>><a href="index.php?c=user&amp;a=compte">Mon Compte</a></li>
+     <li <?php
+  	  	if($controller->getActionName()=='compte')
+  			echo 'class="active"';
+  	   ?>><a href="index.php?c=user&amp;a=compte">Mon Compte</a></li>
 
-	<li <?php
-	  	if($controller->getActionName()=='mesTrajets')
-			echo 'class="active"';
-	   ?>><a href="index.php?c=user&amp;a=mesTrajets">Mes Trajets</a></li>
-</ul>
+  	<li <?php
+  	  	if($controller->getActionName()=='mesTrajets')
+  			echo 'class="active"';
+  	   ?>><a href="index.php?c=user&amp;a=mesTrajets">Mes Trajets</a></li>
+  </ul>
 
-<form class="navbar-form navbar-right" id="login_form" action="index.php" method="post">
-	<button type="submit" class="btn btn-primary">Se déconnecter</button>
-</form>
+  <div class="connection">
+    <form class="navbar-form navbar-right" id="login_form" action="index.php" method="post">
+    	<button type="submit" class="btn btn-primary">Se déconnecter</button>
+    </form>
+  </div>
 </div>
+<!-- top-nav -->
+
+</div>
+<!-- menu -->
