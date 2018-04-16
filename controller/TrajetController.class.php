@@ -49,7 +49,7 @@ class TrajetController extends Controller {
 		$heure = $request->read('heure');
 		$lieu_depart = $request->read('lieu_depart');
 		$lieu_arrivee = $request->read('lieu_arrivee');
-		$date_heure = $date . ' ' . $heure . ':00'; // pour être au format '2018-04-07 22:30:00';
+		$date_heure = $date . ' ' . $heure . ':00';
 		$trajets = Trajet::showTrajet($lieu_depart, $lieu_arrivee, $date_heure);
 		$nbTrajets = sizeof($trajets);
 			
