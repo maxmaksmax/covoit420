@@ -33,6 +33,8 @@
 	User::addSqlRequest('ShowMesTrajets', "SELECT lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
 											WHERE id_user = :id_user;");
 
+	User::addSqlRequest('InscriptionTrajet', "INSERT INTO participe (id_user, id_trajet)
+											VALUES (:id_user, :id_trajet)");
 	//VOITURE
 
 	User::addSqlRequest('CreateVoiture', "INSERT INTO voiture (modele, couleur, nombre_places, taille_bagage)
