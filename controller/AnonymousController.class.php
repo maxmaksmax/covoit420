@@ -38,14 +38,14 @@ class AnonymousController extends Controller {
 				$_SESSION['prenom'] = User::getPrenom($email);
 				$_SESSION['telephone'] = User::getTelephone($email);
 
-				echo 'Vous êtes connectés en tant que '.$email;
+				echo 'Vous êtes connecté en tant que '.$email;
 				$view = new UserView($this,'index');
 				$view->render();
 			}
 			else {
 				echo 'Mot de passe erroné';
 				$view = new View($this,'index');
-				$view->setArg('inscErrorText', 'Le couple mot de passe/Email ne correspond pas');
+				$view->setArg('inscErrorText', "L'email ou le mot de passe ne correspond pas");
 				$view->render();
 			}
 		}
@@ -76,7 +76,7 @@ class AnonymousController extends Controller {
 			$user = User::createUser($email, $prenom, $nom, 0, $telephone, $password);
 			if(!isset($user)) {
 				$view = new View($this,'index');
-				$view->setArg('inscErrorText', 'Cannot complete inscription');
+				$view->setArg('inscErrorText', "Inscription invalide" );
 				$view->render();
 			}
 			else {

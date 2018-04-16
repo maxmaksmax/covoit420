@@ -41,12 +41,12 @@ class UserController extends Controller {
 		$view->render();
 	}
 	
-	public function rechercheTrajet($request) {
-		$view = new UserView($this, 'rechercheTrajet');
+	public function creationTrajet($request) {
+		$view = new UserView($this, 'creationTrajet');
 		$view->render();
 	}
 	
-	public function creationTrajet($request) {
+	public function validateCreationTrajet($request) {
 		$date = $request->read('date');
 		$heure_depart = $request->read('heure_depart');
 		$heure_arrivee = $request->read('heure_arrivee');
@@ -60,10 +60,15 @@ class UserController extends Controller {
 		
 		$trajets = Trajet::createTrajet($lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places, $commentaire);
 		print_r($trajets);
-		$view = new UserView($this, 'creationTrajet');
+		$view = new UserView($this, 'validateCreationTrajet');
 		$view->render();
 	}
 	
+	public function rechercheTrajet($request) {
+		$view = new UserView($this, 'rechercheTrajet');
+		$view->render();
+	}
+
 	public function validateRechercheTrajet($request) {
 		$date = $request->read('date');
 		$heure = $request->read('heure');
