@@ -34,8 +34,9 @@
             <div class="modal-body">
               <div class="formulaire">
                 <form class="form-horizontal" action="index.php?a=validateInscription" method="post">
+
                 <!-- ----------------
-                     inputEmail
+                     Email
                  ---------------- -->
                     <div class="form-group requiredField <?php if(isset($inputEmailError) && $inputEmailError) echo 'has-error'; if(isset($inputEmailFeedbackMsg)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="inputEmail">Email</label>
@@ -53,7 +54,7 @@
                     </div>
 
                   <!-- ----------------
-                       inputPassword
+                       Mot de passe
                     ---------------- -->
                     <div class="form-group requiredField <?php if(isset($inputPasswordFeedbackMsg)) echo 'has-feedback'; if(isset($inputPasswordError) && $inputPasswordError) echo ' has-error';  ?>">
                       <label class="control-label col-sm-3" for="inputPassword">Mot de passe</label>
@@ -71,7 +72,7 @@
                     </div>
 
                   <!-- ----------------
-                       confirmPassword
+                Confirmation de mot de passe
                     ---------------- -->
                     <div class="form-group requiredField <?php if(isset($inputPasswordError2) && $inputPasswordError2) echo 'has-error'; if(isset($inputPasswordFeedbackMsg2)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="confirmPassword">Confirmer mot de passe</label>
@@ -89,7 +90,7 @@
                     </div>
 
                   <!-- ----------------
-                       name
+                       Nom
                     ---------------- -->
                     <div class="form-group requiredField <?php if(isset($inputLastnameError) && $inputLastnameError) echo 'has-error'; if(isset($inputLastnameFeedbackMsg)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="inputLastname">Nom</label>
@@ -107,7 +108,7 @@
                     </div>
 
                   <!-- ----------------
-                       firstName
+                       Prénom
                     ---------------- -->
                     <div class="form-group requiredField <?php if(isset($inputFirstnameError) && $inputFirstnameError) echo 'has-error'; if(isset($inputFirstnameFeedbackMsg)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="inputFirstname">Prénom</label>
@@ -125,7 +126,7 @@
                     </div>
 
                   <!-- ----------------
-                       telephone
+                       Téléphone
                     ---------------- -->
                     <div class="form-group requiredField <?php if(isset($inputTelephoneError) && $inputTelephoneError) echo 'has-error'; if(isset($inputTelephoneFeedbackMsg)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="inputTelephone">Téléphone</label>
@@ -228,4 +229,4 @@
 <!--- top-nav ----->
 
 </div>
-<!-- header -->
+<!-- menu -->
