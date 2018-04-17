@@ -10,7 +10,7 @@
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <form action="index.php?c=user&a=creationTrajet" method="post"  >
+            <form action="index.php?c=user&a=validateCreationTrajet" method="post"  >
               <div class="row">
 			  
 			<div class="col-md-6">

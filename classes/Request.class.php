@@ -42,7 +42,6 @@ class Request extends MyObject {
 		   return $_GET[$params];
 	   }
 	   if(isset($_POST[$params])){
-		   //echo ' '.$_POST[$params];
 		   return $_POST[$params];
 	   }
 	   throw new Exception ("The parameter ".$params." isn't defined in the request \n", $this->debug());

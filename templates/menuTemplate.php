@@ -35,6 +35,43 @@
               <div class="formulaire">
                 <form class="form-horizontal" action="index.php?a=validateInscription" method="post">
 
+				
+				  <!-- ----------------
+					   Nom
+					---------------- -->
+					<div class="form-group requiredField <?php if(isset($inputLastnameError) && $inputLastnameError) echo 'has-error'; if(isset($inputLastnameFeedbackMsg)) echo ' has-feedback' ?>">
+					  <label class="control-label col-sm-3" for="inputLastname">Nom</label>
+					  <div class="col-sm-3">
+						<input type="text" class="form-control" id="inputLastname" placeholder="Nom" name="inputLastname">
+						<?php	if(isset($inputLastnameError) && $inputLastnameError): ?>
+						  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+						<?php endif ?>
+					  </div>
+					  <?php if(isset($inputLastnameFeedbackMsg)): ?>
+						<div id="inputSuccess3Status" class="col-sm-4 help-block feedback" aria-hidden="true">
+						  <span class="feedback-error"><?php echo $inputLastnameFeedbackMsg; ?></span>
+						</div>
+					  <?php endif ?>
+					</div>
+
+                  <!-- ----------------
+                       Prénom
+                    ---------------- -->
+                    <div class="form-group requiredField <?php if(isset($inputFirstnameError) && $inputFirstnameError) echo 'has-error'; if(isset($inputFirstnameFeedbackMsg)) echo ' has-feedback' ?>">
+                      <label class="control-label col-sm-3" for="inputFirstname">Prénom</label>
+                      <div class="col-sm-3">
+                        <input type="text" class="form-control" id="inputFirstname" placeholder="Prénom" name="inputFirstname">
+                        <?php	if(isset($inputFirstnameError) && $inputFirstnameError): ?>
+                          <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                        <?php endif ?>
+                      </div>
+                      <?php if(isset($inputFirstnameFeedbackMsg)): ?>
+                        <div id="inputSuccess3Status" class="col-sm-4 help-block feedback" aria-hidden="true">
+                          <span class="feedback-error"><?php echo $inputFirstnameFeedbackMsg; ?></span>
+                        </div>
+                      <?php endif ?>
+                    </div>
+					
                 <!-- ----------------
                      Email
                  ---------------- -->
@@ -77,7 +114,7 @@
                     <div class="form-group requiredField <?php if(isset($inputPasswordError2) && $inputPasswordError2) echo 'has-error'; if(isset($inputPasswordFeedbackMsg2)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="confirmPassword">Confirmer mot de passe</label>
                       <div class="col-sm-3">
-                        <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" aria-describedby="inputSuccess3Status" name="inscPassword2">
+                        <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Mot de passe" aria-describedby="inputSuccess3Status" name="inscPassword2">
                         <?php	if(isset($inputPasswordError2) && $inputPasswordError2): ?>
                           <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                         <?php endif ?>
@@ -89,41 +126,6 @@
                       <?php endif ?>
                     </div>
 
-                  <!-- ----------------
-                       Nom
-                    ---------------- -->
-                    <div class="form-group requiredField <?php if(isset($inputLastnameError) && $inputLastnameError) echo 'has-error'; if(isset($inputLastnameFeedbackMsg)) echo ' has-feedback' ?>">
-                      <label class="control-label col-sm-3" for="inputLastname">Nom</label>
-                      <div class="col-sm-3">
-                        <input type="text" class="form-control" id="inputLastname" placeholder="Nom" name="inputLastname">
-                        <?php	if(isset($inputLastnameError) && $inputLastnameError): ?>
-                          <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-                        <?php endif ?>
-                      </div>
-                      <?php if(isset($inputLastnameFeedbackMsg)): ?>
-                        <div id="inputSuccess3Status" class="col-sm-4 help-block feedback" aria-hidden="true">
-                          <span class="feedback-error"><?php echo $inputLastnameFeedbackMsg; ?></span>
-                        </div>
-                      <?php endif ?>
-                    </div>
-
-                  <!-- ----------------
-                       Prénom
-                    ---------------- -->
-                    <div class="form-group requiredField <?php if(isset($inputFirstnameError) && $inputFirstnameError) echo 'has-error'; if(isset($inputFirstnameFeedbackMsg)) echo ' has-feedback' ?>">
-                      <label class="control-label col-sm-3" for="inputFirstname">Prénom</label>
-                      <div class="col-sm-3">
-                        <input type="text" class="form-control" id="inputFirstname" placeholder="Prénom" name="inputFirstname">
-                        <?php	if(isset($inputFirstnameError) && $inputFirstnameError): ?>
-                          <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-                        <?php endif ?>
-                      </div>
-                      <?php if(isset($inputFirstnameFeedbackMsg)): ?>
-                        <div id="inputSuccess3Status" class="col-sm-4 help-block feedback" aria-hidden="true">
-                          <span class="feedback-error"><?php echo $inputFirstnameFeedbackMsg; ?></span>
-                        </div>
-                      <?php endif ?>
-                    </div>
 
                   <!-- ----------------
                        Téléphone
