@@ -41,6 +41,11 @@ class User extends Model {
 		}
 	}
 
+	public static function getID($email){
+		$stmt = Model::executeRequest('PrintID', array('email' => $email)) -> fetch()[0];
+		return $stmt;
+	}
+	
 	public static function getNom($email){
 		$stmt = Model::executeRequest('PrintNom', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){

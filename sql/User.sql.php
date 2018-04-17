@@ -7,6 +7,7 @@
 	User::addSqlRequest('CountUsersWithEmail', "SELECT count(*) FROM utilisateur where email = :email;");
 
 	User::addSqlRequest('PrintPassword', "SELECT password FROM utilisateur WHERE utilisateur.email = :email;");
+	User::addSqlRequest('PrintID', "SELECT user_id FROM utilisateur WHERE email = :email;");
 	User::addSqlRequest('PrintTelephone', "SELECT telephone FROM utilisateur WHERE utilisateur.email = :email;");
 	User::addSqlRequest('PrintNom', "SELECT nom_user FROM utilisateur WHERE utilisateur.email = :email;");
 	User::addSqlRequest('PrintPrenom', "SELECT prenom_user FROM utilisateur WHERE utilisateur.email = :email;");

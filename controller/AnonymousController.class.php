@@ -34,6 +34,7 @@ class AnonymousController extends Controller {
 				session_start();
 				$_SESSION['email'] = $email;
 				$_SESSION['password'] = $password;
+				$_SESSION['id_user'] = User::getID($email);
 				$_SESSION['nom'] = User::getNom($email);
 				$_SESSION['prenom'] = User::getPrenom($email);
 				$_SESSION['telephone'] = User::getTelephone($email);
@@ -82,7 +83,7 @@ class AnonymousController extends Controller {
 			else {
 				echo 'Inscription validée';
 
-				$view = new UserView($this, 'index');
+				$view = new View($this, 'index');
 				$view->render();
 				// $newRequest = new Request();
 				// $newRequest->write('controller','user');
