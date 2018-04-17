@@ -72,7 +72,7 @@ class UserController extends Controller {
 
 		$trajets = User::createTrajet($lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places, $commentaire);
 		print_r($trajets);
-		$view = new UserView($this, 'validateCreationTrajet');
+		$view = new UserView($this, 'validateRechercheTrajet');
 		$view->render();
 	}
 
