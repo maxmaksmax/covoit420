@@ -56,11 +56,6 @@ class AnonymousController extends Controller {
 	//INSCRIPTION
 
 
-  public function inscription($request){
-		$view = new View($this, 'inscription');
-		$view->render();
-	}
-
 	public function validateInscription($request) {
 		$email = $request->read('inputEmail');
 		if(User::isEmailUsed($email)) {
@@ -85,10 +80,6 @@ class AnonymousController extends Controller {
 
 				$view = new View($this, 'index');
 				$view->render();
-				// $newRequest = new Request();
-				// $newRequest->write('controller','user');
-				// $newRequest->write('user',$user->id());
-				// Dispatcher::getCurrentDispatcher()->dispatch($newRequest);
 			}
 		}
 

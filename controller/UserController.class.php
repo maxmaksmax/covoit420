@@ -14,18 +14,16 @@ class UserController extends Controller {
 		$view->render();
 	}
 
-	public function inscription($request) {
-		$view = new View($this, 'inscription');
-		$view->render();
-	}
-
 	public function index($request) {
 		$view = new UserView($this, 'index');
 		$view->render();
 	}
 
 	public function deconnection($request) {
-		//session_destroy();
+
+		session_unset();
+		if (isset($_SESSION)) { session_destroy();}
+
 		$view = new View($this, 'index');
 		$view->render();
 	}
