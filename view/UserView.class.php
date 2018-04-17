@@ -6,6 +6,7 @@ class UserView extends View {
 		parent::__construct($controller, $templateName, $args = array());
 		$this->templateNames['head'] = 'head';
 		$this->templateNames['menu'] = 'menuUser';
+		if ($templateName == 'compte'){$this->templateNames['side'] = 'menuCompte';}
 	}
 
 	public function render(){
@@ -13,6 +14,7 @@ class UserView extends View {
 		$this->loadTemplate($this->templateNames['head'], $this->args);
 		$this->loadTemplate($this->templateNames['top'], $this->args);
 		$this->loadTemplate($this->templateNames['menu'], $this->args);
+		if (isset($this->templateNames['side'])){$this->loadTemplate($this->templateNames['side'], $this->args); }
 		$this->loadTemplate($this->templateNames['content'], $this->args);
 		$this->loadTemplate($this->templateNames['foot'], $this->args);
    }

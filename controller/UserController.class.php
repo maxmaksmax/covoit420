@@ -29,11 +29,6 @@ class UserController extends Controller {
 
 	//FONCTIONS TRAJETS
 
-	public function compte($request) {
-		$view = new UserView($this, 'compte');
-		$view->render();
-	}
-
 	public function creationVoiture($request) {
 		$view = new UserView($this, 'creationVoiture');
 		$view->render();
@@ -98,6 +93,13 @@ class UserController extends Controller {
 		// print_r($trajets[0]['heure_depart']);
 	}
 
+
+	//FONCTIONS COMPTE
+
+	public function compte($request) {
+		$view = new UserView($this, 'compte');
+		$view->render();
+	}
 }
 
 ?>
