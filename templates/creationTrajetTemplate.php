@@ -15,15 +15,15 @@
 			  
 			<div class="col-md-6">
                  <div class="form-group">
-                    <input class="form-control" id="lieu_depart" name="lieu_depart" type="text" placeholder="Lieu de départ" required data-validation-required-message="Selectionner un lieu de départ">
+                    <input class="form-control" id="lieu_depart" name="lieu_depart" type="text" placeholder="Lieu de départ" required data-validation-required-message="Sélectionner un lieu de départ">
                     <p class="help-block text-danger"></p>
                   </div>
 				  <div class="form-group">
-                    <input class="form-control" id="lieu_arrivee" name="lieu_arrivee" type="text" placeholder="Lieu d'arrivée" required data-validation-required-message="Selectionner un lieu de départ">
+                    <input class="form-control" id="lieu_arrivee" name="lieu_arrivee" type="text" placeholder="Lieu d'arrivée" required data-validation-required-message="Sélectionner un lieu de départ">
                     <p class="help-block text-danger"></p>
                   </div>
 				  <div class="form-group">
-                    <input class="form-control" id="nombre_places" name="nombre_places" type="text" placeholder="Nombre de places disponibles" required data-validation-required-message="Selectionner un nombre de places disponibles">
+                    <input class="form-control" id="nombre_places" name="nombre_places" type="text" placeholder="Nombre de places disponibles" required data-validation-required-message="Sélectionner un nombre de places disponibles">
                     <p class="help-block text-danger"></p>
                 </div>
 			</div>
