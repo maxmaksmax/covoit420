@@ -20,7 +20,6 @@ class UserController extends Controller {
 	}
 
 	public function deconnection($request) {
-
 		session_unset();
 		if (isset($_SESSION)) { session_destroy();}
 
