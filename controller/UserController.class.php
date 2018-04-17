@@ -26,7 +26,7 @@ class UserController extends Controller {
 	
 	public function deconnection($request) {
 		session_destroy();
-		$view = new AnonymousView($this, 'index');
+		$view = new View($this, 'index');
 		$view->render();
 	}
 	
@@ -48,7 +48,7 @@ class UserController extends Controller {
 	}
 	
 	public function historiqueTrajets($request) {
-		$trajets = User::voirMesTrajets($_SESSION['id']);
+		$trajets = User::showMesTrajets($_SESSION['id']);
 		$view = new UserView($this, 'historiqueTrajets');
 		$view -> setArg('mesTrajets', $trajets);
 		$view->render();
