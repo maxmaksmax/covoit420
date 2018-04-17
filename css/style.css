@@ -34,6 +34,11 @@
   left: 0px;
 }
 
+.blog-menu{
+	float:left;
+	width:23%;
+}
+
 /*--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -659,10 +664,7 @@ a.viewmore-s:hover{
 	font-weight: 700;
 	padding: 0em 0;
 }
-.blog-right{
-	float:right;
-	width:23%;
-}
+
 .blog-left-head{
 	border-bottom:1px solid #EEE;
 	padding-bottom: 1em;
