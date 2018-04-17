@@ -31,7 +31,7 @@ class AnonymousController extends Controller {
 		else {
 			$mdp = User::getPassword($email);
 			if($password == $mdp){
-				session_start();
+				// session_start();
 				$_SESSION['email'] = $email;
 				$_SESSION['password'] = $password;
 				$_SESSION['id_user'] = User::getID($email);
@@ -39,7 +39,7 @@ class AnonymousController extends Controller {
 				$_SESSION['prenom'] = User::getPrenom($email);
 				$_SESSION['telephone'] = User::getTelephone($email);
 
-				echo 'Vous êtes connecté en tant que '.$email;
+				echo 'Vous êtes connecté en tant que '.$_SESSION['prenom'];
 				$view = new UserView($this,'index');
 				$view->render();
 			}

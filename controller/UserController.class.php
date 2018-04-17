@@ -24,6 +24,12 @@ class UserController extends Controller {
 		$view->render();
 	}	
 	
+	public function deconnection($request) {
+		session_destroy();
+		$view = new AnonymousView($this, 'index');
+		$view->render();
+	}
+	
 	//FONCTIONS TRAJETS 
 	
 	public function compte($request) {
@@ -42,9 +48,12 @@ class UserController extends Controller {
 	}
 	
 	public function historiqueTrajets($request) {
-		$view = new UserView($this, 'historique');
+		$trajets = User::voirMesTrajets($_SESSION['id']);
+		$view = new UserView($this, 'historiqueTrajets');
+		$view -> setArg('mesTrajets', $trajets);
 		$view->render();
 	}
+	
 	
 	public function creationTrajet($request) {
 		$view = new UserView($this, 'creationTrajet');

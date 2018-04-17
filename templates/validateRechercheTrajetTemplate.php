@@ -1,6 +1,6 @@
 <?php
-	$trajets = $this->getArg('trajets');
-	// print_r($trajets[0]);
+	$trajets = $this->getArg('mesTrajets');
+
 ?>
  <link href="css/menuAgency.css" rel="stylesheet">
     <link href="css/agency.css" rel="stylesheet">
@@ -19,10 +19,10 @@
 				<?php 
 					$nbTrajets = sizeof($trajets);
 					for ($i=0; $i<$nbTrajets; $i++){ ?>
-						<form action="index.php?c=trajet&a=inscription" method="post" >
+						<form action="index.php?c=user&a=validateRechercheTrajet" method="post" >
 						<ul class="list-inline mb-2" style="text-align: center;">
-							<li class="list-inline-item"> 
-								<p class="text" name="nom_trajet" id="nom_trajet"><?php print_r($trajets[$i]['nom_trajet']);?></p>
+							<li class;;="list-inline-item"> 
+								<p class="text" name="id_trajet" id="id_trajet"><?php print_r($trajets[$i]['id_trajet']);?></p>
 							</li>
 							<li class="list-inline-item"> 
 								<p class="text" name="lieu_depart"><?php print_r($trajets[$i]['lieu_depart']);?></p>
@@ -38,7 +38,7 @@
 							</li>
 							<li class="list-inline-item"> 
 								<input type="submit" value="M'inscrire" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></a> 	
-								<input value="<?php print_r($trajets[$i]['id_trajet'])?>" name="idTrajet" style="visibility: hidden;"></input></a> 	<!-- Sert a garder l'id trajet-->
+								<input value="<?php print_r($trajets[$i]['id_trajet'])?>" name="id_trajet" style="visibility: hidden;"></input></a> 	<!-- Sert a garder l'id trajet-->
 							</li>
 						</ul> 
 						</form>

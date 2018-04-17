@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	$_SESSION['timeout'] = time();
+	if ($_SESSION['timeout'] + 60 * 60 < time()) {
+    session_destroy();
+  }
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
