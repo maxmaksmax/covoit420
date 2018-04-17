@@ -167,7 +167,7 @@
                     <div class="form-group">
                       <div class="col-sm-offset-3 col-sm-3">
                         <input type="submit" class="btn btn-primary" value="Créer mon compte" name="boutonCreerCompte">
-                        <input type="reset" class="btn btn-default" value="Annuler" data-dismiss="modal">
+         
                       </div>
                     </div>
 
