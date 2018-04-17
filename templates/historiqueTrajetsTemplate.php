@@ -1,6 +1,6 @@
 <?php
 	$mesTrajets = $this->getArg('mesTrajets');
-	// print_r($mesTrajets[0]);
+
 ?>  
 
 <section class="content-section" id="portfolio">
