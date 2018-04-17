@@ -29,7 +29,7 @@
   </ul>
 
   <div class="connection">
-    <form class="navbar-form navbar-right" id="login_form" action="index.php?a=deconnection" method="post">
+    <form class="navbar-form navbar-right" id="login_form" action="index.php?c=user&a=deconnection" method="post">
     	<button type="submit" class="btn btn-primary">Se déconnecter</button>
     </form>
   </div>
