@@ -14,7 +14,7 @@
   	  	if($controller->getActionName()=='creationTrajet')
   			echo 'class="active"';
   	   ?>><a href="index.php?c=user&amp;a=creationTrajet">Recherche un covoiturage</a></li>
-
   </ul>
+  <?php echo $_SESSION['nom'].$_SESSION['prenom'].$_SESSION['id_user']; ?>
 </div>
 <!--- banner --->
