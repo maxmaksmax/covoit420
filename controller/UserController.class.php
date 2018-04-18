@@ -89,11 +89,11 @@ class UserController extends Controller {
 		$view->render();
 
 	}
-	
+
 	public function validateInscriptionATrajet($request) {
 		$id_trajet = $request->read('id_trajet');
-		
-		$trajet = User::inscriptionTrajet($_SESSION['id'], $id_trajet);
+
+		$trajet = User::inscriptionTrajet((string)$_SESSION['id_user'], $id_trajet);
 		$view = new UserView($this, 'historiqueTrajets');
 		$view->render();
 	}
