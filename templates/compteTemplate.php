@@ -29,7 +29,7 @@
 								<p class="text" name="telephone"><?php print_r($telephone);?></p>
 							</li>
 							<li class="list-inline-item"> 
-								<p class="text" name="voitures"><?php print_r($voitures);?></p>
+								<p class="text" name="voitures"><?php print_r($voitures)[0];?></p>
 							</li>
 							<li class="list-inline-item"> 
 								<p class="text" name="site"><?php print_r($site);?></p>
@@ -38,7 +38,7 @@
 								<p class="text" name="fonction"><?php print_r($fonction);?></p>
 							</li>
 							<li class="list-inline-item"> 
-								<input type="submit" value="M'inscrire" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></a> 	
+								<input type="submit" value="Enregistrer" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></a> 	
 	<!-- Sert a garder l'id trajet-->
 							</li>
 						</ul> 
