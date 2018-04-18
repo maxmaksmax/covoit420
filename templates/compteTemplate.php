@@ -10,24 +10,25 @@
 	$fonction = User::getFonction($email);
 	$voitures = User::showListeVoitures($id_user);
 
+
 ?>
 	<div class="profil">
 		<h2 class="section-heading text-uppercase"> Mon Profil </h2>
 			<form action="index.php?c=user&a=update" method="post">
               <div class="row">
-                <div class="col-md-6" class="champ-non-modifiable">
+                <div class="col-md-6" >
                   <div class="form-group">
-                   <input class="form-control" name="nom_user" type="text" value= '<?php print_r($nom);?>'  disabled="disabled">
+                   <input class="form-control champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($nom);?>'  disabled="disabled">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
-                   <input class="form-control" name="nom_user" type="text" value= '<?php print_r($prenom);?>'  disabled="disabled">
+                   <input class="form-control champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($prenom);?>'  disabled="disabled"> 
 				   <p class="help-block text-danger"></p>
                   </div>
                 </div>
                 <div class="col-md-6">
                    <div class="form-group" >
-                    <input class="form-control" class="champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($email);?>'  disabled="disabled">
+                    <input class="form-control champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($email);?>'  disabled="disabled">
 					<p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
