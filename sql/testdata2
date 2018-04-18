@@ -6717,5 +6717,3 @@ insert into realise (nom_groupe, id_trajet) values ('WWQCX154YY0PA24K8XXO', 2);
 insert into realise (nom_groupe, id_trajet) values ('K ST3M35NRN9QS45 BLJ', 17);
 
 insert into realise (nom_groupe, id_trajet) values ('1Q8XPXAW0Y3VE6PWX ET', 33);
-
->>>>>>> 25b5468e1e3a5a814271fd2d727dc8258d799af1

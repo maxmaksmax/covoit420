@@ -1,0 +1,31 @@
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom1','prenom1','pswd1',0,'0000000001','1@1.fr');
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom2','prenom2','pswd2',0,'0000000002','2@2.fr');
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom3','prenom3','pswd3',0,'0000000003','3@3.fr');
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom4','prenom4','pswd4',0,'0000000004','4@4.fr');
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom5','prenom5','pswd5',0,'0000000005','5@5.fr');
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom6','prenom6','pswd6',0,'0000000006','6@6.fr');
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom7','prenom7','pswd7',0,'0000000007','7@7.fr');
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom8','prenom8','pswd8',0,'0000000008','8@8.fr');
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom9','prenom9','pswd9',0,'0000000009','9@9.fr');
+INSERT INTO `utilisateur`(`nom_user`, `prenom_user`, `password`, `est_admin`, `telephone`, `email`) VALUES ('nom10','prenom10','pswd10',0,'0000000010','10@10.fr');
+
+INSERT INTO `ville`(`nom_ville`, `code_postal`) VALUES ('MDE','59500');
+INSERT INTO `ville`(`nom_ville`, `code_postal`) VALUES ('Bourseul','59500');
+INSERT INTO `ville`(`nom_ville`, `code_postal`) VALUES ('Lahure','59500');
+INSERT INTO `ville`(`nom_ville`, `code_postal`) VALUES ('IMT Lille','59500');
+
+INSERT INTO `voiture`(`id_user`, `modele`, `couleur`, `nombre_places`, `taille_bagage`) VALUES (200,'Peugeot Kangoo','Blanc',2,'grand');
+INSERT INTO `voiture`(`id_user`, `modele`, `couleur`, `nombre_places`, `taille_bagage`) VALUES (201,'Fiat Mulptipla','Jaune',5,'grand');
+INSERT INTO `voiture`(`id_user`, `modele`, `couleur`, `nombre_places`, `taille_bagage`) VALUES (202,'Renault Twingo','Verte',3,'petit');
+INSERT INTO `voiture`(`id_user`, `modele`, `couleur`, `nombre_places`, `taille_bagage`) VALUES (203,'Peugeot Kangoo','Blanc',2,'grand');
+INSERT INTO `voiture`(`id_user`, `modele`, `couleur`, `nombre_places`, `taille_bagage`) VALUES (204,'Peugeot Kangoo','Blanc',2,'grand');
+INSERT INTO `voiture`(`id_user`, `modele`, `couleur`, `nombre_places`, `taille_bagage`) VALUES (205,'Peugeot Kangoo','Blanc',2,'grand');
+INSERT INTO `voiture`(`id_user`, `modele`, `couleur`, `nombre_places`, `taille_bagage`) VALUES (206,'Peugeot Kangoo','Blanc',2,'grand');
+
+INSERT INTO `trajet`(`id_user`, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `nombre_places`, `heure_arrivee`) VALUES (1,1,'MDE','Bourseul','2018-04-01 08:20:00',2,'2018-04-01 8:30:00');
+INSERT INTO `trajet`(`id_user`, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `nombre_places`, `heure_arrivee`) VALUES (1,1,'Bourseul','MDE','2018-04-01 12:00:00',2,'2018-04-01 12:15:00');
+INSERT INTO `trajet`(`id_user`, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `nombre_places`, `heure_arrivee`) VALUES (1,1,'MDE','IMT-Lille','2018-04-02 08:20:00',2,'2018-02-01 8:30:00');
+INSERT INTO `trajet`(`id_user`, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `nombre_places`, `heure_arrivee`) VALUES (200,2,'MDE','Bourseul','2018-04-03 08:20:00',2,'2018-04-03 8:30:00');
+INSERT INTO `trajet`(`id_user`, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `nombre_places`, `heure_arrivee`) VALUES (1,1,'MDE','Bourseul','2018-05-01 08:20:00',2,'2018-05-01 8:30:00');
+INSERT INTO `trajet`(`id_user`, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `nombre_places`, `heure_arrivee`) VALUES (1,1,'MDE','Lahure','2018-05-02 08:20:00',2,'2018-05-02 8:30:00');
+INSERT INTO `trajet`(`id_user`, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `nombre_places`, `heure_arrivee`) VALUES (1,1,'Lahure','Bourseul','2018-05-04 08:20:00',2,'2018-05-04 8:30:00');

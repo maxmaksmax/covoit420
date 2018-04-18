@@ -61,7 +61,7 @@ class UserController extends Controller {
 		$view = new UserView($this, 'compte');
 		$view->render();
 	}
-	
+
 	public function creationTrajet($request) {
 		$view = new UserView($this, 'creationTrajet');
 		$view->render();
@@ -108,7 +108,7 @@ class UserController extends Controller {
 
 	public function validateInscriptionATrajet($request) {
 		$id_trajet = $request->read('id_trajet');
-
+		if (!isset($_SESSION)) { session_start(); }
 		$trajet = User::inscriptionTrajet($_SESSION['id_user'], $id_trajet);
 		$view = new UserView($this, 'historiqueTrajets');
 		$view->render();
@@ -126,13 +126,15 @@ class UserController extends Controller {
 	$view->render();
 	}
 	public function historiqueTrajets($request) {
+		if (!isset($_SESSION)) { session_start(); }
 		$trajets = User::showMesTrajets($_SESSION['id_user']);
 		$view = new UserView($this, 'historiqueTrajets');
 		$view -> setArg('mesTrajets', $trajets);
 		$view->render();
 	}
 	public function futurTrajets($request){
-		$trajets = User::showFuturTrajets($_SESSION['id_user']);
+		if (!isset($_SESSION)) { session_start(); }
+		$trajets = User::showMesFuturTrajets($_SESSION['id_user']);
 		$view = new UserView($this, 'futurTrajets');
 		$view -> setArg('mesFuturTrajets', $trajets);
 		$view -> render();
