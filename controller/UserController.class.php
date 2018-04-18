@@ -46,7 +46,6 @@ class UserController extends Controller {
 		$view->render();
 	}
 
-
 	public function creationTrajet($request) {
 		$view = new UserView($this, 'creationTrajet');
 		$view->render();
@@ -86,11 +85,17 @@ class UserController extends Controller {
 
 
 		$view = new UserView($this, 'validateRechercheTrajet');
-		// print_r($trajets[0]['nom_trajet']); //marche aussi avec [0]
-		// print_r($trajets[0]['lieu_depart']);
-		// print_r($trajets[0]['lieu_arrivee']);
-		// print_r($trajets[0]['nombre_places']);
-		// print_r($trajets[0]['heure_depart']);
+		$view -> setArg('trajets', $trajets);
+		$view->render();
+
+	}
+	
+	public function validateInscriptionATrajet($request) {
+		$id_trajet = $request->read('id_trajet');
+		
+		$trajet = User::inscriptionTrajet($_SESSION['id'], $id_trajet);
+		$view = new UserView($this, 'historiqueTrajets');
+		$view->render();
 	}
 
 
