@@ -34,6 +34,9 @@
 	User::addSqlRequest('ShowMesTrajets', "SELECT lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
 											WHERE id_user = :id_user AND heure_arrivee < NOW();");
 
+	User::addSqlRequest('ShowMesFuturTrajets', "SELECT lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
+											WHERE id_user = :id_user AND heure_depart > NOW();");
+
 	User::addSqlRequest('InscriptionTrajet', "INSERT INTO participe (id_user, id_trajet)
 											VALUES (:id_user, :id_trajet)");
 	//VOITURE

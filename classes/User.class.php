@@ -5,8 +5,8 @@ class User extends Model {
 	////////////////////////////////////
 	//            USER                //
 	////////////////////////////////////
-	
-	
+
+
 	public static function isEmailUsed($email){
 		$user = Model::executeRequest('CountUsersWithEmail', array(':email' => $email));
 		foreach($user as $u){
@@ -45,7 +45,7 @@ class User extends Model {
 		$stmt = Model::executeRequest('PrintID', array('email' => $email)) -> fetch()[0];
 		return $stmt;
 	}
-	
+
 	public static function getNom($email){
 		$stmt = Model::executeRequest('PrintNom', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
@@ -139,7 +139,7 @@ class User extends Model {
 	//            VOITURE             //
 	////////////////////////////////////
 
-	public static function createVoiture($id_user, $modele, $couleur, $taille_bagage, $nombre_places){ 
+	public static function createVoiture($id_user, $modele, $couleur, $taille_bagage, $nombre_places){
 
 		$voiture = Model::executeRequest('CreateVoiture', array('id_user' => $id_user, 'modele' => $modele, 'taille_bagage' => $taille_bagage,
 			'couleur' => $couleur, 'nombre_places' => $nombre_places));
@@ -152,11 +152,11 @@ class User extends Model {
 	$result = $voitures->fetchAll();
 	return $result;
 	}
-	
+
 	////////////////////////////////////
 	//            TRAJETS             //
 	////////////////////////////////////
-	
+
 	public static function UpdateNbTrajet($email){
 		$stmt = Model::executeRequest('UpdateNbTrajet', array('email'=>$email)) -> fetch()[0];
 		if($stmt == null){
@@ -166,8 +166,8 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-	
-	public static function createTrajet($id_user, $id_voiture, $lieu_depart, $lieu_arrivee, $heure_depart, $heure_arrivee, $nombre_places){ 
+
+	public static function createTrajet($id_user, $id_voiture, $lieu_depart, $lieu_arrivee, $heure_depart, $heure_arrivee, $nombre_places){
 
 		$trajet = Model::executeRequest('CreateTrajet', array('id_user' => $id_user, 'id_voiture' => $id_voiture, 'lieu_depart' => $lieu_depart,
 			'lieu_arrivee' => $lieu_arrivee, 'heure_depart' => $heure_depart, 'heure_arrivee' => $heure_arrivee, 'nombre_places' => $nombre_places));
@@ -175,7 +175,6 @@ class User extends Model {
 	}
 
 	public static function showTrajet($lieu_depart, $lieu_arrivee, $heure_depart){
-
 		$trajet = Model::executeRequest('ShowTrajet', array('lieu_depart' => $lieu_depart, 'lieu_arrivee' => $lieu_arrivee, 'heure_depart' => $heure_depart));
 		$result = $trajet->fetchAll();
 		return $result;
@@ -187,7 +186,11 @@ class User extends Model {
 		$result = $trajet->fetchAll();
 		return $result;
 	}
-
+	public static function showMesFuturTrajets($id_user){
+		$trajet = Model::executeRequest('ShowMesFuturTrajets', array('id_user' => $id_user));
+		$result = $trajet->fetchAll();
+		return $result;
+	}
 	public static function inscriptionTrajet($id_user, $id_trajet){
 
 	$trajet = Model::executeRequest('InscriptionTrajet', array(':id_user' => $id_user, ':id_trajet' => $id_trajet));
