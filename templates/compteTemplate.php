@@ -25,8 +25,8 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                   <div class="form-group" class="champ-non-modifiable">
-                    <input class="form-control" name="nom_user" type="text" value= '<?php print_r($email);?>'  disabled="disabled">
+                   <div class="form-group" >
+                    <input class="form-control" class="champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($email);?>'  disabled="disabled">
 					<p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
