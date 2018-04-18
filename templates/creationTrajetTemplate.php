@@ -1,3 +1,9 @@
+<?php
+	// $email = $_SESSION["email"];
+	// $id_user = $_SESSION["id"];
+	$voitures = User::showListeVoitures($id_user);
+?>
+
 
 <section class="content-section" id="portfolio">
  
@@ -43,9 +49,9 @@
                 </div>              
 				<div class="form-group">
 					<select name="voiture">
-						<?php for($i=0; $i < sizeof($reponse); $i++){ ?>
-							<option value="<?php echo $reponse[$i][0]?>";>
-							<?php echo $reponse[$i][0]; ?> </option>
+						<?php for($i=0; $i < sizeof($voitures); $i++){ ?>
+							<option value="<?php echo $voitures[$i][0]?>";>
+							<?php echo $voitures[$i][0]; ?> </option>
 						<?php
 							} 
 						?>

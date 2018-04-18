@@ -1,7 +1,7 @@
 <?php
 	$email = $_SESSION["email"];
 	$id_user = $_SESSION["id"];
-	$reponse = User::showListeVoitures($idUser);
+	$reponse = User::showListeVoitures($id_user);
 ?>
 
 	  
