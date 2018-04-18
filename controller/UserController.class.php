@@ -73,8 +73,8 @@ class UserController extends Controller {
 		$nombre_places = $request->read('nombre_places');
 		$commentaire = $request->read('commentaire');
 
-		$dateDepartHeure = $date . ' ' . $heure_depart . ':00';
-		$dateArriveeHeure = $date . ' ' . $heure_arrivee . ':00';
+		$date_depart_heure = $date . ' ' . $heure_depart . ':00';
+		$date_arrivee_heure = $date . ' ' . $heure_arrivee . ':00';
 
 		$trajets = User::createTrajet($lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places, $commentaire);
 		print_r($trajets);

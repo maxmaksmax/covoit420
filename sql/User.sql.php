@@ -19,6 +19,8 @@
 	User::addSqlRequest('UpdateSite', "UPDATE `utilisateur` SET `site`= :newSite WHERE utilisateur.email = :email;");
 	User::addSqlRequest('UpdateFonction', "UPDATE `utilisateur` SET `fonction`= :newFonction WHERE utilisateur.email = :email;");
 	User::addSqlRequest('UpdateNbTrajet', "UPDATE `utilisateur` SET `nombre_trajets_realises`= :newNb WHERE utilisateur.email = :email;");
+	
+	
 
 
 	//TRAJET
@@ -36,6 +38,7 @@
 
 	User::addSqlRequest('InscriptionTrajet', "INSERT INTO participe (id_user, id_trajet)
 											VALUES (:id_user, :id_trajet)");
+											
 	//VOITURE
 
 	User::addSqlRequest('CreateVoiture', "INSERT INTO voiture (modele, couleur, nombre_places, taille_bagage)
