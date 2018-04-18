@@ -9,9 +9,11 @@
 	$site = User::getSite($email);
 	$fonction = User::getFonction($email);
 	$voitures = User::showListeVoitures($id_user);
-	
+
 ?>
 
+<div class="profil">
+		<h2 class="section-heading text-uppercase"> Mon Profil </h2>
 			<form action="index.php?c=user&a=updateAllProfil" method="post">
               <div class="row">
                 <div class="col-md-6" >
@@ -20,7 +22,7 @@
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
-                   <input class="form-control champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($prenom);?>'  disabled="disabled"> 
+                   <input class="form-control champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($prenom);?>'  disabled="disabled">
 				   <p class="help-block text-danger"></p>
                   </div>
                 </div>
@@ -55,4 +57,4 @@
                 </div>
               </div>
             </form>
-
+					</div>
