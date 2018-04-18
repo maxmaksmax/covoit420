@@ -29,7 +29,7 @@
 								<p class="text" name="telephone"><?php print_r($telephone);?></p>
 							</li>
 							<li class="list-inline-item"> 
-								<p class="text" name="voitures"><?php print_r($voitures)[0][0].' '.print_r($voitures)[0][1];?></p>
+								<p class="text" name="voitures"><?php print_r($voitures[0][0]).' '.print_r($voitures[0][1]);?></p>
 							</li>
 							<li class="list-inline-item"> 
 								<p class="text" name="site"><?php print_r($site);?></p>
