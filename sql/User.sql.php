@@ -42,7 +42,7 @@
 											VALUES (:modele, :couleur, :nombre_places, :taille_bagage)
 											WHERE id_user = :id_user;");
 
-	User::addSqlRequest('ShowVoiture', "SELECT modele, couleur, nombre_places, taille_bagage FROM voiture WHERE id_user = :id_user;");
+	User::addSqlRequest('ShowListeVoitures', "SELECT modele, couleur, nombre_places, taille_bagage FROM voiture WHERE id_user = :id_user;");
 
 	User::addSqlRequest('UpdateModele', "UPDATE `voiture` SET `modele`= :newModele WHERE voiture.email = :email;");
 	User::addSqlRequest('UpdateCouleur', "UPDATE `voiture` SET `couleur`= :newCouleur WHERE voiture.email = :email;");

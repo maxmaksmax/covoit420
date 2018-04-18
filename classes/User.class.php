@@ -76,7 +76,7 @@ class User extends Model {
 		}
 	}
 
-	public static function UpdatePassword($email){
+	public static function updatePassword($email){
 		$stmt = Model::executeRequest('UpdatePassword', array('email'=>$email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
@@ -86,7 +86,7 @@ class User extends Model {
 		}
 	}
 
-	public static function UpdateNom($email){
+	public static function updateNom($email){
 		$stmt = Model::executeRequest('UpdateNom', array('email'=>$email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
@@ -96,7 +96,7 @@ class User extends Model {
 		}
 	}
 
-	public static function UpdatePrenom($email){
+	public static function updatePrenom($email){
 		$stmt = Model::executeRequest('UpdatePrenom', array('email'=>$email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
@@ -106,7 +106,7 @@ class User extends Model {
 		}
 	}
 
-	public static function UpdateTelephone($email){
+	public static function updateTelephone($email){
 		$stmt = Model::executeRequest('UpdatTelephone', array('email'=>$email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
@@ -116,7 +116,7 @@ class User extends Model {
 		}
 	}
 
-	public static function UpdateSite($email){
+	public static function updateSite($email){
 		$stmt = Model::executeRequest('UpdateSite', array('email'=>$email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
@@ -126,7 +126,7 @@ class User extends Model {
 		}
 	}
 
-	public static function UpdateFonction($email){
+	public static function updateFonction($email){
 		$stmt = Model::executeRequest('UpdateFonction', array('email'=>$email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
@@ -135,7 +135,24 @@ class User extends Model {
 			return $stmt;
 		}
 	}
+    ////////////////////////////////////
+	//            VOITURE             //
+	////////////////////////////////////
 
+	public static function createVoiture($id_user, $modele, $couleur, $taille_bagage, $nombre_places){ 
+
+		$voiture = Model::executeRequest('CreateVoiture', array('id_user' => $id_user, 'modele' => $modele, 'taille_bagage' => $taille_bagage,
+			'couleur' => $couleur, 'nombre_places' => $nombre_places));
+		return $voiture;
+	}
+
+	public static function showListeVoitures($id_user){
+
+	$voitures = Model::executeRequest('ShowListeVoitures', array('id_user' => $id_user));
+	$result = $voitures->fetchAll();
+	return $result;
+	}
+	
 	////////////////////////////////////
 	//            TRAJETS             //
 	////////////////////////////////////

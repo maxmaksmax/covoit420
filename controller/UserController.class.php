@@ -34,6 +34,19 @@ class UserController extends Controller {
 		$view->render();
 	}
 
+	public function validateCreationVoiture($request) {
+		$modele = $request->read('modele');
+		$couleur = $request->read('couleur');
+		$taille_bagage = $request->read('taille_bagage');
+		$nombre_places = $request->read('nombre_places');
+
+
+		$voiture = User::createVoiture($modele, $couleur, $taille_bagage, $nombre_places);
+		print_r($voiture);
+		$view = new UserView($this, 'compte');
+		$view->render();
+	}
+	
 	public function creationTrajet($request) {
 		$view = new UserView($this, 'creationTrajet');
 		$view->render();
