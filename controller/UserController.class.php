@@ -40,7 +40,7 @@ class UserController extends Controller {
 	}
 
 	public function historiqueTrajets($request) {
-		$trajets = User::showMesTrajets($_SESSION['id']);
+		$trajets = User::showMesTrajets($_SESSION['id_user']);
 		$view = new UserView($this, 'historiqueTrajets');
 		$view -> setArg('mesTrajets', $trajets);
 		$view->render();
