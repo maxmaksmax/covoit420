@@ -12,40 +12,51 @@
 	
 ?>
 
-	  
-				<div class="container">
-						<form action="index.php?c=user&a=update" method="post" >
-						<ul class="list-inline mb-2" style="text-align: center;">
-							<input class="form-control" id="date" name="date" type="date" placeholder="<?php print_r($nom);?>" required data-validation-required-message="Sélectionner une date">
-							<li class="list-inline-item"> 
-								<p class="text" name="nom" id="nom"><?php print_r($nom);?></p>
-							</li>
-							<li class="list-inline-item"> 
-								<p class="text" name="prenom"><?php print_r($prenom);?></p>
-							</li>
-							<li class="list-inline-item"> 
-								<p class="text" name="email"><?php print_r($email);?></p>
-							</li>
-							<li class="list-inline-item"> 
-								<p class="text" name="telephone"><?php print_r($telephone);?></p>
-							</li>
-							<li class="list-inline-item"> 
-								<p class="text" name="voitures"><?php print_r($voitures[0][0].' '.$voitures[0][1]);?></p>
-							</li>
-							<li class="list-inline-item"> 
-								<p class="text" name="site"><?php print_r($site);?></p>
-							</li>
-							<li class="list-inline-item"> 
-								<p class="text" name="fonction"><?php print_r($fonction);?></p>
-							</li>
-							<li class="list-inline-item"> 
-								<input type="submit" value="Enregistrer" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></a> 	
-	<!-- Sert a garder l'id trajet-->
-							</li>
-						</ul> 
-						</form>
+			<form action="index.php?c=user&a=update" method="post">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                   <input class="form-control" name="nom_user" type="text" value= '<?php print_r($nom);?>'  disabled="disabled">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                   <input class="form-control" name="nom_user" type="text" value= '<?php print_r($prenom);?>'  disabled="disabled"> 
+				   <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                   <div class="form-group">
+                    <input class="form-control" name="nom_user" type="text" value= '<?php print_r($email);?>'  disabled="disabled">
+					<p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" name="nom_user" type="text" value= '<?php print_r($telephone);?>' required data-validation-required-message="Sélectionner une date">
+					<p class="help-block text-danger"></p>
+                  </div>
+                </div>
+				<div class="col-md-6">
+                   <div class="form-group">
+                    <input class="form-control" name="nom_user" type="text" value= '<?php print_r($site);?>' required data-validation-required-message="Sélectionner une date">
+					<p class="help-block text-danger"></p>
+                  </div>
+				  <div class="form-group">
+                   <input class="form-control" name="nom_user" type="text" value= '<?php print_r($voitures[0][0].' '.$voitures[0][1]);?>'  disabled="disabled">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" name="nom_user" type="text" value= '<?php print_r($fonction);?>' required data-validation-required-message="Sélectionner une date">
+					<p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <input type="submit" value="Enregistrer" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input>
+                </div>
+              </div>
+            </form>
 
-				</div>
+
 <!--
 <section class="content-section" id="portfolio">
  
