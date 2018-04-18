@@ -22,6 +22,9 @@ class View extends MyObject {
        $this->args[$key] = $val;
  	     echo ''.$val;
     }
+	public function getArg($key) {
+	return $this->args[$key];
+	}
 
     public function templatesSearchPaths() {
  		// paths are ordered and will be prefixed by templates/
