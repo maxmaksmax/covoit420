@@ -135,6 +135,17 @@ class User extends Model {
 			return $stmt;
 		}
 	}
+	
+	public static function updateAllProfil($email, $nom, $prenom, $telephone, $site, $fonction){
+		$newProfil = Model::executeRequest('UpdateAllProfil', array('email'=>$email, 'nom' => $nom, 'prenom' => $prenom,'telephone' => $telephone, 'site' => $site, 'fonction' => $fonction )) -> fetch()[0];
+		if($newProfil == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $newProfil;
+		}
+	}
+	
     ////////////////////////////////////
 	//            VOITURE             //
 	////////////////////////////////////
