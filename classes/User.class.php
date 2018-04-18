@@ -34,7 +34,7 @@ class User extends Model {
   public static function getPassword($email){
 		$stmt = Model::executeRequest('PrintPassword', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
-			echo "Cet utilisateur n'existe pas !";
+			echo "Cet utilisateur n'a pas de mot de passe !";
 		}
 		else{
 			return $stmt;
@@ -49,7 +49,7 @@ class User extends Model {
 	public static function getNom($email){
 		$stmt = Model::executeRequest('PrintNom', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
-			echo "Cet utilisateur n'existe pas !";
+			echo "Cet utilisateur n'a pas de mail !";
 		}
 		else{
 			return $stmt;
@@ -59,7 +59,7 @@ class User extends Model {
 	public static function getPrenom($email){
 		$stmt = Model::executeRequest('PrintPrenom', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
-			echo "Cet utilisateur n'existe pas !";
+			echo "Cet utilisateur n'a pas de prénom !";
 		}
 		else{
 			return $stmt;
@@ -69,7 +69,7 @@ class User extends Model {
 	public static function getSite($email){
 		$stmt = Model::executeRequest('PrintSite', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
-			echo "Cet utilisateur n'existe pas !";
+			echo "Cet utilisateur n'a pas de site !";
 		}
 		else{
 			return $stmt;
@@ -79,7 +79,7 @@ class User extends Model {
 	public static function getFonction($email){
 		$stmt = Model::executeRequest('PrintFonction', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
-			echo "Cet utilisateur n'existe pas !";
+			echo "Cet utilisateur n'a pas de fonction!";
 		}
 		else{
 			return $stmt;
@@ -89,7 +89,7 @@ class User extends Model {
 	public static function getTelephone($email){
 		$stmt = Model::executeRequest('PrintTelephone', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
-			echo "Cet utilisateur n'existe pas !";
+			echo "Cet utilisateur n'a pas de téléphone !";
 		}
 		else{
 			return $stmt;
