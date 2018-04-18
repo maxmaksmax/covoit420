@@ -29,11 +29,6 @@ class UserController extends Controller {
 
 	//FONCTIONS TRAJETS
 
-	public function compte($request) {
-		$view = new UserView($this, 'compte');
-		$view->render();
-	}
-
 	public function creationVoiture($request) {
 		$view = new UserView($this, 'creationVoiture');
 		$view->render();
@@ -103,6 +98,13 @@ class UserController extends Controller {
 		$view->render();
 	}
 
+
+	//FONCTIONS COMPTE
+
+	public function compte($request) {
+		$view = new UserView($this, 'compte');
+		$view->render();
+	}
 }
 
 ?>
