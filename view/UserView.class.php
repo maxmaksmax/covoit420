@@ -8,7 +8,7 @@ class UserView extends View {
 		$this->templateNames['menu'] = 'menuUser';
 
 		if (($templateName == 'compte') or ($templateName == 'futurTrajets') or ($templateName == 'historiqueTrajets') or ($templateName == 'statistiques')){
-			echo ' ' . $templateName; $this->templateNames['side'] = 'menuCompte';}
+			$this->templateNames['side'] = 'menuCompte';}
 	}
 
 	public function render(){
