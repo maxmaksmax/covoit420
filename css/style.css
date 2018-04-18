@@ -22,19 +22,19 @@
   text-align: center;
 }
 .creation{
-  max-width: 700px;
+  max-width: 600px;
   width: 50%;
   margin-left: 23%;
   margin-top: 5%;
 }
-.vertical-center{
-	vertical-align: middle;
-}
+
 #accueil{
   color: #fff;
   /*background-color: rgba(255,255,255, 0.9); */
   width: 50%;
   margin: auto;
+  margin-top: 15%;
+  vertical-align: middle;
 }
 
 
