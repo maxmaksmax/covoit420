@@ -2,6 +2,7 @@
 	// define __ROOT_DIR constant which contains the absolute path on disk
 	// of the directory that contains this file (index.php)
 	// e.g. http://isic.mines-douai.fr/web01/index.php => __ROOT_DIR = /home/web01/public_html
+  session_start();
   $rootDirectoryPath = realpath(dirname(__FILE__));
 	define ('__ROOT_DIR', $rootDirectoryPath );
 
@@ -19,7 +20,7 @@
 
   // Load sql requests
   require_once(__ROOT_DIR . '/sql/User.sql.php');
-  
+
   // Reify the current request
 	$request = Request::getCurrentRequest();
 

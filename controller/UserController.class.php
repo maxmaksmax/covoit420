@@ -26,13 +26,13 @@ class UserController extends Controller {
 		$view = new View($this, 'index');
 		$view->render();
 	}
-	
+
 	public function updateAllProfil($request) {
 		$email = $request->read('email');
 		$nom = $request->read('nom');
 		$prenom = $request->read('prenom');
-		$site = $request->read('site');		
-		$fonction = $request->read('fonction');	
+		$site = $request->read('site');
+		$fonction = $request->read('fonction');
 		$telephone = $request->read('telephone');
 
 
@@ -74,12 +74,13 @@ class UserController extends Controller {
 		$lieu_depart = $request->read('lieu_depart');
 		$lieu_arrivee = $request->read('lieu_arrivee');
 		$nombre_places = $request->read('nombre_places');
-		$commentaire = $request->read('commentaire');
 
 		$date_depart_heure = $date . ' ' . $heure_depart . ':00';
 		$date_arrivee_heure = $date . ' ' . $heure_arrivee . ':00';
 
-		$trajets = User::createTrajet($lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places, $commentaire);
+		$id_voiture = User::getVoitureID($_SESSION['id_user']);
+		print_r($id_voiture[0][0]);
+		$trajets = User::createTrajet($_SESSION['id_user'], $id_voiture, $lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places);
 		print_r($trajets);
 		$view = new UserView($this, 'validateRechercheTrajet');
 		$view->render();
