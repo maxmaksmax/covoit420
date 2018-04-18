@@ -16,6 +16,7 @@
 				<div class="container">
 						<form action="index.php?c=user&a=update" method="post" >
 						<ul class="list-inline mb-2" style="text-align: center;">
+							<input class="form-control" id="date" name="date" type="date" placeholder="<?php print_r($nom);?>" required data-validation-required-message="Sélectionner une date">
 							<li class="list-inline-item"> 
 								<p class="text" name="nom" id="nom"><?php print_r($nom);?></p>
 							</li>
