@@ -20,6 +20,7 @@ class View extends MyObject {
 
     public function setArg($key, $val) {
        $this->args[$key] = $val;
+       // echo '' . $val[0][0];
     }
   	public function getArg($key) {
   	return $this->args[$key];

@@ -31,7 +31,7 @@ class AnonymousController extends Controller {
 		else {
 			$mdp = User::getPassword($email);
 			if($password == $mdp){
-				if(!isset($_SESSION)){session_start();}
+				session_start();
 				$_SESSION['email'] = $email;
 				$_SESSION['password'] = $password;
 				$_SESSION['id_user'] = User::getID($email);

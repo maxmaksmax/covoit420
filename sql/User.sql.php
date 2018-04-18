@@ -34,10 +34,10 @@
 											WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee AND heure_depart >= :heure_depart
 											ORDER BY heure_depart;");
 
-	User::addSqlRequest('ShowMesTrajets', "SELECT id_trajet, id_user, lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
+	User::addSqlRequest('ShowMesTrajets', "SELECT lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
 											WHERE id_user = :id_user AND heure_arrivee < NOW();");
 
-	User::addSqlRequest('ShowMesFuturTrajets', "SELECT id_trajet, id_user, lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
+	User::addSqlRequest('ShowMesFuturTrajets', "SELECT lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
 											WHERE id_user = :id_user AND heure_depart > NOW();");
 
 	User::addSqlRequest('InscriptionTrajet', "INSERT INTO participe (id_user, id_trajet)
@@ -51,7 +51,7 @@
 
 	User::addSqlRequest('ShowListeVoitures', "SELECT modele, couleur, nombre_places, taille_bagage FROM voiture WHERE id_user = :id_user;");
 	User::addSqlRequest('GetVoitureID', "SELECT id_voiture FROM voiture WHERE id_user = :id_user;");
-
+	
 	User::addSqlRequest('UpdateModele', "UPDATE `voiture` SET `modele`= :newModele WHERE voiture.email = :email;");
 	User::addSqlRequest('UpdateCouleur', "UPDATE `voiture` SET `couleur`= :newCouleur WHERE voiture.email = :email;");
 	User::addSqlRequest('UpdateNbPlaces', "UPDATE `voiture` SET `nombre_places`= :newNbPlaces WHERE voiture.email = :email;");

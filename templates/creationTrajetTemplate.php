@@ -6,7 +6,7 @@
 ?>
 
 
-<section class="creation" id="portfolio">
+<section class="content-section" id="portfolio">
 
  <section id="contact">
       <div class="container">
