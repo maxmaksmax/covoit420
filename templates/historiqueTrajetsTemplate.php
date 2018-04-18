@@ -16,10 +16,10 @@
 				<div class="container">
 				<ul class="list-inline mb-2" style="text-align: center;">
 							<li class="list-inline-item">
-								<p class="text" name="nom_trajet" id="nom_trajet">Ville de départ</p>
+								<p class="text" name="nom_trajet" id="nom_trajet">Lieu de départ</p>
 							</li>
 							<li class="list-inline-item">
-								<p class="text" name="nom_trajet" id="nom_trajet">Ville d'arrivée</p>
+								<p class="text" name="nom_trajet" id="nom_trajet">Lieu d'arrivée</p>
 							</li>
 							<li class="list-inline-item">
 								<p class="text" name="nom_trajet" id="nom_trajet">Heure du départ</p>
