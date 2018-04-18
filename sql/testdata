@@ -16878,3 +16878,4 @@ insert into realise (nom_groupe, id_trajet) values ('9907QDKXRV1Q6GYT0Q0F', 4);
 
 insert into realise (nom_groupe, id_trajet) values ('GN9GDQ7LOIXJ19L 4FHE', 61);
 
+>>>>>>> 25b5468e1e3a5a814271fd2d727dc8258d799af1

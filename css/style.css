@@ -850,12 +850,22 @@ a.viewmore-s:hover{
 .blog-right-head span{
 }
 .blog-right-head h3{
-	color: #424242;
+	color: #fff;
 	text-transform: uppercase;
 	font-size: 1.3em;
 	font-weight: 700;
 	padding: 0.3em 0 1.1em;
 	border-bottom: 1px solid #EEE;
+  text-align: center;
+}
+.blog-right-head h4{
+	color: #fff;
+  text-align: center;
+	/* text-transform: uppercase;
+	font-size: 1.3em;
+	font-weight: 700;
+	padding: 0.3em 0 1.1em;
+	border-bottom: 1px solid #EEE; */
 }
 .accordion-content ul li a{
 	color: #424242;

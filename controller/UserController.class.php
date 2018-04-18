@@ -53,7 +53,7 @@ class UserController extends Controller {
 	}
 
 	public function historiqueTrajets($request) {
-		$trajets = User::showMesTrajets($_SESSION['id']);
+		$trajets = User::showMesTrajets($_SESSION['id_user']);
 		$view = new UserView($this, 'historiqueTrajets');
 		$view -> setArg('mesTrajets', $trajets);
 		$view->render();
@@ -102,11 +102,11 @@ class UserController extends Controller {
 		$view->render();
 
 	}
-	
+
 	public function validateInscriptionATrajet($request) {
 		$id_trajet = $request->read('id_trajet');
-		
-		$trajet = User::inscriptionTrajet($_SESSION['id'], $id_trajet);
+
+		$trajet = User::inscriptionTrajet((string)$_SESSION['id_user'], $id_trajet);
 		$view = new UserView($this, 'historiqueTrajets');
 		$view->render();
 	}
