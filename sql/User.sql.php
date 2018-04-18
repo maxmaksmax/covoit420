@@ -7,7 +7,7 @@
 	User::addSqlRequest('CountUsersWithEmail', "SELECT count(*) FROM utilisateur where email = :email;");
 
 	User::addSqlRequest('PrintPassword', "SELECT password FROM utilisateur WHERE utilisateur.email = :email;");
-	User::addSqlRequest('PrintID', "SELECT user_id FROM utilisateur WHERE email = :email;");
+	User::addSqlRequest('PrintID', "SELECT id_user FROM utilisateur WHERE email = :email;");
 	User::addSqlRequest('PrintTelephone', "SELECT telephone FROM utilisateur WHERE utilisateur.email = :email;");
 	User::addSqlRequest('PrintNom', "SELECT nom_user FROM utilisateur WHERE utilisateur.email = :email;");
 	User::addSqlRequest('PrintPrenom', "SELECT prenom_user FROM utilisateur WHERE utilisateur.email = :email;");
@@ -32,7 +32,7 @@
 											ORDER BY heure_depart;");
 
 	User::addSqlRequest('ShowMesTrajets', "SELECT lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
-											WHERE id_user = :id_user;");
+											WHERE id_user = :id_user AND heure_arrivee < NOW();");
 
 	User::addSqlRequest('InscriptionTrajet', "INSERT INTO participe (id_user, id_trajet)
 											VALUES (:id_user, :id_trajet)");
