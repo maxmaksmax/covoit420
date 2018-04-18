@@ -9,10 +9,12 @@
 	$site = User::getSite($email);
 	$fonction = User::getFonction($email);
 	$voitures = User::showListeVoitures($id_user);
-	
-?>
 
-			<form action="index.php?c=user&a=updateAllProfil" method="post">
+
+?>
+	<div class="profil">
+		<h2 class="section-heading text-uppercase"> Mon Profil </h2>
+			<form action="index.php?c=user&a=update" method="post">
               <div class="row">
                 <div class="col-md-6" >
                   <div class="form-group">
@@ -55,4 +57,4 @@
                 </div>
               </div>
             </form>
-
+					</div>

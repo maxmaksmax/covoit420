@@ -79,9 +79,7 @@ class UserController extends Controller {
 		$date_arrivee_heure = $date . ' ' . $heure_arrivee . ':00';
 
 		$id_voiture = User::getVoitureID($_SESSION['id_user']);
-		print_r($id_voiture[0][0]);
 		$trajets = User::createTrajet($_SESSION['id_user'], $id_voiture, $lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places);
-		print_r($trajets);
 		$view = new UserView($this, 'validateRechercheTrajet');
 		$view->render();
 	}

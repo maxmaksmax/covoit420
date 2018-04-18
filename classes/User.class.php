@@ -191,7 +191,7 @@ class User extends Model {
 
 	public static function getVoitureID($id_user){
 		$voiture = Model::executeRequest('GetVoitureID', array('id_user' => $id_user));
-		$res = $voiture->fetchAll();
+		$res = $voiture->fetch()[0][0];
 		return $res;
 	}
 	////////////////////////////////////
@@ -210,7 +210,7 @@ class User extends Model {
 
 	public static function createTrajet($id_user, $id_voiture, $lieu_depart, $lieu_arrivee, $heure_depart, $heure_arrivee, $nombre_places){
 		$trajet = Model::executeRequest('CreateTrajet', array('id_user' => $id_user, 'id_voiture' => $id_voiture, 'lieu_depart' => $lieu_depart,
-			'lieu_arrivee' => $lieu_arrivee, 'heure_depart' => $heure_depart, 'heure_arrivee' => $heure_arrivee, 'nombre_places' => $nombre_places))->fetchAll();
+			'lieu_arrivee' => $lieu_arrivee, 'heure_depart' => $heure_depart, 'heure_arrivee' => $heure_arrivee, 'nombre_places' => $nombre_places))->fetch()[0][0];
 		return $trajet;
 	}
 
