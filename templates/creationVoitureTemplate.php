@@ -1,7 +1,7 @@
 <?php
-	$login = $_SESSION["login"];
-	$idUser = $_SESSION["id"];
-	$reponse = User::listeVoitures($idUser);
+	$email = $_SESSION["email"];
+	$id_user = $_SESSION["id"];
+	$reponse = User::showListeVoitures($idUser);
 ?>
 
 	  
@@ -18,7 +18,7 @@
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <form action="index.php?c=trajet&a=compte" method="post"  >
+            <form action="index.php?c=trajet&a=validateCreationVoiture" method="post" >
               <div class="row">
 			  
 			<div class="col-md-6">
@@ -36,34 +36,16 @@
                     <p class="help-block text-danger"></p>
                   </div>
 				  <div class="form-group">
-                    <input class="form-control" id="nombrePlaces" name="nombrePlaces" type="text" placeholder="Nombre de Places" required data-validation-required-message="Sélectionner le nombre de voyageurs que peut contenir votre voiture">
+                    <input class="form-control" id="nombre_places" name="nombre_places" type="text" placeholder="Nombre de places" required data-validation-required-message="Sélectionner le nombre de voyageurs que peut contenir votre voiture">
                     <p class="help-block text-danger"></p>
                 </div>
 			</div>
-			
-            <div class="col-md-6">
-				<div class="form-group">
-                    <input class="form-control" id="date" name="date" type="date" placeholder="Date" required data-validation-required-message="Selectionner une date">
-                    <p class="help-block text-danger"></p>
-                </div>
-				<div class="form-group">
-                    <input class="form-control" id="heure_depart" name="heure_depart" type="text" placeholder="Heure de départ au format hh:mm" required data-validation-required-message="Selectionner une heure de départ">
-                    <p class="help-block text-danger"></p>
-                </div>
-				<div class="form-group">
-                    <input class="form-control" id="heure_arrivee" name="heure_arrivee" type="text" placeholder="Heure d'arrivée au format hh:mm" required data-validation-required-message="Selectionner une heure d'arrivée">
-                    <p class="help-block text-danger"></p>
-                </div>              
-				<div class="form-group">
-                    <p class="help-block text-danger"></p>
-                </div>
-			</div>
-			
+
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
 				
                   <div id="success"></div>
-                  <input type="submit" value="Ajouter une voiture" name="creationVoiture" class="btn btn-primary btn-xl text-uppercase"></input>
+                  <input type="submit" value="Valider" name="creationVoiture" class="btn btn-primary btn-xl text-uppercase"></input>
                 </div>
               </div>
             </form>
