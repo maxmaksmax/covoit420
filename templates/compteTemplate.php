@@ -39,8 +39,8 @@
                     <input class="form-control" name="nom_user" type="text" value= '<?php print_r($site);?>' required data-validation-required-message="Entrez un site">
 					<p class="help-block text-danger"></p>
                   </div>
-				  <div class="form-group" class="champ-non-modifiable">
-                   <input class="form-control" name="nom_user" type="text" value= '<?php print_r($voitures[0][0].' '.$voitures[0][1]);?>'  disabled="disabled">
+				  <div class="form-group" >
+                   <input class="form-control champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($voitures[0][0].' '.$voitures[0][1]);?>'  disabled="disabled">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
