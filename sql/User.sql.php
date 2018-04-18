@@ -11,7 +11,9 @@
 	User::addSqlRequest('PrintTelephone', "SELECT telephone FROM utilisateur WHERE utilisateur.email = :email;");
 	User::addSqlRequest('PrintNom', "SELECT nom_user FROM utilisateur WHERE utilisateur.email = :email;");
 	User::addSqlRequest('PrintPrenom', "SELECT prenom_user FROM utilisateur WHERE utilisateur.email = :email;");
-
+	User::addSqlRequest('PrintSite', "SELECT site FROM utilisateur WHERE utilisateur.email = :email;");
+	User::addSqlRequest('PrintFonction', "SELECT fonction FROM utilisateur WHERE utilisateur.email = :email;");
+	
 	User::addSqlRequest('UpdatePassword', "UPDATE `utilisateur` SET `password`= :newPassword WHERE utilisateur.email = :email;");
 	User::addSqlRequest('UpdateNom', "UPDATE `utilisateur` SET `nom`= :newNom WHERE utilisateur.email = :email;");
 	User::addSqlRequest('UpdatePrenom', "UPDATE `utilisateur` SET `prenom`= :newPrenom WHERE utilisateur.email = :email;");

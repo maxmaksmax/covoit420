@@ -3,9 +3,13 @@
 	$nom = $_SESSION["nom"];
 	$prenom = $_SESSION["prenom"];
 	$email = $_SESSION["email"];
+	$id_user = $_SESSION["id_user"];
 	//$password = $_SESSION["password"];
 	$telephone = $_SESSION["telephone"];
+	$site = User::getSite($id_user);
+	$fonction = User::getFonction($fonction);
 	$voitures = User::showListeVoitures($id_user);
+	
 ?>
 
 	  
@@ -16,26 +20,32 @@
 								<p class="text" name="nom" id="nom"><?php print_r($nom);?></p>
 							</li>
 							<li class="list-inline-item"> 
-								<p class="text" name="lieu_depart"><?php print_r($prenom);?></p>
+								<p class="text" name="prenom"><?php print_r($prenom);?></p>
 							</li>
 							<li class="list-inline-item"> 
-								<p class="text" name="lieu_arrivee"><?php print_r($email);?></p>
+								<p class="text" name="email"><?php print_r($email);?></p>
 							</li>
 							<li class="list-inline-item"> 
-								<p class="text" name="heure_depart"><?php print_r($telephone);?></p>
+								<p class="text" name="telephone"><?php print_r($telephone);?></p>
 							</li>
 							<li class="list-inline-item"> 
-								<p class="text" name="nombre_places"><?php print_r($voitures);?></p>
+								<p class="text" name="voitures"><?php print_r($voitures);?></p>
+							</li>
+							<li class="list-inline-item"> 
+								<p class="text" name="site"><?php print_r($site);?></p>
+							</li>
+							<li class="list-inline-item"> 
+								<p class="text" name="fonction"><?php print_r($fonction);?></p>
 							</li>
 							<li class="list-inline-item"> 
 								<input type="submit" value="M'inscrire" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></a> 	
-								<input value="<?php print_r($trajets[$i]['id_trajet'])?>" name="idTrajet" style="visibility: hidden;"></input></a> 	<!-- Sert a garder l'id trajet-->
+								<input value="<?php print_r($trajets[$i]['id_trajet'])?>" name="id_trajet" style="visibility: hidden;"></input></a> 	<!-- Sert a garder l'id trajet-->
 							</li>
 						</ul> 
 						</form>
 
 				</div>
-
+<!--
 <section class="content-section" id="portfolio">
  
  <section id="contact">
@@ -83,3 +93,4 @@
       </div>
     </section>
 </section>
+-->

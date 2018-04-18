@@ -65,6 +65,26 @@ class User extends Model {
 			return $stmt;
 		}
 	}
+	
+	public static function getSite($email){
+		$stmt = Model::executeRequest('PrintSite', array('email' => $email)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+	
+	public static function getFonction($email){
+		$stmt = Model::executeRequest('PrintFonction', array('email' => $email)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
 
 	public static function getTelephone($email){
 		$stmt = Model::executeRequest('PrintTelephone', array('email' => $email)) -> fetch()[0];
@@ -136,13 +156,20 @@ class User extends Model {
 		}
 	}
 	
-	public static function updateAllProfil($email, $nom, $prenom, $telephone, $site, $fonction){
-		$newProfil = Model::executeRequest('UpdateAllProfil', array('email'=>$email, 'nom' => $nom, 'prenom' => $prenom,'telephone' => $telephone, 'site' => $site, 'fonction' => $fonction )) -> fetch()[0];
-		if($newProfil == null){
+	public static function updateAllProfil($email){
+		// $newProfil = Model::executeRequest('UpdateAllProfil', array('email'=>$email, 'nom' => $nom, 'prenom' => $prenom,'telephone' => $telephone, 'site' => $site, 'fonction' => $fonction )) -> fetch()[0];
+		$newNom = Model::executeRequest('UpdateNom', array('email'=>$email)) -> fetch()[0];
+		$newPrenom = Model::executeRequest('UpdatePrenom', array('email'=>$email)) -> fetch()[0];
+		$newFonction = Model::executeRequest('UpdateFonction', array('email'=>$email)) -> fetch()[0];
+		$newSite = Model::executeRequest('UpdateSite', array('email'=>$email)) -> fetch()[0];
+		$newTel = Model::executeRequest('UpdatTelephone', array('email'=>$email)) -> fetch()[0];
+	
+	
+		if($newNom == null || $newPrenom == null || $newFonction == null || $newSite == null || $newTel == null  ){
 			echo "Cet utilisateur n'existe pas !";
 		}
 		else{
-			return $newProfil;
+			return $newNom;
 		}
 	}
 	

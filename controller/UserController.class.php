@@ -26,6 +26,21 @@ class UserController extends Controller {
 		$view = new View($this, 'index');
 		$view->render();
 	}
+	
+	public function updateAllProfil($request) {
+		$email = $request->read('email');
+		$nom = $request->read('nom');
+		$prenom = $request->read('prenom');
+		$site = $request->read('site');		
+		$fonction = $request->read('fonction');	
+		$telephone = $request->read('telephone');
+
+
+		$newProfil = User::updateAllProfil($email);
+		print_r($newProfil);
+		$view = new UserView($this, 'compte');
+		$view->render();
+	}
 
 	//FONCTIONS TRAJETS
 
