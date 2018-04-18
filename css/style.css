@@ -5,6 +5,9 @@
   padding: 15px 10px 25px 10px;
 }
 
+.champ-non-modifiable{
+	background-color: rgba(255,255,255, 0.9);
+}
 .contenu{
   min-height: 730px;
   background-image: url(../images/background-road.jpg);
