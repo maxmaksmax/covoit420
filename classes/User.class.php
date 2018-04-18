@@ -69,7 +69,7 @@ class User extends Model {
 	public static function getSite($email){
 		$stmt = Model::executeRequest('PrintSite', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
-			echo "Cet utilisateur n'a pas de site !";
+			echo "Veuillez ajouter le site de l'école sur lequel vous travaillez";
 		}
 		else{
 			return $stmt;
@@ -79,7 +79,7 @@ class User extends Model {
 	public static function getFonction($email){
 		$stmt = Model::executeRequest('PrintFonction', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
-			echo "Cet utilisateur n'a pas de fonction!";
+			echo "Veuillez ajouter votre fonction à l'IMT Lille-Douai";
 		}
 		else{
 			return $stmt;

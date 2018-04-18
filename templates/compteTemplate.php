@@ -6,8 +6,8 @@
 	$id_user = $_SESSION["id_user"];
 	//$password = $_SESSION["password"];
 	$telephone = $_SESSION["telephone"];
-	$site = User::getSite($id_user);
-	$fonction = User::getFonction($fonction);
+	$site = User::getSite($email);
+	$fonction = User::getFonction($email);
 	$voitures = User::showListeVoitures($id_user);
 	
 ?>
@@ -39,7 +39,7 @@
 							</li>
 							<li class="list-inline-item"> 
 								<input type="submit" value="M'inscrire" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></a> 	
-								<input value="<?php print_r($trajets[$i]['id_trajet'])?>" name="id_trajet" style="visibility: hidden;"></input></a> 	<!-- Sert a garder l'id trajet-->
+	<!-- Sert a garder l'id trajet-->
 							</li>
 						</ul> 
 						</form>
