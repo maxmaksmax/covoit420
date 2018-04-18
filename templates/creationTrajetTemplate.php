@@ -49,7 +49,7 @@
                     <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group">
-					<select name="voiture">
+					<select name="voiture" required oninvalid="this.setCustomValidity('Veuillez enregistrer une voiture (Mon Compte)')">
 						<?php for($i=0; $i < sizeof($voitures); $i++){ ?>
 							<option value="<?php echo $voitures[$i][0]?>";>
 							<?php echo $voitures[$i][0]; ?> </option>
