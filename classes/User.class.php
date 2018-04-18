@@ -65,7 +65,7 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-	
+
 	public static function getSite($email){
 		$stmt = Model::executeRequest('PrintSite', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
@@ -75,7 +75,7 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-	
+
 	public static function getFonction($email){
 		$stmt = Model::executeRequest('PrintFonction', array('email' => $email)) -> fetch()[0];
 		if($stmt == null){
@@ -155,7 +155,7 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-	
+
 	public static function updateAllProfil($email){
 		// $newProfil = Model::executeRequest('UpdateAllProfil', array('email'=>$email, 'nom' => $nom, 'prenom' => $prenom,'telephone' => $telephone, 'site' => $site, 'fonction' => $fonction )) -> fetch()[0];
 		$newNom = Model::executeRequest('UpdateNom', array('email'=>$email)) -> fetch()[0];
@@ -163,8 +163,8 @@ class User extends Model {
 		$newFonction = Model::executeRequest('UpdateFonction', array('email'=>$email)) -> fetch()[0];
 		$newSite = Model::executeRequest('UpdateSite', array('email'=>$email)) -> fetch()[0];
 		$newTel = Model::executeRequest('UpdatTelephone', array('email'=>$email)) -> fetch()[0];
-	
-	
+
+
 		if($newNom == null || $newPrenom == null || $newFonction == null || $newSite == null || $newTel == null  ){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -172,25 +172,28 @@ class User extends Model {
 			return $newNom;
 		}
 	}
-	
+
     ////////////////////////////////////
 	//            VOITURE             //
 	////////////////////////////////////
 
 	public static function createVoiture($id_user, $modele, $couleur, $taille_bagage, $nombre_places){
-
 		$voiture = Model::executeRequest('CreateVoiture', array('id_user' => $id_user, 'modele' => $modele, 'taille_bagage' => $taille_bagage,
 			'couleur' => $couleur, 'nombre_places' => $nombre_places));
 		return $voiture;
 	}
 
 	public static function showListeVoitures($id_user){
-
 	$voitures = Model::executeRequest('ShowListeVoitures', array('id_user' => $id_user));
 	$result = $voitures->fetchAll();
 	return $result;
 	}
 
+	public static function getVoitureID($id_user){
+		$voiture = Model::executeRequest('GetVoitureID', array('id_user' => $id_user));
+		$res = $voiture->fetchAll();
+		return $res;
+	}
 	////////////////////////////////////
 	//            TRAJETS             //
 	////////////////////////////////////
@@ -206,9 +209,8 @@ class User extends Model {
 	}
 
 	public static function createTrajet($id_user, $id_voiture, $lieu_depart, $lieu_arrivee, $heure_depart, $heure_arrivee, $nombre_places){
-
 		$trajet = Model::executeRequest('CreateTrajet', array('id_user' => $id_user, 'id_voiture' => $id_voiture, 'lieu_depart' => $lieu_depart,
-			'lieu_arrivee' => $lieu_arrivee, 'heure_depart' => $heure_depart, 'heure_arrivee' => $heure_arrivee, 'nombre_places' => $nombre_places));
+			'lieu_arrivee' => $lieu_arrivee, 'heure_depart' => $heure_depart, 'heure_arrivee' => $heure_arrivee, 'nombre_places' => $nombre_places))->fetchAll();
 		return $trajet;
 	}
 
