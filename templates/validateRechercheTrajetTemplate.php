@@ -48,9 +48,9 @@
 				<td>
 
 						<?php // cache le bouton "m'incrire" si l'utilisateur est déjà participant
-						if( in_array($_SESSION['id_user'], $participants) ){ ?>
+						if( array_search($_SESSION['id_user'], array_column($participants, 'id_user')) === FALSE ){ ?>
 
-					<form action="index.php?c=user&a=validateRechercheTrajet" method="post" >
+					<form action="index.php?c=user&a=validateInscriptionATrajet" method="post" >
 						<p><input type="submit" value="M'inscrire" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></p>
 					</form>
 						<?php } else{ ?>
