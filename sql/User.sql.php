@@ -67,6 +67,6 @@
 	User::addSqlRequest('CreateModele', "INSERT INTO voiture (modele) VALUES (:modele) WHERE id_voiture = :id_voiture;");
 	User::addSqlRequest('CreateCouleur', "INSERT INTO voiture (couleur) VALUES (:couleur) WHERE id_voiture = :id_voiture;");
 	User::addSqlRequest('CreateNbPlaces', "INSERT INTO voiture (nombre_places) VALUES (:nombre_places) WHERE id_voiture = :id_voiture;");
-	User::addSqlRequest('CreateTailleBagages', "INSERT INTO voiture (taille_bagage) VALUES (:taille_bagages) WHERE id_voiture = :id_voiture;");											
+	User::addSqlRequest('CreateTailleBagages', "INTO voiture (taille_bagage) VALUES (:taille_bagages) WHERE id_voiture = :id_voiture;");											
 
 ?>
