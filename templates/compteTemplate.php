@@ -13,8 +13,8 @@
 
 <div class="profil">
 		<h2 class="section-heading text-uppercase"> Mon Profil </h2>
-			<form action="index.php?c=user&a=updateAllProfil" method="post">
-				<table class="tab-profil">
+			<form class="tab-profil" action="index.php?c=user&a=updateAllProfil" method="post">
+				<table>
 					 <tr>
 							 <td><label for="nom_user">Nom</label></td>
 							 <td><input class="form-control champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($nom);?>'  disabled="disabled"></td>

@@ -86,10 +86,10 @@ caption {
 font-family: sans-serif;
 }
 
-table {
-border: medium solid #6495ed;
+.tab-profil table {
+border: none;
 border-collapse: collapse;
-width: 50%;
+width: 100%;
 }
 .tab-profil th {
 font-family: monospace;
@@ -101,7 +101,7 @@ background-image: url(sky.jpg);
 }
 .tab-profil td {
 font-family: sans-serif;
-border: thin solid #6495ed;
+border: none;
 width: 50%;
 padding: 5px;
 text-align: center;
