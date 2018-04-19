@@ -10,28 +10,28 @@
 								<h3>Contact</h3>
 								<ul class="address">
 									<li><span class="map-pin"> </span><label>263, Rue du Grand Bail, 59500 DOUAI</label></li>
-									<li><span class="mob"> </span>+33 1 46 87 53 93</li>
-									<li><span class="msg"> </span><a href="mailto:yourname@yoursite.com">maxime@imt-express.com</a></li>
+									<li><span class="mob"> </span>+33 6 15 53 16 90</li>
+									<li><span class="msg"> </span><a href="mailto:maxime.servillat@etu.imt-lille-douai.fr">maxime@imt-express.com</a></li>
 								</ul>
 							</div>
 							<div class="top-footer-grid">
-								<h3>Latest posts</h3>
+								<h3>Les dernières nouvelles</h3>
 								<ul class="latest-post">
-									<li><a href="#"><span class="icon1"> </span> Made With Love In Toronto</a> </li>
-									<li><a href="#"><span class="icon2"> </span> Startup News &amp; Emerging Tech</a> </li>
-									<li><a href="#"><span class="icon3"> </span> Bitcoin Will Soon Rule The World</a> </li>
-									<li><a href="#"><span class="icon4"> </span> Wearable Technology On The Rise</a> </li>
-									<li><a href="#"><span class="icon5"> </span> Learn Web Design In <label>30 Days!</label></a> </li>
+									<li><a href="#">Made With Love In Douai</a> </li>
+									<li><a href="#">Le temps à Douai</a> </li>
+									<li><a href="#">On covoiture près de chez vous</a> </li>
+									<li><a href="#">Mines Express + Télécom'voit = IMT Express </a> </li>
+									<li><a href="#"> </a> </li>
 								</ul>
 							</div>
 							<div class="top-footer-grid">
-								<h3>Latest tweets</h3>
+								<h3>Vos tweets</h3>
 								<div class="tweet-box">
 									<div class="tweet-box-icon">
 										<span> </span>
 									</div>
 									<div class="tweet-box-info">
-										<p>Confucius: Life is really simple, but we insist on making it complicated. <span><a href="#">#famousquotes</a></span><label><a href="#"> 8 mins ago</a></label></p>
+										<p>Ca marche vraiment bien le covoiturage, surtout avec la grève <span><a href="#">#GreveSNCF #IMTExpress</a></span><label><a href="#"> 8 mins ago</a></label></p>
 									</div>
 									<div class="clear"> </div>
 								</div>
@@ -40,7 +40,7 @@
 										<span> </span>
 									</div>
 									<div class="tweet-box-info">
-										<p>Confucius: Life is really simple, but we insist on making it complicated. <span><a href="#">#famousquotes</a></span><label><a href="#"> 8 mins ago</a></label></p>
+										<p>Merci pour le voyage <span><a href="#">#IMTExpress</a></span><label><a href="#"> 31 mins ago</a></label></p>
 									</div>
 									<div class="clear"> </div>
 								</div>
@@ -50,16 +50,6 @@
 					</div>
 				</div>
 
-				<!---start-bottom-footer---->
-				<div class="bottom-footer">
-					<div class="container">
-						<div class="bottom-footer-left">
-							<p>&#169; Copyright 2014 Template by <a href="http://w3layouts.com/">W3layouts</a></p>
-						</div>
-						<div class="clear"> </div>
-					</div>
-				</div>
-				<!---//End-bottom-footer---->
 <!--
 <div class="bottom-footer">
   Ce site vous est fourni par Maxime Lehmann et Maxime Servillat
