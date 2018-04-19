@@ -238,7 +238,7 @@ class User extends Model {
 
 	public static function showMesTrajetsPasses($id_user){
 
-		$trajet = Model::executeRequest('ShowMesTrajets', array('id_user' => $id_user));
+		$trajet = Model::executeRequest('ShowMesTrajetsPasses', array('id_user' => $id_user));
 		$result = $trajet->fetchAll();
 		return $result;
 	}
