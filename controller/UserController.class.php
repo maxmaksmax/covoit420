@@ -39,15 +39,16 @@ class UserController extends Controller {
 		$couleur =  $request->read('couleur');
 		$nb_places =  $request->read('nb_places');
 		$taille_bagages =  $request->read('taille_bagages');
-
-
+		
+		
+		$id_voiture = User::getVoitureID($_SESSION['id_user']);
 		$newSite = User::updateSite($email, $site);
 		$newFonction = User::updateFonction($email, $fonction);
 		$newTelephone = User::updateTelephone($email, $telephone );
-		$newModele = User::updateModele($email, $modele );
-		$newCouleur = User::updateCouleur($email, $couleur );
-		$newNbPlaces = User::updateNbPlaces($email, $nb_places );
-		$newTailleBagages = User::updateTailleBagages($email, $taille_bagages);
+		$newModele = User::updateModele($id_voiture, $modele );
+		$newCouleur = User::updateCouleur($id_voiture, $couleur );
+		$newNbPlaces = User::updateNbPlaces($id_voiture, $nb_places );
+		$newTailleBagages = User::updateTailleBagages($id_voiture, $taille_bagages);
 
 		$view = new UserView($this, 'compte');
 		$view->render();
@@ -93,7 +94,7 @@ class UserController extends Controller {
 
 		$id_voiture = User::getVoitureID($_SESSION['id_user']);
 		$trajets = User::createTrajet($_SESSION['id_user'], $id_voiture, $lieu_depart, $lieu_arrivee, $date_depart_heure, $date_arrivee_heure, $nombre_places);
-		$view = new UserView($this, 'compte');
+		$view = new UserView($this, 'index');
 		$view->render();
 	}
 
