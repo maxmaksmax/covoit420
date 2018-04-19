@@ -18,6 +18,7 @@
 				<th>Heure de départ</th>
 				<th>Participants</th>
 				<th>Places disponibles</th>
+				<th></th>
 			</tr>
 
 			<?php
@@ -29,29 +30,29 @@
 				<td><?php print_r($trajetsRecherchés[$i]['lieu_depart']);?></td>
 				<td><?php print_r($trajetsRecherchés[$i]['lieu_arrivee']);?></td>
 				<td><?php print_r($trajetsRecherchés[$i]['heure_depart']);?></td>
-
+<td>
 					<?php
 					// affiche les participants
 					$participants = User::showParticipantsTrajet($trajetsRecherchés[$i]['id_trajet']);
 					$nbParticipants = sizeof($participants);
 					for ($j=0; $j<$nbParticipants; $j++){ ?>
 
-				<td><?php print_r($participants[$j]['nom_user'].' '.$participants[$j]['prenom_user']);?></td>
+				<?php print_r($participants[$j]['nom_user'].' '.$participants[$j]['prenom_user']);?>
 
 
 					<?php }
-					?>
-					<td></td>
+					?></td>
+
 				<td><?php print_r($trajetsRecherchés[$i]['nombre_places']-$nbParticipants);?></td>
 
 
-				<td><?php // cache le bouton "m'incrire" si l'utilisateur est déjà participant
+				<?php // cache le bouton "m'incrire" si l'utilisateur est déjà participant
 
 					// if(User::showParticipantsTrajet($trajetsRecherchés[$i]['id_trajet'])['id_user'] == $_SESSION['id_user']){
 						// echo("style=\"visibility:hidden\" ");
 					// }
 					// A MODIFIER AVEC UNE FONCTION QUI VERIFIE SI LE USER EST PARTICIPANT, ET NON CREATEUR
-					?> </td>
+					?>
 				<td>
 					<form action="index.php?c=user&a=validateRechercheTrajet" method="post" >
 						<p><input type="submit" value="M'inscrire" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></p>
