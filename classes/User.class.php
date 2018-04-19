@@ -160,9 +160,16 @@ class User extends Model {
 	}
 
 	public static function showListeVoitures($id_user){
-	$voitures = Model::executeRequest('ShowListeVoitures', array('id_user' => $id_user));
-	$result = $voitures->fetchAll();
-	return $result;
+		
+		$voitures = Model::executeRequest('ShowListeVoitures', array('id_user' => $id_user));
+		$result = $voitures->fetchAll();
+		if($result == null){
+			return "";
+		}
+		else{
+			return $result;
+		}
+	
 	}
 
 	public static function getVoitureID($id_user){
