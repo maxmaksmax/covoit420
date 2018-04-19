@@ -1,6 +1,7 @@
 <?php
-	$trajets = User::showMesFutursTrajets($_SESSION['id_user']);
+	//$trajets = User::showMesFutursTrajets($_SESSION['id_user']);
 	$trajetsRecherchés = $this->getArg('trajetsRecherchés');
+	$id_user = $_SESSION['id_user'];
 	//$trajetsR = User::showTrajet($_SESSION['id_user']);
 
 
@@ -48,15 +49,15 @@
 				<td>
 
 						<?php // cache le bouton "m'incrire" si l'utilisateur est déjà participant
-						if( array_search($_SESSION['id_user'], array_column($participants, 'id_user')) === FALSE ){ ?>
+						if( array_search($id_user, array_column($participants, 'id_user')) === FALSE ){ ?>
 
 					<form action="index.php?c=user&a=validateInscriptionATrajet" method="post" >
 						<p><input type="submit" value="M'inscrire" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></p>
 					</form>
 						<?php } else{ ?>
 
-					<form action="index.php?c=user&a=validateRechercheTrajet" method="post" >
-						<p><input type="submit" value="Me désinscrire" name="boutonInscription" disabled="disabled" class="btn btn-primary btn-xl text-uppercase"></input></p>
+					<form action="index.php?c=user&a=validateInscriptionATrajet" method="post" >
+						<p><input type="submit" value="Me désinscrire" name="boutonInscription"  class="btn btn-primary btn-xl text-uppercase"></input></p>
 					</form>
 						<?php }?>
 
