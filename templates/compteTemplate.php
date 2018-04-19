@@ -58,12 +58,12 @@
 
 					<tr>
 						<td><label for="NbPlaces">Nombre de places</label></td>
-						<td><input class="form-control" name="NbPlaces" type="text" value= '<?php print_r($voitures[0][3]);?>'></td>
+						<td><input class="form-control" name="nb_places" type="text" value= '<?php print_r($voitures[0][3]);?>'></td>
 					</tr>
 
 					<tr>
 						<td><label for="tailleBagage">Taille des bagages</label></td>
-						<td><input class="form-control" name="tailleBagage" type="text" value= '<?php print_r($voitures[0][4]);?>'></td>
+						<td><input class="form-control" name="taille_bagage" type="text" value= '<?php print_r($voitures[0][4]);?>'></td>
 					</tr>
 
 				</table>

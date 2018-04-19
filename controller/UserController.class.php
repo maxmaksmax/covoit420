@@ -35,8 +35,7 @@ class UserController extends Controller {
 		$fonction = $request->read('fonction');
 		$telephone = $request->read('telephone');
 
-
-		$newProfil = User::updateAllProfil($email);
+		$newProfil = User::updateAllProfil($email, $nom , $prenom , $site , $fonction , $telephone );
 		print_r($newProfil);
 		$view = new UserView($this, 'compte');
 		$view->render();
