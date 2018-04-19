@@ -62,6 +62,7 @@
 					<form action="index.php?c=user&a=validateDesinscriptionATrajet" method="post" >
 						<p><input type="submit" value="Me désinscrire" name="boutonInscription"  class="btn btn-primary btn-xl text-uppercase"></input>
 					       <input value="<?php print_r($trajetsRecherches[$i]['id_trajet'])?>" name="id_trajet_recherche" style="visibility: hidden;"></input>
+					       <input value="<?php print_r($trajetsRecherches)?>" name="liste_trajets_recherches" style="visibility: hidden;"></input>
 						</p>
 					</form>
 						<?php }?>
