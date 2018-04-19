@@ -75,7 +75,7 @@ class User extends Model {
 	public static function getFonction($email){
 		$stmt = Model::executeRequest('PrintFonction', array('email' => $email)) -> fetch()[0];
 		return $stmt;
-	
+
 	}
 
 	public static function getTelephone($email){
@@ -229,7 +229,7 @@ class User extends Model {
 	$result = $trajet->fetchAll();
 	return $result;
 	}
-	
+
 	public static function desinscriptionTrajet($id_user, $id_trajet){
 
 	$trajet = Model::executeRequest('DesinscriptionTrajet', array(':id_user' => $id_user, ':id_trajet' => $id_trajet));
@@ -243,5 +243,10 @@ class User extends Model {
 		return $result;
 	}
 
+	public static function showTrajetWithParticipant($id_user){
+		$trajet = Model::executeRequest('ShowTrajetWithParticipant', array('id_user' => $id_user));
+		$result = $trajet->fetchAll();
+		return $result;
+	}
 }
  ?>
