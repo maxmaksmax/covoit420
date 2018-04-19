@@ -1,6 +1,6 @@
 <section>
 
-<section class="creation">
+<section class="creation text-center">
       <div >
         <div>
           <div >
@@ -30,8 +30,8 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                   
-                  
+
+
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
