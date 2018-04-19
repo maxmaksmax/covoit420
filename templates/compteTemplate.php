@@ -68,7 +68,7 @@
 
 				</table>
 				<div class="clearfix"></div>
-        <div class="col-lg-12 text-center">
+				<div class="col-lg-12 text-center">
           <div id="success"></div>
           <input type="submit" value="Enregistrer" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input>
 				</div>
