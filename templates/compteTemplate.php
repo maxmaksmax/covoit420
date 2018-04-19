@@ -14,7 +14,7 @@
 <div class="profil">
 		<h2 class="section-heading text-uppercase"> Mon Profil </h2>
 			<form action="index.php?c=user&a=updateAllProfil" method="post">
-				<table>
+				<table class="tab-profil">
 					 <tr>
 							 <td><label for="nom_user">Nom</label></td>
 							 <td><input class="form-control champ-non-modifiable" name="nom_user" type="text" value= '<?php print_r($nom);?>'  disabled="disabled"></td>
@@ -45,7 +45,7 @@
 						 <td><input class="form-control" name="fonction" type="text" value= '<?php print_r($fonction);?>'></td>
 					 </tr>
 
-					<tr>Voiture</tr>
+					<tr><td></td><td></td></tr>
 					<tr>
 						<td><label for="modele">Modèle</label></td>
 						<td><input class="form-control" name="modele" type="text" value= '<?php print_r($voitures[0][1]);?>'></td>
@@ -63,9 +63,14 @@
 
 					<tr>
 						<td><label for="tailleBagage">Taille des bagages</label></td>
-						<td><input class="form-control" name="tailleBagage" type="text" value= '<?php print_r($voitures[0][3]);?>'></td>
+						<td><input class="form-control" name="tailleBagage" type="text" value= '<?php print_r($voitures[0][4]);?>'></td>
 					</tr>
 
 				</table>
+				<div class="clearfix"></div>
+        <div class="col-lg-12 text-center">
+          <div id="success"></div>
+          <input type="submit" value="Enregistrer" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input>
+				</div>
       </form>
 		</div>
