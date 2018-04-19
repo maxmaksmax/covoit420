@@ -42,7 +42,7 @@
 					<div class="form-group requiredField <?php if(isset($inputLastnameError) && $inputLastnameError) echo 'has-error'; if(isset($inputLastnameFeedbackMsg)) echo ' has-feedback' ?>">
 					  <label class="control-label col-sm-3" for="inputLastname">Nom</label>
 					  <div class="col-sm-3">
-						<input type="text" class="form-control" id="inputLastname" placeholder="Nom" name="inputLastname">
+						<input type="text" class="form-control" id="inputLastname" placeholder="Nom" name="inputLastname" required data-validation-required-message="Entrez votre nom">
 						<?php	if(isset($inputLastnameError) && $inputLastnameError): ?>
 						  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
 						<?php endif ?>
@@ -60,7 +60,7 @@
                     <div class="form-group requiredField <?php if(isset($inputFirstnameError) && $inputFirstnameError) echo 'has-error'; if(isset($inputFirstnameFeedbackMsg)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="inputFirstname">Prénom</label>
                       <div class="col-sm-3">
-                        <input type="text" class="form-control" id="inputFirstname" placeholder="Prénom" name="inputFirstname">
+                        <input type="text" class="form-control" id="inputFirstname" placeholder="Prénom" name="inputFirstname" required data-validation-required-message="Entrez votre prénom">
                         <?php	if(isset($inputFirstnameError) && $inputFirstnameError): ?>
                           <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                         <?php endif ?>
@@ -78,7 +78,7 @@
                     <div class="form-group requiredField <?php if(isset($inputEmailError) && $inputEmailError) echo 'has-error'; if(isset($inputEmailFeedbackMsg)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="inputEmail">Email</label>
                       <div class="col-sm-3">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="inputEmail">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="inputEmail" required data-validation-required-message="Entrez votre email">
                          <?php	if(isset($inputEmailError) && $inputEmailError): ?>
                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                          <?php endif ?>
@@ -96,7 +96,7 @@
                     <div class="form-group requiredField <?php if(isset($inputPasswordFeedbackMsg)) echo 'has-feedback'; if(isset($inputPasswordError) && $inputPasswordError) echo ' has-error';  ?>">
                       <label class="control-label col-sm-3" for="inputPassword">Mot de passe</label>
                       <div class="col-sm-3">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" aria-describedby="inputPassordStatus" name="inscPassword">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" aria-describedby="inputPassordStatus" name="inscPassword" required data-validation-required-message="Entrez votre mot de passe">
                         <?php	if(isset($inputPasswordError) && $inputPasswordError): ?>
                           <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
                         <?php endif ?>
@@ -114,7 +114,7 @@
                     <div class="form-group requiredField <?php if(isset($inputPasswordError2) && $inputPasswordError2) echo 'has-error'; if(isset($inputPasswordFeedbackMsg2)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="confirmPassword">Confirmer mot de passe</label>
                       <div class="col-sm-3">
-                        <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Mot de passe" aria-describedby="inputSuccess3Status" name="inscPassword2">
+                        <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Mot de passe" aria-describedby="inputSuccess3Status" name="inscPassword2" required data-validation-required-message="Confirmez votre mot de passe">
                         <?php	if(isset($inputPasswordError2) && $inputPasswordError2): ?>
                           <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                         <?php endif ?>
@@ -133,7 +133,7 @@
                     <div class="form-group requiredField <?php if(isset($inputTelephoneError) && $inputTelephoneError) echo 'has-error'; if(isset($inputTelephoneFeedbackMsg)) echo ' has-feedback' ?>">
                       <label class="control-label col-sm-3" for="inputTelephone">Téléphone</label>
                       <div class="col-sm-3">
-                        <input type="text" class="form-control" id="inputTelephone" placeholder="Téléphone" name="inputTelephone">
+                        <input type="text" class="form-control" id="inputTelephone" placeholder="Téléphone" name="inputTelephone"  required data-validation-required-message="Entrez votre numéro de téléphone">
                         <?php	if(isset($inputTelephoneError) && $inputTelephoneError): ?>
                           <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                         <?php endif ?>
