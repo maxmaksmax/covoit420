@@ -141,13 +141,13 @@ class UserController extends Controller {
 		$view->render();
 	}
 	
-	// public function historiqueTrajets($request) {
-		// if (!isset($_SESSION)) { session_start(); }
-		// $trajets = User::showMesTrajetsPasses($_SESSION['id_user']);
-		// $view = new UserView($this, 'historiqueTrajets');
-		// $view -> setArg('mesTrajetsPasses', $trajets);
-		// $view->render();
-	// }
+	public function historiqueTrajets($request) {
+		if (!isset($_SESSION)) { session_start(); }
+		$trajets = User::showMesTrajetsPasses($_SESSION['id_user']);
+		$view = new UserView($this, 'historiqueTrajets');
+		$view -> setArg('mesTrajetsPasses', $trajets);
+		$view->render();
+	}
 	
 	public function futursTrajets($request){
 		if (!isset($_SESSION)) { session_start(); }
