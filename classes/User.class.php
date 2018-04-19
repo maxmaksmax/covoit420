@@ -89,7 +89,7 @@ class User extends Model {
 	}
 
 	public static function updatePassword($email, $newPassword){
-		$stmt = Model::executeRequest('UpdatePassword', array('email'=>$email, 'newPassword' => $newPassword)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdatePassword', array('email'=>$email, 'password' => $newPassword)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -99,7 +99,7 @@ class User extends Model {
 	}
 
 	public static function updateNom($email, $newFonction){
-		$stmt = Model::executeRequest('UpdateNom', array('email'=>$email, 'newNom' => $newNom)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdateNom', array('email'=>$email, 'nom' => $newNom)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -109,7 +109,7 @@ class User extends Model {
 	}
 
 	public static function updatePrenom($email, $newPrenom){
-		$stmt = Model::executeRequest('UpdatePrenom', array('email'=>$email, 'newPrenom' => $newPrenom)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdatePrenom', array('email'=>$email, 'prenom' => $newPrenom)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -118,8 +118,8 @@ class User extends Model {
 		}
 	}
 
-	public static function updateTelephone($email, $newNom){
-		$stmt = Model::executeRequest('UpdateTelephone', array('email'=>$email, 'newTelephone' => $newTelephone)) -> fetch()[0];
+	public static function updateTelephone($email, $newTelephone){
+		$stmt = Model::executeRequest('UpdateTelephone', array('email'=>$email, 'telephone' => $newTelephone)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -129,7 +129,7 @@ class User extends Model {
 	}
 
 	public static function updateSite($email, $newSite){
-		$stmt = Model::executeRequest('UpdateSite', array('email'=>$email, 'newSite' => $newSite)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdateSite', array('email'=>$email, 'site' => $newSite)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -139,7 +139,7 @@ class User extends Model {
 	}
 
 	public static function updateFonction($email, $newFonction){
-		$stmt = Model::executeRequest('UpdateFonction', array('email'=>$email, 'newFonction' => $newFonction)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdateFonction', array('email'=>$email, 'fonction' => $newFonction)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -170,9 +170,9 @@ class User extends Model {
 		$res = $voiture->fetch()[0][0];
 		return $res;
 	}
-	
+
 	public static function updateModele($id_voiture, $newModele){
-		$stmt = Model::executeRequest('UpdateModele', array('email'=>$email, 'newModele' => $newModele)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdateModele', array('id_voiure'=>$id_voiture, 'modele' => $newModele)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -180,9 +180,9 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-	
+
 	public static function updateCouleur($id_voiture, $newCouleur){
-		$stmt = Model::executeRequest('UpdateCouleur', array('email'=>$email, 'newCouleur' => $newCouleur)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdateCouleur', array('id_voiture'=>$id_voiture, 'couleur' => $newCouleur)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -190,9 +190,9 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-	
+
 	public static function updateTailleBagages($id_voiture, $newTaille){
-		$stmt = Model::executeRequest('UpdateTailleBagages', array('email'=>$email, 'newTaille' => $newTaille)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdateTailleBagages', array('id_voiture'=>$id_voiture, 'taille_bagages' => $newTaille)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -200,9 +200,9 @@ class User extends Model {
 			return $stmt;
 		}
 	}
-	
+
 	public static function updateNbPlaces($id_voiture, $newNbPlaces){
-		$stmt = Model::executeRequest('UpdateNbPlaces', array('email'=>$email, 'newNbPlaces' => $newNbPlaces)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdateNbPlaces', array('id_voiture'=>$id_voiture, 'nb_places' => $newNbPlaces)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
