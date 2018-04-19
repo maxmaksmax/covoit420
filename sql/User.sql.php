@@ -73,13 +73,10 @@
 	
 	//STATISTIQUES GENERALES
 	
-	Trajet::addSqlRequest('NbTrajetParJour', "SELECT COUNT(id_trajet), DAYOFMONTH(heure_depart) FROM trajet GROUP BY DAYOFMONTH(heure_depart) ORDER BY DAYOFMONTH(heure_depart) ;");
-	Trajet::addSqlRequest('NbTrajetParMois', "SELECT COUNT(id_trajet), MONTH(heure_depart) FROM trajet GROUP BY MONTH(heure_depart) ORDER BY MONTH(heure_depart) ;");
-	Trajet::addSqlRequest('NbTrajetParAnnee', "SELECT COUNT(id_trajet), YEAR(heure_depart) FROM trajet GROUP BY YEAR(heure_depart) ORDER BY YEAR(heure_depart) ;");
+	User::addSqlRequest('NbTrajetParJour', "SELECT COUNT(id_trajet), DAYOFMONTH(heure_depart) FROM trajet GROUP BY DAYOFMONTH(heure_depart) ORDER BY DAYOFMONTH(heure_depart) ;");
+	User::addSqlRequest('NbTrajetParMois', "SELECT COUNT(id_trajet), MONTH(heure_depart) FROM trajet GROUP BY MONTH(heure_depart) ORDER BY MONTH(heure_depart) ;");
+	User::addSqlRequest('NbTrajetParAnnee', "SELECT COUNT(id_trajet), YEAR(heure_depart) FROM trajet GROUP BY YEAR(heure_depart) ORDER BY YEAR(heure_depart) ;");
 	
-	TrajeddSqlRequest('DistanceParJour', "SELECT SUM(distance) FROM trajet GROUP BY ( DAYOFMONTH(trajet.heure_depart) )");
-	Trajet::addSqlRequest('DistanceParMois', "SELECT SUM(distance) FROM trajet ROUP BY ( MONTH(trajet.heure_depart) )");
-	Trajet::addSqlRequest('DistanceParAnnee', "SELECT SUM(distance) FROM trajet GROUP BY ( YEAR(trajet.heure_depart) )");
 		
 
 ?>
