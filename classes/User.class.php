@@ -226,8 +226,8 @@ class User extends Model {
 		$result = $trajet->fetchAll();
 		return $result;
 	}
-	public static function showMesFuturTrajets($id_user){
-		$trajet = Model::executeRequest('ShowMesFuturTrajets', array('id_user' => $id_user));
+	public static function showMesFutursTrajets($id_user){
+		$trajet = Model::executeRequest('ShowMesFutursTrajets', array('id_user' => $id_user));
 		$result = $trajet->fetchAll();
 		return $result;
 	}
@@ -238,6 +238,11 @@ class User extends Model {
 	return $result;
 	}
 
+	public static function showParticipantsTrajet($id_trajet){
+		$trajet = Model::executeRequest('ShowParticipantsTrajet', array('id_trajet' => $id_trajet));
+		$result = $trajet->fetchAll();
+		return $result;
+	}
 
 }
  ?>

@@ -30,7 +30,7 @@
 	User::addSqlRequest('CreateTrajet', "INSERT INTO `trajet`(id_user, `id_voiture`, `lieu_depart`, `lieu_arrivee`, `heure_depart`, `heure_arrivee`, `nombre_places`)
 											VALUES (:id_user, :id_voiture, :lieu_depart, :lieu_arrivee, :heure_depart, :heure_arrivee, :nombre_places);");
 
-	User::addSqlRequest('ShowTrajet', "SELECT lieu_depart, lieu_arrivee, heure_depart, nombre_places FROM trajet
+	User::addSqlRequest('ShowTrajet', "SELECT lieu_depart, lieu_arrivee, heure_depart, nombre_places, id_trajet FROM trajet
 											WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee AND heure_depart >= :heure_depart
 											ORDER BY heure_depart;");
 
@@ -43,6 +43,8 @@
 	User::addSqlRequest('InscriptionTrajet', "INSERT INTO participe (id_user, id_trajet)
 											VALUES (:id_user, :id_trajet)");
 
+	User::addSqlRequest('ShowParticipantsTrajet', "SELECT p.id_user, nom_user, prenom_user FROM participe p JOIN utilisateur u ON p.id_user = u.id_user WHERE p.id_trajet= :id_trajet);
+	
 	//VOITURE
 
 	User::addSqlRequest('CreateVoiture', "INSERT INTO voiture (modele, couleur, nombre_places, taille_bagage)
