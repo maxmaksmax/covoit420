@@ -46,7 +46,7 @@
                     <input class="form-control" id="heure_arrivee" name="heure_arrivee" type="text" placeholder="Heure d'arrivée au format hh:mm" required data-validation-required-message="Heure d'arrivée">
                     <p class="help-block text-danger"></p>
                 </div>
-				<div class="form-group" type="hidden">
+				<div class="form-group">
 					<select name="voiture" required oninvalid="this.setCustomValidity('Veuillez enregistrer une voiture (Mon Compte)')">
 						<?php for($i=0; $i < sizeof($voitures); $i++){ ?>
 							<option value="<?php echo $voitures[$i][0]?>";>
