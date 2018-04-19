@@ -14,7 +14,7 @@
 				<th>Heure de départ</th>
 				<th>Heure d'arrivée</th>
 				<th>Conducteur</th>
-				<th>Commentaire</th>
+				
 			</tr>
 
 			<?php
@@ -28,8 +28,6 @@
 				<td><?php print_r($mesTrajetsPasses[$i]['heure_depart']);?></td>
 				<td><?php print_r($mesTrajetsPasses[$i]['heure_arrivee']);?></td>
 				<td><?php print_r($mesTrajetsPasses[$i]['id_user']);?></td>
-				<td><?php print_r($mesTrajetsPasses[$i]['commentaire']);?></td>
-				<td>
 			</tr>
 			<?php } ?>
 		</table>
