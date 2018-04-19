@@ -111,7 +111,7 @@ class UserController extends Controller {
 		$id_trajet = $request->read('id_trajet');
 		if (!isset($_SESSION)) { session_start(); }
 		$trajet = User::inscriptionTrajet($_SESSION['id_user'], $id_trajet);
-		$view = new UserView($this, 'historiqueTrajets');
+		$view = new UserView($this, 'validateRechercheTrajet');
 		$view->render();
 	}
 
