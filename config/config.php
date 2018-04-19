@@ -26,7 +26,6 @@
 		define('_MYSQL_USER','root');
 		define('_MYSQL_PASSWORD','root');
 	} else {
-		echo('online');
 		define('_MYSQL_HOST','localhost');
 		define('_MYSQL_PORT',443);
 		define('_MYSQL_DBNAME','maxime_servillat');
