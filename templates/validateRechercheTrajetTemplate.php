@@ -37,26 +37,29 @@
 					$nbParticipants = sizeof($participants);
 					for ($j=0; $j<$nbParticipants; $j++){ ?>
 
-				<?php print_r($participants[$j]['nom_user'].' '.$participants[$j]['prenom_user']);?>
+				<?php print_r($participants[$j]['nom_user'];?>
 
 
 					<?php }
 					?></td>
 
 				<td><?php print_r($trajetsRecherchés[$i]['nombre_places']-$nbParticipants);?></td>
-
-
-				<?php // cache le bouton "m'incrire" si l'utilisateur est déjà participant
-
-					// if(User::showParticipantsTrajet($trajetsRecherchés[$i]['id_trajet'])['id_user'] == $_SESSION['id_user']){
-						// echo("style=\"visibility:hidden\" ");
-					// }
-					// A MODIFIER AVEC UNE FONCTION QUI VERIFIE SI LE USER EST PARTICIPANT, ET NON CREATEUR
-					?>
+					
 				<td>
+				
+						<?php // cache le bouton "m'incrire" si l'utilisateur est déjà participant
+						if( in_array($_SESSION['id_user'], $participants['id_user']) ){ ?>
+						
 					<form action="index.php?c=user&a=validateRechercheTrajet" method="post" >
 						<p><input type="submit" value="M'inscrire" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input></p>
 					</form>
+						<?php } else{ ?>
+						
+					<form action="index.php?c=user&a=validateRechercheTrajet" method="post" >
+						<p><input type="submit" value="Me désinscrire" name="boutonInscription" disabled="disabled" class="btn btn-primary btn-xl text-uppercase"></input></p>
+					</form>
+						<?php }?>
+					
 				</td>
 			</tr>
 		<?php } ?>
