@@ -16,20 +16,22 @@
                     <input class="form-control" id="date" name="date" type="date" placeholder="Date" required data-validation-required-message="Sélectionner une date">
                     <p class="help-block text-danger"></p>
                   </div>
+				  <div class="form-group">
+                    <input class="form-control" id="heure" name="heure" type="time" placeholder="Heure" required data-validation-required-message="Sélectionner une heure de départ">
+                    <p class="help-block text-danger"></p>
+                  </div>
                   <div class="form-group">
-                    <input class="form-control" id="lieuDepart" name="lieuDepart" type="text" placeholder="Lieu Départ" required data-validation-required-message="Sélectionner un lieu de départ">
+                    <input class="form-control" id="lieu_depart" name="lieu_depart" type="text" placeholder="Lieu de départ" required data-validation-required-message="Sélectionner un lieu de départ">
+                    <p class="help-block text-danger"></p>
+                  </div>
+				  <div class="form-group">
+                    <input class="form-control" id="lieu_arrivee" name="lieu_arrivee" type="text" placeholder="Lieu d'arrivée" required data-validation-required-message="Sélectionner un lieu d'arrivée">
                     <p class="help-block text-danger"></p>
                   </div>
                 </div>
                 <div class="col-md-6">
-                   <div class="form-group">
-                    <input class="form-control" id="heure" name="heure" type="time" placeholder="Heure" required data-validation-required-message="Sélectionner une heure">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="lieuArrivee" name="lieuArrivee" type="text" placeholder="Lieu d'arrivée" required data-validation-required-message="Sélectionner un lieu de départ">
-                    <p class="help-block text-danger"></p>
-                  </div>
+                   
+                  
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
