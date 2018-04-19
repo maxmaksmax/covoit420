@@ -108,20 +108,25 @@ class UserController extends Controller {
 
 	public function validateInscriptionATrajet($request) {
 		$id_trajet = $request->read('id_trajet_recherche');
+		$liste_trajets = $request->read('liste_trajets_recherches');
+		
 		if (!isset($_SESSION)) { session_start(); }
 		$trajet = User::inscriptionTrajet($_SESSION['id_user'], $id_trajet);
 
 		$view = new UserView($this, 'validateRechercheTrajet');
-		$view -> setArg('trajetsRecherches', $trajetsRecherches);
+		$view -> setArg('trajetsRecherches', $liste_trajets);
 		$view->render();
 	}
 
 	public function validateDesinscriptionATrajet($request) {
 		$id_trajet = $request->read('id_trajet_recherche');
+		$liste_trajets = $request->read('liste_trajets_recherches');
+		
 		if (!isset($_SESSION)) { session_start(); }
 		$trajet = User::desinscriptionTrajet($_SESSION['id_user'], $id_trajet);
+		
 		$view = new UserView($this, 'validateRechercheTrajet');
-		$view -> setArg('trajetsRecherches', $trajetsRecherches);
+		$view -> setArg('trajetsRecherches', $liste_trajets);
 		$view->render();
 	}
 
