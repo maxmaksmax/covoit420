@@ -29,8 +29,8 @@ class UserController extends Controller {
 
 	public function updateAllProfil($request) {
 		$email = $_SESSION['email'];
-		$nom = $request->read('nom');
-		$prenom = $request->read('prenom');
+		// $nom = $request->read('nom_user');
+		// $prenom = $request->read('prenom_user');
 		$site = $request->read('site');
 		$fonction = $request->read('fonction');
 		//$password = $request->read('password');
@@ -40,15 +40,20 @@ class UserController extends Controller {
 		$nb_places =  $request->read('nb_places');
 		$taille_bagages =  $request->read('taille_bagages');
 
-		
+
 		$newSite = User::updateSite($email, $site);
 		$newFonction = User::updateFonction($email, $fonction);
 		$newTelephone = User::updateTelephone($email, $telephone );
-		$newModele = User::updateTelephone($email, $modele );
+		$newModele = User::updateModele($email, $modele );
 		$newCouleur = User::updateCouleur($email, $couleur );
 		$newNbPlaces = User::updateNbPlaces($email, $nb_places );
+<<<<<<< HEAD
 		$newTailleBagages = User::updateTailleBagages($email, $taille_bagages);
 		
+=======
+		$newTailleBagages = User::updateTailleBagages($email, $taille_bagages );
+
+>>>>>>> 6ea1b970f38cfb6f4bbfe83798e7ffcc2bf25b88
 		$view = new UserView($this, 'compte');
 		$view->render();
 	}
