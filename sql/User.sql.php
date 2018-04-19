@@ -34,10 +34,10 @@
 											WHERE lieu_depart = :lieu_depart AND lieu_arrivee = :lieu_arrivee AND heure_depart >= :heure_depart
 											ORDER BY heure_depart;");
 
-	User::addSqlRequest('ShowMesTrajets', "SELECT id_trajet, id_user, lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
+	User::addSqlRequest('ShowMesTrajetsPasses', "SELECT id_trajet, id_user, lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, commentaire FROM TRAJET
 											WHERE id_user = :id_user AND heure_arrivee < NOW();");
 
-	User::addSqlRequest('ShowMesFutursTrajets', "SELECT id_trajet, id_user, lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
+	User::addSqlRequest('ShowMesFutursTrajets', "SELECT id_trajet, id_user, lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, commentaire FROM TRAJET
 											WHERE id_user = :id_user AND heure_depart > NOW();");
 
 	User::addSqlRequest('InscriptionTrajet', "INSERT INTO participe (id_user, id_trajet) VALUES (:id_user, :id_trajet)");

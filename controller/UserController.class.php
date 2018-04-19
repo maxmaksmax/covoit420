@@ -140,6 +140,22 @@ class UserController extends Controller {
 		$view -> setArg('trajetsRecherches', $liste_trajets);
 		$view->render();
 	}
+	
+	// public function historiqueTrajets($request) {
+		// if (!isset($_SESSION)) { session_start(); }
+		// $trajets = User::showMesTrajetsPasses($_SESSION['id_user']);
+		// $view = new UserView($this, 'historiqueTrajets');
+		// $view -> setArg('mesTrajetsPasses', $trajets);
+		// $view->render();
+	// }
+	
+	public function futursTrajets($request){
+		if (!isset($_SESSION)) { session_start(); }
+		$trajets = User::showMesFutursTrajets($_SESSION['id_user']);
+		$view = new UserView($this, 'futursTrajets');
+		$view -> setArg('mesFutursTrajets', $trajets);
+		$view -> render();
+	}
 
 	//FONCTIONS COMPTE
 
@@ -151,20 +167,7 @@ class UserController extends Controller {
 	$view = new UserView($this, 'statistiques');
 	$view->render();
 	}
-	public function historiqueTrajets($request) {
-		if (!isset($_SESSION)) { session_start(); }
-		$trajets = User::showMesTrajets($_SESSION['id_user']);
-		$view = new UserView($this, 'historiqueTrajets');
-		$view -> setArg('mesTrajets', $trajets);
-		$view->render();
-	}
-	public function futursTrajets($request){
-		if (!isset($_SESSION)) { session_start(); }
-		$trajets = User::showMesFutursTrajets($_SESSION['id_user']);
-		$view = new UserView($this, 'futursTrajets');
-		$view -> setArg('mesFutursTrajets', $trajets);
-		$view -> render();
-	}
+
 }
 
 ?>
