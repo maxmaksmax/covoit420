@@ -214,7 +214,7 @@ class User extends Model {
 	//            TRAJETS             //
 	////////////////////////////////////
 
-	public static function UpdateNbTrajet($email){
+	public static function updateNbTrajet($email){
 		$stmt = Model::executeRequest('UpdateNbTrajet', array('email'=>$email)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
