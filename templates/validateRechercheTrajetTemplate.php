@@ -1,5 +1,6 @@
 <?php
-	$trajets = User::showMesFuturTrajets($_SESSION['id_user']);
+	$trajets = User::showMesFutursTrajets($_SESSION['id_user']);
+	$trajetsRecherchés = $this->getArg('trajetsRecherchés');
 
 ?>
 
@@ -42,8 +43,7 @@
 							</li>
 						</ul>
 						</form>
-						<?php
-					}?>
+						
 				</div>
 			</div>
 			</div>

@@ -42,7 +42,7 @@ class UserController extends Controller {
 		$view->render();
 	}
 
-	//FONCTIONS TRAJETS
+	//FONCTIONS VOITURE
 
 	public function creationVoiture($request) {
 		$view = new UserView($this, 'creationVoiture');
@@ -62,6 +62,8 @@ class UserController extends Controller {
 		$view->render();
 	}
 
+	//FONCTIONS TRAJETS
+	
 	public function creationTrajet($request) {
 		$view = new UserView($this, 'creationTrajet');
 		$view->render();
@@ -100,7 +102,7 @@ class UserController extends Controller {
 
 
 		$view = new UserView($this, 'validateRechercheTrajet');
-		$view -> setArg('trajets', $trajets);
+		$view -> setArg('trajetsRecherchés', $trajets);
 		$view->render();
 
 	}
@@ -131,11 +133,11 @@ class UserController extends Controller {
 		$view -> setArg('mesTrajets', $trajets);
 		$view->render();
 	}
-	public function futurTrajets($request){
+	public function futursTrajets($request){
 		if (!isset($_SESSION)) { session_start(); }
-		$trajets = User::showMesFuturTrajets($_SESSION['id_user']);
-		$view = new UserView($this, 'futurTrajets');
-		$view -> setArg('mesFuturTrajets', $trajets);
+		$trajets = User::showMesFutursTrajets($_SESSION['id_user']);
+		$view = new UserView($this, 'futursTrajets');
+		$view -> setArg('mesFutursTrajets', $trajets);
 		$view -> render();
 	}
 }
