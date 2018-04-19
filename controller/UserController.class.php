@@ -99,10 +99,9 @@ class UserController extends Controller {
 		$date_heure = $date . ' ' . $heure . ':00';
 		$trajets = User::showTrajet($lieu_depart, $lieu_arrivee, $date_heure);
 		$nbTrajets = sizeof($trajets);
-
-
+		
 		$view = new UserView($this, 'validateRechercheTrajet');
-		$view -> setArg('trajetsRecherchés', $trajets);
+		$view -> setArg('trajetsRecherches', $trajetsRecherches);
 		$view->render();
 
 	}
@@ -111,7 +110,9 @@ class UserController extends Controller {
 		$id_trajet = $request->read('id_trajet_recherche');
 		if (!isset($_SESSION)) { session_start(); }
 		$trajet = User::inscriptionTrajet($_SESSION['id_user'], $id_trajet);
+		
 		$view = new UserView($this, 'validateRechercheTrajet');
+		$view -> setArg('trajetsRecherches', $trajetsRecherches);
 		$view->render();
 	}
 
@@ -120,6 +121,7 @@ class UserController extends Controller {
 		if (!isset($_SESSION)) { session_start(); }
 		$trajet = User::desinscriptionTrajet($_SESSION['id_user'], $id_trajet);
 		$view = new UserView($this, 'validateRechercheTrajet');
+		$view -> setArg('trajetsRecherches', $trajetsRecherches);
 		$view->render();
 	}
 

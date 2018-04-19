@@ -1,6 +1,6 @@
 <?php
 	//$trajets = User::showMesFutursTrajets($_SESSION['id_user']);
-	$trajetsRecherchés = $this->getArg('trajetsRecherchés');
+	$trajetsRecherches = $this->getArg('trajetsRecherches');
 	$id_user = $_SESSION['id_user'];
 	
 	//$trajetsR = User::showTrajet($_SESSION['id_user']);
@@ -24,18 +24,18 @@
 			</tr>
 
 			<?php
-				$nbTrajets = sizeof($trajetsRecherchés);
+				$nbTrajets = sizeof($trajetsRecherches);
 				for ($i=0; $i<$nbTrajets; $i++){ ?>
 
 
 			<tr>
-				<td><?php print_r($trajetsRecherchés[$i]['lieu_depart']);?></td>
-				<td><?php print_r($trajetsRecherchés[$i]['lieu_arrivee']);?></td>
-				<td><?php print_r($trajetsRecherchés[$i]['heure_depart']);?></td>
+				<td><?php print_r($trajetsRecherches[$i]['lieu_depart']);?></td>
+				<td><?php print_r($trajetsRecherches[$i]['lieu_arrivee']);?></td>
+				<td><?php print_r($trajetsRecherches[$i]['heure_depart']);?></td>
 <td>
 					<?php
 					// affiche les participants
-					$participants = User::showParticipantsTrajet($trajetsRecherchés[$i]['id_trajet']);
+					$participants = User::showParticipantsTrajet($trajetsRecherches[$i]['id_trajet']);
 					$nbParticipants = sizeof($participants);
 					for ($j=0; $j<$nbParticipants; $j++){ ?>
 
@@ -45,7 +45,7 @@
 					<?php }
 					?></td>
 
-				<td><?php print_r($trajetsRecherchés[$i]['nombre_places']-$nbParticipants);?></td>
+				<td><?php print_r($trajetsRecherches[$i]['nombre_places']-$nbParticipants);?></td>
 
 				<td>
 
@@ -54,14 +54,14 @@
 
 					<form action="index.php?c=user&a=validateInscriptionATrajet" method="post" >
 						<p><input type="submit" value="M'inscrire" name="boutonInscription" class="btn btn-primary btn-xl text-uppercase"></input>
-						   <input value="<?php print_r($trajetsRecherchés[$i]['id_trajet'])?>" name="id_trajet_recherche" style="visibility: hidden;"></input>
+						   <input value="<?php print_r($trajetsRecherches[$i]['id_trajet'])?>" name="id_trajet_recherche" style="visibility: hidden;"></input>
 						</p>
 					</form>
 						<?php } else{ ?>
 
 					<form action="index.php?c=user&a=validateDesinscriptionATrajet" method="post" >
 						<p><input type="submit" value="Me désinscrire" name="boutonInscription"  class="btn btn-primary btn-xl text-uppercase"></input>
-					       <input value="<?php print_r($trajetsRecherchés[$i]['id_trajet'])?>" name="id_trajet_recherche" style="visibility: hidden;"></input>
+					       <input value="<?php print_r($trajetsRecherches[$i]['id_trajet'])?>" name="id_trajet_recherche" style="visibility: hidden;"></input>
 						</p>
 					</form>
 						<?php }?>
