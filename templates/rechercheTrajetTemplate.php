@@ -9,7 +9,7 @@
         </div>
         <div>
           <div>
-            <form action="index.php?c=user&a=rechercheTrajet" method="post">
+            <form action="index.php?c=user&a=validateRechercheTrajet" method="post">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">

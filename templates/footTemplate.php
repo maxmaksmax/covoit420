@@ -7,11 +7,11 @@
 					<div class="container">
 						<div class="top-footer-grids">
 							<div class="top-footer-grid">
-								<h3>Contact us</h3>
+								<h3>Contact</h3>
 								<ul class="address">
-									<li><span class="map-pin"> </span><label>55 Main St.Toronto, ON M1H 3A5</label></li>
-									<li><span class="mob"> </span>(416) 555-5252</li>
-									<li><span class="msg"> </span><a href="mailto:yourname@yoursite.com">hello@moto.com</a></li>
+									<li><span class="map-pin"> </span><label>263, Rue du Grand Bail, 59500 DOUAI</label></li>
+									<li><span class="mob"> </span>+33 1 46 87 53 93</li>
+									<li><span class="msg"> </span><a href="mailto:yourname@yoursite.com">maxime@imt-express.com</a></li>
 								</ul>
 							</div>
 							<div class="top-footer-grid">
