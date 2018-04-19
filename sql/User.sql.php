@@ -40,8 +40,9 @@
 	User::addSqlRequest('ShowMesFutursTrajets', "SELECT id_trajet, id_user, lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places, commentaire FROM TRAJET
 											WHERE id_user = :id_user AND heure_depart > NOW();");
 
-	User::addSqlRequest('InscriptionTrajet', "INSERT INTO participe (id_user, id_trajet)
-											VALUES (:id_user, :id_trajet)");
+	User::addSqlRequest('InscriptionTrajet', "INSERT INTO participe (id_user, id_trajet) VALUES (:id_user, :id_trajet)");
+
+	User::addSqlRequest('DesinscriptionTrajet', "DELETE FROM participe WHERE id_user = :id_user AND id_trajet = :id_trajet");
 
 	User::addSqlRequest('ShowParticipantsTrajet', "SELECT p.id_user, nom_user, prenom_user FROM participe p JOIN utilisateur u ON p.id_user = u.id_user WHERE p.id_trajet= :id_trajet");
 

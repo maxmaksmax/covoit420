@@ -229,6 +229,13 @@ class User extends Model {
 	$result = $trajet->fetchAll();
 	return $result;
 	}
+	
+	public static function desinscriptionTrajet($id_user, $id_trajet){
+
+	$trajet = Model::executeRequest('DesinscriptionTrajet', array(':id_user' => $id_user, ':id_trajet' => $id_trajet));
+	$result = $trajet->fetchAll();
+	return $result;
+	}
 
 	public static function showParticipantsTrajet($id_trajet){
 		$trajet = Model::executeRequest('ShowParticipantsTrajet', array('id_trajet' => $id_trajet));

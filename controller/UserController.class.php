@@ -108,13 +108,20 @@ class UserController extends Controller {
 	}
 
 	public function validateInscriptionATrajet($request) {
-
+		$id_trajet = $request->read('id_trajet_recherche');
 		if (!isset($_SESSION)) { session_start(); }
 		$trajet = User::inscriptionTrajet($_SESSION['id_user'], $id_trajet);
 		$view = new UserView($this, 'validateRechercheTrajet');
 		$view->render();
 	}
 
+	public function validateDesinscriptionATrajet($request) {
+		$id_trajet = $request->read('id_trajet_recherche');
+		if (!isset($_SESSION)) { session_start(); }
+		$trajet = User::desinscriptionTrajet($_SESSION['id_user'], $id_trajet);
+		$view = new UserView($this, 'validateRechercheTrajet');
+		$view->render();
+	}
 
 	//FONCTIONS COMPTE
 
