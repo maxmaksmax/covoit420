@@ -32,7 +32,7 @@
 				<td><?php print_r($trajetsRecherches[$i]['lieu_depart']);?></td>
 				<td><?php print_r($trajetsRecherches[$i]['lieu_arrivee']);?></td>
 				<td><?php print_r($trajetsRecherches[$i]['heure_depart']);?></td>
-<td>
+				<td>
 					<?php
 					// affiche les participants
 					$participants = User::showParticipantsTrajet($trajetsRecherches[$i]['id_trajet']);
