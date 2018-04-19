@@ -28,7 +28,7 @@ class UserController extends Controller {
 	}
 
 	public function updateAllProfil($request) {
-		$email = $request->read('email');
+		$email = $_SESSION['email'];
 		$nom = $request->read('nom');
 		$prenom = $request->read('prenom');
 		$site = $request->read('site');

@@ -119,7 +119,7 @@ class User extends Model {
 	}
 
 	public static function updateTelephone($email, $newNom){
-		$stmt = Model::executeRequest('UpdatTelephone', array('email'=>$email, 'newTelephone' => $newTelephone)) -> fetch()[0];
+		$stmt = Model::executeRequest('UpdateTelephone', array('email'=>$email, 'newTelephone' => $newTelephone)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
