@@ -88,8 +88,8 @@ class User extends Model {
 		}
 	}
 
-	public static function updatePassword($email){
-		$stmt = Model::executeRequest('UpdatePassword', array('email'=>$email)) -> fetch()[0];
+	public static function updatePassword($email, $newPassword){
+		$stmt = Model::executeRequest('UpdatePassword', array('email'=>$email, 'newPassword' => $newPassword)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -98,8 +98,8 @@ class User extends Model {
 		}
 	}
 
-	public static function updateNom($email){
-		$stmt = Model::executeRequest('UpdateNom', array('email'=>$email)) -> fetch()[0];
+	public static function updateNom($email, $newFonction){
+		$stmt = Model::executeRequest('UpdateNom', array('email'=>$email, 'newNom' => $newNom)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -108,8 +108,8 @@ class User extends Model {
 		}
 	}
 
-	public static function updatePrenom($email){
-		$stmt = Model::executeRequest('UpdatePrenom', array('email'=>$email)) -> fetch()[0];
+	public static function updatePrenom($email, $newPrenom){
+		$stmt = Model::executeRequest('UpdatePrenom', array('email'=>$email, 'newPrenom' => $newPrenom)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -118,8 +118,8 @@ class User extends Model {
 		}
 	}
 
-	public static function updateTelephone($email){
-		$stmt = Model::executeRequest('UpdatTelephone', array('email'=>$email)) -> fetch()[0];
+	public static function updateTelephone($email, $newNom){
+		$stmt = Model::executeRequest('UpdatTelephone', array('email'=>$email, 'newTelephone' => $newTelephone)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -128,8 +128,8 @@ class User extends Model {
 		}
 	}
 
-	public static function updateSite($email){
-		$stmt = Model::executeRequest('UpdateSite', array('email'=>$email)) -> fetch()[0];
+	public static function updateSite($email, $newSite){
+		$stmt = Model::executeRequest('UpdateSite', array('email'=>$email, 'newSite' => $newSite)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -138,8 +138,8 @@ class User extends Model {
 		}
 	}
 
-	public static function updateFonction($email){
-		$stmt = Model::executeRequest('UpdateFonction', array('email'=>$email)) -> fetch()[0];
+	public static function updateFonction($email, $newFonction){
+		$stmt = Model::executeRequest('UpdateFonction', array('email'=>$email, 'newFonction' => $newFonction)) -> fetch()[0];
 		if($stmt == null){
 			echo "Cet utilisateur n'existe pas !";
 		}
@@ -148,22 +148,6 @@ class User extends Model {
 		}
 	}
 
-	public static function updateAllProfil($email){
-		// $newProfil = Model::executeRequest('UpdateAllProfil', array('email'=>$email, 'nom' => $nom, 'prenom' => $prenom,'telephone' => $telephone, 'site' => $site, 'fonction' => $fonction )) -> fetch()[0];
-		$newNom = Model::executeRequest('UpdateNom', array('email'=>$email)) -> fetch()[0];
-		$newPrenom = Model::executeRequest('UpdatePrenom', array('email'=>$email)) -> fetch()[0];
-		$newFonction = Model::executeRequest('UpdateFonction', array('email'=>$email)) -> fetch()[0];
-		$newSite = Model::executeRequest('UpdateSite', array('email'=>$email)) -> fetch()[0];
-		$newTel = Model::executeRequest('UpdatTelephone', array('email'=>$email)) -> fetch()[0];
-
-
-		if($newNom == null || $newPrenom == null || $newFonction == null || $newSite == null || $newTel == null  ){
-			echo "Cet utilisateur n'existe pas !";
-		}
-		else{
-			return $newNom;
-		}
-	}
 
     ////////////////////////////////////
 	//            VOITURE             //
@@ -185,6 +169,46 @@ class User extends Model {
 		$voiture = Model::executeRequest('GetVoitureID', array('id_user' => $id_user));
 		$res = $voiture->fetch()[0][0];
 		return $res;
+	}
+	
+	public static function updateModele($id_voiture, $newModele){
+		$stmt = Model::executeRequest('UpdateModele', array('email'=>$email, 'newModele' => $newModele)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+	
+	public static function updateCouleur($id_voiture, $newCouleur){
+		$stmt = Model::executeRequest('UpdateCouleur', array('email'=>$email, 'newCouleur' => $newCouleur)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+	
+	public static function updateTailleBagages($id_voiture, $newTaille){
+		$stmt = Model::executeRequest('UpdateTailleBagages', array('email'=>$email, 'newTaille' => $newTaille)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
+	}
+	
+	public static function updateNbPlaces($id_voiture, $newNbPlaces){
+		$stmt = Model::executeRequest('UpdateNbPlaces', array('email'=>$email, 'newNbPlaces' => $newNbPlaces)) -> fetch()[0];
+		if($stmt == null){
+			echo "Cet utilisateur n'existe pas !";
+		}
+		else{
+			return $stmt;
+		}
 	}
 	////////////////////////////////////
 	//            TRAJETS             //

@@ -33,10 +33,22 @@ class UserController extends Controller {
 		$prenom = $request->read('prenom');
 		$site = $request->read('site');
 		$fonction = $request->read('fonction');
+		//$password = $request->read('password');
 		$telephone = $request->read('telephone');
+		$modele =  $request->read('modele');
+		$couleur =  $request->read('couleur');
+		$nb_places =  $request->read('nb_places');
+		$taille_bagages =  $request->read('taille_bagages');
 
-		$newProfil = User::updateAllProfil($email, $nom , $prenom , $site , $fonction , $telephone );
-		print_r($newProfil);
+		
+		$newSite = User::updateSite($email, $site);
+		$newFonction = User::updateFonction($email, $fonction);
+		$newTelephone = User::updateTelephone($email, $telephone );
+		$newModele = User::updateTelephone($email, $modele );
+		$newCouleur = User::updateCouleur($email, $couleur );
+		$newNbPlaces = User::updateNbPlaces($email, $nb_places );
+		$newTailleBagages = User::updateTailleBagages($email, $taille_bagages );
+		
 		$view = new UserView($this, 'compte');
 		$view->render();
 	}

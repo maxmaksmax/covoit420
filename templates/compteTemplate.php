@@ -63,7 +63,7 @@
 
 					<tr>
 						<td><label for="tailleBagage">Taille des bagages</label></td>
-						<td><input class="form-control" name="taille_bagage" type="text" value= '<?php print_r($voitures[0][4]);?>'></td>
+						<td><input class="form-control" name="taille_bagages" type="text" value= '<?php print_r($voitures[0][4]);?>'></td>
 					</tr>
 
 				</table>
