@@ -1,6 +1,4 @@
 <?php
-	// $email = $_SESSION["email"];
-	// $id_user = $_SESSION["id"];
 	if (!isset($_SESSION)) { session_start(); }
 	$voitures = User::showListeVoitures($_SESSION['id_user']);
 ?>
