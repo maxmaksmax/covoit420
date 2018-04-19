@@ -1,11 +1,12 @@
 <?php
 	$mesTrajets = $this->getArg('mesTrajets');
+	$trajetsRecherches = $this->getArg('trajetsRecherches');
 
 ?>
 
 <section class="content-section" id="portfolio">
 
-	<h2 class="section-heading text-uppercase">Trajets recherchés</h2>
+	<h2 class="section-heading text-uppercase">Historique de mes trajets</h2>
 		<table>
 
 			<tr>
@@ -13,8 +14,6 @@
 				<th>Lieu d'arrivée</th>
 				<th>Heure de départ</th>
 				<th>Participants</th>
-				<th>Places disponibles</th>
-				<th></th>
 			</tr>
 
 			<?php

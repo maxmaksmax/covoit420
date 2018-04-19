@@ -47,13 +47,8 @@ class UserController extends Controller {
 		$newModele = User::updateModele($email, $modele );
 		$newCouleur = User::updateCouleur($email, $couleur );
 		$newNbPlaces = User::updateNbPlaces($email, $nb_places );
-<<<<<<< HEAD
 		$newTailleBagages = User::updateTailleBagages($email, $taille_bagages);
-		
-=======
-		$newTailleBagages = User::updateTailleBagages($email, $taille_bagages );
 
->>>>>>> 6ea1b970f38cfb6f4bbfe83798e7ffcc2bf25b88
 		$view = new UserView($this, 'compte');
 		$view->render();
 	}
