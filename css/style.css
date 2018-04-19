@@ -56,7 +56,9 @@
 	float:left;
 	width:23%;
 }
-
+.modal-title {
+  color: #333;
+}
 /*--
 Author: W3layouts
 Author URL: http://w3layouts.com
