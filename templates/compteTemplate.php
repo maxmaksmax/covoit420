@@ -37,7 +37,7 @@
 
 					 <tr>
 						 <td><label for="site">Site</label></td>
-						 <td><input class="form-control" name="site" type="text" placeholder="Site : "value= '<?php print_r($site);?>'></td>
+						 <td><input class="form-control" name="site" type="text" value= '<?php print_r($site);?>'></td>
 					 </tr>
 
 					 <tr>
@@ -47,7 +47,7 @@
 
 					<tr><td></td><td></td></tr>
 					<tr>
-						<td><label for="modele">Modèle</label></td>
+						<td><label for="modele">Modèle de voiture</label></td>
 						<td><input class="form-control" name="modele" type="text" value= '<?php print_r($voitures[0][1]);?>'></td>
 					</tr>
 
