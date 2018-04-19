@@ -1,5 +1,5 @@
 <?php
-	$mesTrajets = $this->getArg('mesFuturTrajets');
+	$mesTrajets = $this->getArg('mesFutursTrajets');
 
 ?>
 

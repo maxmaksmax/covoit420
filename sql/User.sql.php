@@ -63,5 +63,10 @@
 	User::addSqlRequest('UpdateCouleur', "UPDATE `voiture` SET `couleur`= :newCouleur WHERE voiture.id_user = :email;");
 	User::addSqlRequest('UpdateNbPlaces', "UPDATE `voiture` SET `nombre_places`= :newNbPlaces WHERE voiture.id_user = :id_user;");
 	User::addSqlRequest('UpdateTailleBagages', "UPDATE `voiture` SET `taille_bagage`= :newTailleBagages WHERE voiture.id_user = :id_user;");
+	
+	User::addSqlRequest('CreateModele', "INSERT INTO voiture (modele) VALUES (:modele) WHERE id_voiture = :id_voiture;");
+	User::addSqlRequest('CreateCouleur', "INSERT INTO voiture (couleur) VALUES (:couleur) WHERE id_voiture = :id_voiture;");
+	User::addSqlRequest('CreateNbPlaces', "INSERT INTO voiture (nombre_places) VALUES (:nombre_places) WHERE id_voiture = :id_voiture;");
+	User::addSqlRequest('CreateTailleBagages', "INTO voiture (taille_bagage) VALUES (:taille_bagages) WHERE id_voiture = :id_voiture;");											
 
 ?>
