@@ -46,6 +46,9 @@
 
 	User::addSqlRequest('ShowParticipantsTrajet', "SELECT p.id_user, nom_user, prenom_user FROM participe p JOIN utilisateur u ON p.id_user = u.id_user WHERE p.id_trajet= :id_trajet");
 
+	User::addSqlRequest('ShowTrajetWithParticipant', "SELECT id_trajet, id_user, lieu_depart, lieu_arrivee, heure_depart, heure_arrivee, nombre_places
+											FROM trajet t JOIN participe p ON t.id_trajet = p.id_trajet
+											WHERE p.id_user = :id_user AND heure_depart > NOW();");
 	//VOITURE
 
 	User::addSqlRequest('CreateVoiture', "INSERT INTO voiture (modele, couleur, nombre_places, taille_bagage)

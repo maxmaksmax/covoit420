@@ -123,7 +123,7 @@ class UserController extends Controller {
 
 		if (!isset($_SESSION)) { session_start(); }
 		$trajet = User::inscriptionTrajet($_SESSION['id_user'], $id_trajet);
-		$liste_trajets = User::showMesFutursTrajets($_SESSION['id_user']);
+		$liste_trajets = User::showTrajetWithParticipant($id_trajet);
 		$view = new UserView($this, 'validateRechercheTrajet');
 		$view -> setArg('trajetsRecherches', $liste_trajets);
 		$view->render();
