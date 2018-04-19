@@ -97,7 +97,7 @@ class UserController extends Controller {
 		$lieu_depart = $request->read('lieu_depart');
 		$lieu_arrivee = $request->read('lieu_arrivee');
 		$date_heure = $date . ' ' . $heure . ':00';
-		$trajets = User::showTrajet($lieu_depart, $lieu_arrivee, $date_heure);
+		$trajetsRecherches = User::showTrajet($lieu_depart, $lieu_arrivee, $date_heure);
 		$nbTrajets = sizeof($trajets);
 		
 		$view = new UserView($this, 'validateRechercheTrajet');
