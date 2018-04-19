@@ -34,11 +34,26 @@
 							<li class="list-inline-item">
 								<p class="text" name="nombre_places"><?php print_r($trajetsRecherchés[$i]['nombre_places']);?></p>
 							</li>
+							
+							<?php
+								$participants = User::showParticipantsTrajet($trajetsRecherchés[$i]['id_trajet']);
+								$nbParticipants = sizeof($participants['id_trajet']);
+								for ($j=0; $j<$nbParticipants; $j++){ ?>
+								
+								<li class="list-inline-item">
+								<p class="text" name="nombre_places"><?php print_r($participants[$j]['nom'].' '$participants[$j]['prenom']);?></p>
+								</li>
+								
+								<?php }
+							?>
+							
 							<li class="list-inline-item"
 								<?php
-									if($trajetsRecherchés[$i]['id_user'] == $_SESSION['id_user']){
-										echo("style=\"visibility:hidden\" ");
-									}
+								
+									// cache le bouton "m'incrire" si l'utilisateur est déjà participant
+									// if(User::showParticipantsTrajet($trajetsRecherchés[$i]['id_trajet'])['id_user'] == $_SESSION['id_user']){
+										// echo("style=\"visibility:hidden\" ");
+									// }
 									// A MODIFIER AVEC UNE FONCTION QUI VERIFIE SI LE USER EST PARTICIPANT, ET NON CREATEUR
 								?>
 							>
@@ -46,7 +61,7 @@
 							</li>
 						</ul>
 						</form>
-						
+							<?php	} ?>
 				</div>
 			</div>
 			</div>
