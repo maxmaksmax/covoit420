@@ -2,7 +2,7 @@
 	$trajets = User::showMesFutursTrajets($_SESSION['id_user']);
 	$trajetsRecherchés = $this->getArg('trajetsRecherchés');
 	//$trajetsR = User::showTrajet($_SESSION['id_user']);
-	
+
 
 ?>
 
@@ -34,22 +34,22 @@
 							<li class="list-inline-item">
 								<p class="text" name="nombre_places"><?php print_r($trajetsRecherchés[$i]['nombre_places']);?></p>
 							</li>
-							
+
 							<?php
 								$participants = User::showParticipantsTrajet($trajetsRecherchés[$i]['id_trajet']);
-								$nbParticipants = sizeof($participants['id_trajet']);
+								$nbParticipants = sizeof($participants);
 								for ($j=0; $j<$nbParticipants; $j++){ ?>
-								
+
 								<li class="list-inline-item">
-								<p class="text" name="nombre_places"><?php print_r($participants[$j]['nom'].' '$participants[$j]['prenom']);?></p>
+								<p class="text" name="nombre_places"><?php print_r($participants[$j]['nom_user'].' '.$participants[$j]['prenom_user']);?></p>
 								</li>
-								
+
 								<?php }
 							?>
-							
+
 							<li class="list-inline-item"
 								<?php
-								
+
 									// cache le bouton "m'incrire" si l'utilisateur est déjà participant
 									// if(User::showParticipantsTrajet($trajetsRecherchés[$i]['id_trajet'])['id_user'] == $_SESSION['id_user']){
 										// echo("style=\"visibility:hidden\" ");
