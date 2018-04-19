@@ -51,13 +51,14 @@
 	User::addSqlRequest('CreateVoiture', "INSERT INTO voiture (modele, couleur, nombre_places, taille_bagage)
 											VALUES (:modele, :couleur, :nombre_places, :taille_bagage)
 											WHERE id_user = :id_user;");
-
+											
 	User::addSqlRequest('ShowListeVoitures', "SELECT id_voiture, modele, couleur, nombre_places, taille_bagage FROM voiture WHERE id_user = :id_user;");
+	
 	User::addSqlRequest('GetVoitureID', "SELECT id_voiture FROM voiture WHERE id_user = :id_user;");
 
-	User::addSqlRequest('UpdateModele', "UPDATE `voiture` SET `modele`= :newModele WHERE voiture.email = :email;");
-	User::addSqlRequest('UpdateCouleur', "UPDATE `voiture` SET `couleur`= :newCouleur WHERE voiture.email = :email;");
-	User::addSqlRequest('UpdateNbPlaces', "UPDATE `voiture` SET `nombre_places`= :newNbPlaces WHERE voiture.email = :email;");
-	User::addSqlRequest('UpdateTailleBagage', "UPDATE `voiture` SET `taille_bagage`= :newTailleBagage WHERE voiture.email = :email;");
+	User::addSqlRequest('UpdateModele', "UPDATE `voiture` SET `modele`= :newModele WHERE voiture.id_user = :id_user;");
+	User::addSqlRequest('UpdateCouleur', "UPDATE `voiture` SET `couleur`= :newCouleur WHERE voiture.id_user = :email;");
+	User::addSqlRequest('UpdateNbPlaces', "UPDATE `voiture` SET `nombre_places`= :newNbPlaces WHERE voiture.id_user = :id_user;");
+	User::addSqlRequest('UpdateTailleBagages', "UPDATE `voiture` SET `taille_bagage`= :newTailleBagages WHERE voiture.id_user = :id_user;");
 
 ?>
