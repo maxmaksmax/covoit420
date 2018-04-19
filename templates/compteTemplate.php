@@ -48,22 +48,22 @@
 					<tr><td></td><td></td></tr>
 					<tr>
 						<td><label for="modele">Modèle de voiture</label></td>
-						<td><input class="form-control" name="modele" type="text" value= '<?php print_r($voitures[0][1]);?>'></td>
+						<td><input class="form-control" name="modele" type="text" value= '<?php if(isset($voiture[0][1])){print_r($voitures[0][1]);}?>'></td>
 					</tr>
 
 					<tr>
 						<td><label for="couleur">Couleur</label></td>
-						<td><input class="form-control" name="couleur" type="text" value= '<?php print_r($voitures[0][2]);?>'></td>
+						<td><input class="form-control" name="couleur" type="text" value= '<?php if(isset($voiture[0][2])){print_r($voitures[0][2]);}?>'></td>
 					</tr>
 
 					<tr>
 						<td><label for="NbPlaces">Nombre de places</label></td>
-						<td><input class="form-control" name="nb_places" type="text" value= '<?php print_r($voitures[0][3]);?>'></td>
+						<td><input class="form-control" name="nb_places" type="text" value= '<?php if(isset($voiture[0][3])){print_r($voitures[0][3]);}?>'></td>
 					</tr>
 
 					<tr>
 						<td><label for="tailleBagage">Taille des bagages</label></td>
-						<td><input class="form-control" name="taille_bagages" type="text" value= '<?php print_r($voitures[0][4]);?>'></td>
+						<td><input class="form-control" name="taille_bagages" type="text" value= '<?php if(isset($voiture[0][4])){print_r($voitures[0][1]);}?>'></td>
 					</tr>
 
 				</table>
