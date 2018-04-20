@@ -33,7 +33,7 @@
 
             <div class="modal-body">
               <div class="formulaire">
-                <form class="form-horizontal" action="index.php?a=validateInscription" method="post">
+                <form class="form-horizontal" action="index.php?c=usera=validateInscription" method="post">
 
 				
 				  <!-- ----------------
